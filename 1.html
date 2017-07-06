@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			:root {
+			  --text-color: #000000; /* A custom property named text-color */
+			}
+			a {
+  color: var( --text-color );
+  font-size: 16px;
+}
+		</style>
+		<!--<link rel="stylesheet" type="text/css" href="css/css.less"/>-->
+		<link rel="stylesheet" type="text/css" href="lightbox/themes/default/jquery.lightbox.css"/>
+		<script type="text/javascript" src="js/jquery-1-7-2-min.js" ></script>
+		<script type="text/javascript" src="lightbox/jquery.lightbox.min.js" ></script>
+		<script type="text/javascript">
+		 jQuery(document).bind('keydown', 'esc',function (evt){jQuery('#footer').addClass('dirty'); return false; });
+		</script>
+<!--<script src="js/less.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":/a.com/"
+  };
+</script>-->
+	</head>
+
+	<body>
+		<div id="main">
+		    <div class="left"><a href="2.html?lightbox[iframe]=true&lightbox[width]=900&lightbox[height]=540&id=1" class="list">aaaaaaa</a></div>
+		    <div class="right"></div>
+		    <div class="clear"></div>
+		    <iframe id="aaaaa" name="aaaaa" src="2.html" width="500" height="500">
+		    </iframe>
+		</div>
+		<div id="footer"><input type="text" /></div>
+		<script>
+/**
+* 响应javascript键盘事件
+* by www.jbxue.com
+*/
+
+document.getElementById('footer').onkeydown=function(event){  
+    var e = event || window.event || arguments.callee.caller.arguments[0];  
+    if(e && e.keyCode==27){ // 按 Esc   
+        //要做的事情  
+        alert("esc");  
+      }  
+    if(e && e.keyCode==113){ // 按 F2   
+         //要做的事情  
+        alert("需要帮助");  
+       }              
+     if(e && e.keyCode==13){ // enter 键  
+         //要做的事情  
+         alert("回车了");  
+    }  
+};  
+			$(".list").lightbox();
+			$(function(){
+//				alert($(".left").length);
+			})
+			//控制iframe里面的元素
+		 	window.onload=function(){
+			 	//document.getElementById('aaaaa').contentWindow.document.getElementById('test').style.color='red';
+			  var $obj=$("#aaaaa").contents().find(".left");   
+			  $($obj).css("width","1000px")
+			}
+		</script>
+	</body>
+
+</html>
