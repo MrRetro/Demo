@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body{position: relative;overflow-x: hidden;}
+			.lb{position: absolute;top: 205px;left: 49%;font-size: 130px;color: rgba(0, 0, 0, 0.04);transform: rotate(-24deg);z-index: -1;}
+			.container-fluid {padding: 20px;}
+			
+			.box {margin-bottom: 20px;float: left;}
+			.button{
+					color: #FFF;
+				    background-color: #1B9AF7;
+				    border-color: #1B9AF7;
+				    border-radius: 8px;
+				    font-weight: 300;
+				    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+				    text-decoration: none;
+				    text-align: center;
+				    margin: 0;
+				    display: inline-block;
+				    appearance: none;
+				    cursor: pointer;
+				    border: none;
+				    -webkit-box-sizing: border-box;
+				    -moz-box-sizing: border-box;
+				    box-sizing: border-box;
+				    -webkit-transition-property: all;
+				    transition-property: all;
+				    -webkit-transition-duration: .3s;
+				    transition-duration: .3s;
+				    margin-bottom: 10px;
+				    font-size: 12px;
+				    height: 30px;
+				    line-height: 30px;
+				    padding: 0 30px;
+				    outline: none;
+			}
+			.button:hover{background-color: rgba(27,154,247,0.75);}
+			.button:active{color: #085D9C;}
+			
+			.box img,
+			.box a {
+				font-size: 20px;
+				max-width: 100%;
+				text-decoration: none;
+				background-color: rgba(245,222,179,0.5);
+				color: grey;
+				display: inline-block;
+				padding: 5px;
+				line-height: 23px;
+				border-radius: 8px;
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			.box a:hover {color: #323232;}
+			
+			a.a1 {color: red;}
+			a.a2 {color: lightskyblue;}
+			a.a3 {color: orange;}
+			a.a4 {color: darkgreen;}
+			a.a5 {color: fuchsia;}
+			a.a6 {color: yellowgreen;}
+			a.a7 {color: sandybrown;}
+			
+			
+		</style>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/masonry-docs.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<label class="lb">内容显示区</label>
+		<div id="prepended-demo" class="cell demo" style="margin-left: 1%;margin-right:1%;margin-top: 1%;width: 48%;float: left;">
+			<button class="button">点我添加</button>
+			<div id="masonry" class="masonry" class="container-fluid">
+				<!--<div class="box">
+					<a href="#">你说啥</a>
+				</div>
+				<div class="box">
+					<a href="#">你说啥</a>
+				</div>
+				<div class="box">
+					<a href="#">你说啥</a>
+				</div>
+				<div class="box">
+					<a href="#">你说啥</a>
+				</div>
+				<div class="box">
+					<a href="#">你说啥</a>
+				</div>-->
+			</div>
+		</div>
+		<iframe id="ifranme" name="ifranme" width="48%" height="1200" scrolling="yes" style="margin-left: 1%;margin-top: 1%;border: 1px solid gainsboro;float: left;"></iframe>
+		<script type="text/javascript">
+			$(function() {
+				//				var $container = $('#masonry');
+				//				$container.imagesLoaded(function() {
+				//					$container.masonry({
+				//						itemSelector: '.box',
+				//						gutter: 20,
+				//						isAnimated: true,
+				//					});
+				//				});
+
+var arry = ['3d小球', 'angularJs学习', 'before和after', 'bootstrap加载模态窗体', '可拖动的div','3d翻转交互',
+			'css3不断旋转', 'css3不断翻转', 'css来回移动', 'ie8测试png是否透明', 'ie兼容css3', 'index', 
+			'Js点击事件', 'js自调用', 'li', 'meitu', 'QQ授权登录', 'svg测试', 'test1', 
+			'xuanzhuan', '三级联动js版', '三角形', '下拉框', '事件委托', '克隆剪切', '判断浏览器版本号', 
+			'可拖动模态窗体', '各种基本图形', '响应式加载条', '图片实现前loading', '图片碎片化飞来', '图片转64为字符串', 
+			'复制 css3不断旋转', '奖金调整', '将jq函数封装和jq函数同级别调用', '小球依次滚出来', '属性获值', '左键长按事件', '平移轮播',
+			'微信授权登录', '手机端滑动登陆', '扑克翻牌效果', '拖曳效果', '插件开发', '数组去重', '新浪授权登录', 
+			'无缝轮播', '时间倒计时', '模拟模态窗体', '正在开奖文字闪烁', '测试验证表单', '浏览器搜索提示关键字', '淘宝样式初始化', 
+			'清除左浮动', '滚轮滚动一屏切换页面', '滚轮滚动切换页面', '火狐画虚线圆', '电商页面', '百度图片遮罩', '百度新闻导航背景滑动', 
+			'盾牌加飞剑', '网页中弹出另一网页', '背景星星闪烁', '背景颜色不断变化加过渡', '获取当前文件夹的所有列表', '视差滚动', '调用自定义插件的附加属性', 
+			'谷歌浏览器滚动条变细', '购物车动画效果', '边框动画', '选择标签的文本', '随机生成数字变化滚球', '随机生成验证码', '鼠标滑动登陆', 
+			'鼠标移上出现遮罩', '鼠标移上图片放大遮罩效果', '鼠标移动后文字飞来飞去', '鼠标移动背景微动'];
+
+				var demo = document.querySelector('#prepended-demo');
+				var container = demo.querySelector('.masonry');
+				var button = demo.querySelector('button');
+				var msnry = new Masonry(container, {
+					columnWidth: 10
+				});
+
+				eventie.bind(button, 'click', function() {
+					// create new item elements
+					var elems = [];
+					var fragment = document.createDocumentFragment();
+					for(var i = 0; i < arry.length; i++) {
+						var elem = document.createElement('div');
+						elem.className = 'box';
+
+						if(i % 7 == 0) {
+							elem.innerHTML = "<a class='a1' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						} else if(i % 7 == 1) {
+							elem.innerHTML = "<a class='a2' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}else if(i % 7 == 2) {
+							elem.innerHTML = "<a class='a3' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}else if(i % 7 == 3) {
+							elem.innerHTML = "<a class='a4' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}else if(i % 7 == 4) {
+							elem.innerHTML = "<a class='a5' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}else if(i % 7 == 5) {
+							elem.innerHTML = "<a class='a6' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}else if(i % 7 == 6) {
+							elem.innerHTML = "<a class='a7' href='../" + arry[i] + ".html' target='ifranme'>" + arry[i] + "</a>"
+						}
+
+						fragment.appendChild(elem);
+						elems.push(elem);
+					}
+					// prepend elements to container
+					container.insertBefore(fragment, container.firstChild);
+					// add and lay out newly prepended elements
+					msnry.prepended(elems);
+
+				});
+				
+				$('.button').click();
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于WebGL的炫酷元素背景水波涟漪jQuery特效|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<style type="text/css">
+		body {
+			color: #fff;
+			font-size: 16px;
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			background-image: url(img/bg2.jpg);
+			background-size: cover;
+			background-position: 50% 0;
+			height: 100%;
+			text-align: center;
+		}
+
+		body:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+
+		main {
+			display: inline-block;
+			vertical-align: middle;
+			background: url(img/bg.jpg);
+			padding:  100px;
+			max-width: 500px;
+			text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+			box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+			margin-bottom: 2em;
+		}
+
+		h1 {
+			font-size: 32px;
+		}
+		h2 {
+			font-size: 18px;
+			margin-top: 6px;
+		}
+		p {
+			text-align: left;
+			margin-top: 20px;
+		}
+		a {
+			color: #ff6800;
+		}
+		pre {
+			text-align: left;
+			margin-top: 20px;
+		}
+
+		.error {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			background: #000;
+			color: #f00;
+			padding: 5px;
+			max-width: 50%;
+		}
+
+		button {
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		  padding: 0 0.8em;
+			line-height: 2em;
+			border: none;
+			background: #666;
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+			border-radius: 4px;
+			cursor: pointer;
+			margin-bottom: 0.5em;
+			box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+		}
+
+		button:hover {
+			background: #888;
+		}
+
+		code { font-size: 0.8em; display: inline; }
+
+		.disable {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+		}
+
+		.code-string { color:#ec7600; }
+		.code-cbracket { font-weight:bold; }
+		.code-number { color:#ffcd22; }
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>基于WebGL的炫酷元素背景水波涟漪jQuery特效 <span>Add water ripples to your background using WebGL.</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Image-Effects/201504121667.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<main>
+			<header>
+				<h1>jQuery Ripples</h1>
+				<h2>A simple WebGL-based ripple effect.</h2>
+			</header>
+			<p>Background images are often boring. Use this effect to make your static CSS background images more interactive!</p>
+			<p>It's as easy as:</p>
+			
+			<pre><code>
+		$(<span class="code-string">'body'</span>).ripples(<span class="code-cbracket">{</span>
+			resolution: <span class="code-number">512</span>,
+			dropRadius: <span class="code-number">20</span>,
+			perturbance: <span class="code-number">0.04</span>,
+		<span class="code-cbracket">}</span>);
+			</code></pre>
+			
+			<p>You can add drops programmatically by doing <code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"drop"</span>, x, y, radius, strength)</code></p>
+			
+			<p>And you can change its state:<br>
+			<button class="js-ripples-pause" type="button">
+				<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"pause"</span>)</code>
+			</button>
+			
+			<button class="js-ripples-play" type="button">
+				<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"play"</span>)</code>
+			</button>
+			</p>
+			
+		</main>
+
+		<button class="js-ripples-disable disable">
+			Click here if your PC can't handle this effect very well 
+			(<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"destroy"</span>)</code>)
+		</button>
+
+		<div class="error"></div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/html5/html5-canvas/201502061336.html">
+			  <img src="related/1.jpg" width="300" alt="HTML5 canvas制作逼真的下雨雨滴效果js插件"/>
+			  <h3>HTML5 canvas制作逼真的下雨雨滴效果js插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/html5/html5-canvas/201504061633.html">
+			  <img src="related/2.jpg" width="300" alt="HTML5 canvas超简单和逼真的下雪特效"/>
+			  <h3>HTML5 canvas超简单和逼真的下雪特效</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/jquery.ripples.js"></script>
+	<script>
+	$(document).ready(function() {
+		try {
+			$('body').ripples({
+				resolution: 512,
+				dropRadius: 20, //px
+				perturbance: 0.04,
+			});
+			$('main').ripples({
+				resolution: 128,
+				dropRadius: 100, //px
+				perturbance: 0.04,
+				interactive: true
+			});
+		}
+		catch (e) {
+			$('.error').show().text(e);
+		}
+
+		$('.js-ripples-disable').on('click', function() {
+			$('body, main').ripples('destroy');
+			$(this).hide();
+		});
+		
+		$('.js-ripples-play').on('click', function() {
+			$('body, main').ripples('play');
+		});
+		
+		$('.js-ripples-pause').on('click', function() {
+			$('body, main').ripples('pause');
+		});
+
+		// Automatic drops
+		setInterval(function() {
+			var $el = $('main');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 20;
+			var strength = 0.04 + Math.random() * 0.04;
+			
+			$el.ripples('drop', x, y, dropRadius, strength);
+		}, 400);
+	});
+	
+//使用方法
+//使用这个水波涟漪特效插件必须先引入jQuery和jquery.ripples.js文件。
+// script src="js/jquery.min.js" type="text/javascript" 
+//////////////// script type="text/javascript" src="js/jquery.ripples.js"     
+// 调用插件
+//
+//在你要调用水波涟漪效果的元素上应该有一张CSS背景图片，否则效果会不太明显。该插件的使用方法非常简单，在页面初始化完成后使用下面的方法调用它。下面是在<body>元素上调用该插件。
+//$('body').ripples({
+//resolution: 512,
+//dropRadius: 20,
+//perturbance: 0.04,
+//});                
+//你还可以使用编程的方式来添加水滴效果：
+//$('body').ripples("drop", x, y, radius, strength)                
+//你还可以暂停和播放水波涟漪效果：
+//$('body').ripples('pause');                
+//$('body').ripples('play');                
+// 配置参数
+//以下是该水波涟漪特效的一些可用参数。
+//resolution：分辨率。默认值：256。
+//dropRadius：水波涟漪的半径。默认值：20。
+//perturbance：干扰效果。默认值：0.03。
+//interactive：是否可以用鼠标进行互动。默认值：false。
+	</script>
+</body>
+</html>

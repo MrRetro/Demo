@@ -1,0 +1,63 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function searchFiles() {
+				var fso = new ActiveXObject("Scripting.FileSystemObject");
+				var f = fso.GetFolder(document.all.fixfolder.value);
+				var fc = new Enumerator(f.files);
+				var s = "";
+				
+//				var i=0;
+//				var arry=[];
+				for(; !fc.atEnd(); fc.moveNext()) {
+//					var url=fc.item();
+//					arry[i]=url;
+//					i++;
+					
+					s += fc.item();
+					s += "<br/>";
+				}
+				fk = new Enumerator(f.SubFolders);
+				for(; !fk.atEnd(); fk.moveNext()) {
+					s += fk.item();
+					s += "<br/>";
+				}
+				textarea.innerHTML = s
+			}
+			window.onload = function() {
+				//获取当前网址，如： http://localhost:8080/Tmall/index.jsp 
+				var curWwwPath = window.document.location.href;
+
+				//获取主机地址之后的目录如：/Tmall/index.jsp 
+				var pathName = window.document.location.pathname;
+				var pos = curWwwPath.indexOf(pathName);
+
+				//获取主机地址，如： http://localhost:8080 
+				var localhostPaht = curWwwPath.substring(0, pos);
+				var locF = curWwwPath.substring(0, pos);
+				//				alert(curWwwPath.substring(0,pos));
+				var pathName = document.getElementById('search');
+				pathName.value = "D:\\Work\\加旅科技\\测试";
+				
+
+			}
+
+			
+		</script>
+	</head>
+
+	<body bgcolor="#FFFFFF">
+		指定文件夹：<input id="search" type="text" name="fixfolder" value="D:">
+		<input type="button" value="搜索" onclick="searchFiles()">
+		<table>
+			<tr>
+				<td id="textarea">
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

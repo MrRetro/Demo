@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+.border_dashed{
+    width:260px;
+    height:180px;
+    border-width:6px;
+    /*IE*/
+    border:2px dashed red;
+    border-radius: 50%;
+    /*Firefox*/
+    -moz-border-image:url(/study/image/dashed_red2.png) 6 repeat;
+    /*Chrome & Safari*/
+    -webkit-border-image:url(/study/image/dashed_red2.png) 6 repeat;
+    /*Opera*/
+    border-image:url(/study/image/dashed_red2.png) 6 repeat;
+    background:yellow;
+}
+		</style>
+	</head>
+	<body>
+		
+
+<div class="border_dashed"></div>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>无标题文档</title>  
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>  
+  
+<body>  
+<div id="mydiv" style="width:100px; height:100px; background:#ddd;">1</div>  
+</body>  
+</html>  
+  
+<script>  
+/*设置一个长按的计时器，如果点击这个图层超过2秒则触发，mydiv里面的文字从out变in的动作*/  
+var timeout ;  
+var i=$('#mydiv').text();
+var num=$('#mydiv').text();
+$("#mydiv").mousedown(function() {  
+	var d=setInterval(function(){
+  		i++;
+  		$("#mydiv").text(i); 
+  	},30);
+//  timeout = setTimeout(function() {  
+//      $("#mydiv").text(++num);  
+//  }, 2000);  
+});  
+   
+$("#mydiv").mouseup(function() {  
+    clearTimeout(timeout);  
+    $("#mydiv").text("out");  
+});  
+  
+$("#mydiv").mouseout(function() {  
+    clearTimeout(timeout);  
+    $("#mydiv").text("out");  
+});  
+</script>-->
+
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>鼠标长按事件</title>
+		<meta name="Generator" content="EditPlus">
+		<meta name="Author" content="">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var evl;
+			var timer_alert;
+			//e表示当前对象 operate表示四则运算
+			function whichElement(e, operate) {
+				var i = parseInt($('#aa').html());
+				switch (operate) {
+					case "add":
+						timer_alert = setTimeout(function() {
+							if (e.which == 1) {
+								evl = setInterval(function() {
+									i++;
+									console.log(i);
+								}, 50);
+							}
+						}, 1000);
+						break;
+					case 'sub':
+						timer_alert = setTimeout(function() {
+							if (e.which == 1) {
+								evl = setInterval(function() {
+									i--;
+									if (i <= 0) {
+										i = 0;
+									}
+									console.log(i);
+								}, 50);
+							}
+						}, 1000);
+						break;
+				}
+			}
+
+			function whichOut() {
+				clearInterval(evl);
+				clearTimeout(timer_alert);
+			}
+		</script>
+	</head>
+
+	<body>
+		<a id="aa" style="border:1px solid #E0E0E0;width:120px;height:130px;display: inline-block;" onmousedown="whichElement(event,'sub')" onmouseup="whichOut()">5</a>
+	</body>
+
+</html>

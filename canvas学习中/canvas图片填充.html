@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" style="border:1px solid #aaa;margin: 50px auto;display: block;"></canvas>
+		<!--<embed src="1.swf"/>-->
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				canvas.width=800;
+				canvas.height=800;
+				var context=canvas.getContext("2d");
+				
+				context.fillStyle="black";
+				context.fillRect(0,0,800,800);
+				
+				var backgroundImage=new Image();
+				var x = document.createElement("video");
+					x.setAttribute("width", "320");
+					x.setAttribute("height", "240");
+					x.setAttribute("controls", "controls");
+					x.setAttribute("src", "1.MP4");
+					document.body.appendChild(x);
+				backgroundImage.src="img/ico.png";
+				backgroundImage.onload=function(){
+					var pattern=context.createPattern(x,'repeat');
+					context.fillStyle=pattern;
+					context.fillRect(0,0,800,800);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

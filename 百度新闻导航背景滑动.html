@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--参考地址：http://www.wosoni.com/cnblogs/ShadowFiend/p/4876972.html-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>仿百度新闻菜单滑动动画</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        body, div, ul, li, a
+        {
+            margin: 0px;
+            padding: 0px;
+            font-size: 20px;
+            color: #FFF;
+            border: 0;
+        }
+        .div-nav-container
+        {
+            margin-top: 50px;
+            width: 100%;
+            background-color: #01204F;
+        }
+        .div-nav
+        {
+            /*作为div-hover的父元素定位参照*/
+            position: relative;
+            width: 870px;
+            margin: 0px auto;
+        }
+        .div-hover
+        {
+            background-color: Red;
+            /*以父元素绝对定位*/
+            position: absolute;
+            height: 50px;
+            left: 0px;
+            top: 0px;
+            width: 0px;
+        }
+        ul
+        {
+            list-style: outside none none;
+            width: 100%;
+            height: 50px;
+        }
+        ul li
+        {
+            float: left;
+            /*****Start（作用:导航文字浮于div-hover红色之上）*******/
+            position: relative;
+            z-index: 4;
+            /*********************End*************************/
+        }
+        ul li a
+        {
+            line-height: 50px;
+            display: block;
+            padding: 0px 15px;
+            text-align: center;
+            text-decoration: none;
+        }
+        /**设置菜单激活***/
+        .active
+        {
+            background-color: Red;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+    <script type="text/javascript">
+
+        var divHoverLeft = 0;
+        var aWidth = 0;
+
+        $(document).ready(function () {
+            //菜单滑动动画
+            $("a").on({
+                 /*此处用mouseover或者mouseenter均可，如果以后要为X标签同时添加悬停和移出事件，建议用enter和leave也就是传说中的hover事件，因为里面事件冒泡已经处理过，就不会出现类似over和out之类的情况了*/
+                'mouseenter': function () {
+                    SetDivHoverWidthAndLeft(this);
+                    //设置滑动动画
+                     $(".div-hover").animate({ width: aWidth, left: divHoverLeft }, 150);
+                },
+                'click': function () {
+                    SetDivHoverWidthAndLeft(this);
+                    //清除所有a标签class
+                    $('a').removeClass();
+                    //设置当前点击菜单为激活状态
+                    $(this).addClass('active');
+
+                    $(".h-width").val(aWidth);
+                    $(".h-left").val(divHoverLeft);
+                }
+            });
+
+            /*鼠标滑出UL或者div-nav背景div-hover自动定位到激活菜单处*/
+            //mouseleave事件定位到ul或者div-nav均可
+            $("ul").on({
+                'mouseleave': function (event) {
+                    $(".div-hover").animate({ width: $(".h-width").val(), left: $(".h-left").val() }, 150);
+                }
+            });
+        });
+
+        function SetDivHoverWidthAndLeft(element) {
+            divHoverLeft = GetLeft(element);
+            aWidth = GetWidth(element);
+        }
+
+        //获得Li宽度
+        function GetWidth(ele) {
+            return $(ele).parent().width();
+        }
+
+        //获得div-hover左边距
+        function GetLeft(element) {
+            //获得li之前的同级li元素
+            var menuList = $(element).parent().prevAll();
+            var left = 0;
+            //计算背景遮罩左边距
+            $.each(menuList, function (index, ele) {
+                left += $(ele).width();
+          });
+          return left;
+        }
+    </script>
+</head>
+<body>
+    <div class="div-nav-container">
+        <div class="div-nav">
+            <!--添加滑动背景-->
+            <div class="div-hover">
+            </div>
+            <ul>
+                <li><a class="active" href="javascript:void(0)">网站首页</a></li>
+                <li><a href="javascript:void(0)">热点</a> </li>
+                <li><a href="javascript:void(0)">国际新闻</a> </li>
+                <li><a href="javascript:void(0)">国内新闻</a> </li>
+                <li><a href="javascript:void(0)">国家政策</a> </li>
+                <li><a href="javascript:void(0)">体育新闻</a> </li>
+                <li><a href="javascript:void(0)">娱乐新闻</a> </li>
+                <li><a href="javascript:void(0)">名人</a> </li>
+                <li><a href="javascript:void(0)">古迹</a> </li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" class="h-width" value="110" />
+    <input type="hidden" class="h-left" value="0" />
+</body>
+</html>

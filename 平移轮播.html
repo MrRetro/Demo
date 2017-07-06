@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.lunbo{width: 100%;height:400px;position: relative;overflow: hidden;}
+			.lunbo .one{float: left;position: absolute;left: 0;}
+			.lunbo .one img{width: 1920px;}
+			
+			.lunbo .pageOne{float:left;margin-left: 50%;margin-top: 370px;position: relative;}
+			.lunbo .pageOne span{
+			    width: 12px;
+			    height: 12px;
+			    background-color: gray;
+			    position: relative;
+			    display: block;
+			    float: left;
+			    margin: 0 2px;
+			    border-radius: 50%;
+			    cursor: pointer;
+			}
+			.lunbo .pageOne .active{background-color: cornflowerblue;}
+			
+			.lunbo .leftOne{
+			    width: 50px;
+			    height: 50px;
+			    position: absolute;
+			    top: 162px;
+			    left: 30px;
+			    background-color: gray;
+			    opacity: 0.7;
+			    cursor: pointer;
+			}
+			.lunbo .rightOne{
+				width: 50px;
+			    height: 50px;
+			    position: absolute;
+			    top: 162px;
+			    right: 30px;
+			    background-color: gray;
+			    opacity: 0.7;
+			    cursor: pointer;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="lunbo">
+			<div class="one"><a href="#"><img src="images/bac1.jpg"/></a></div>
+			<div class="one"><a href="#"><img src="images/bac2.jpg"/></a></div>
+			<div class="one"><a href="#"><img src="images/bac3.jpg"/></a></div>
+			<div class="pageOne"></div>
+			<div class="leftOne"></div>
+			<div class="rightOne"></div>
+		</div>
+		<script>
+			$(function(){
+				$.fn.lunbo({'speed':5});
+			});
+//			function lunbo(e){
+//				var defaults = {
+//					'speed':3                              //速度 单位s
+//				};
+//				var data = $.extend({}, defaults, e);
+//				
+//				var times=0;
+//				//轮播宽度
+//				var lunboWidth=$('.lunbo').width();
+//				//轮播页数
+//				var lunboCount=$('.lunbo .one').length;
+//				var allWidth=lunboWidth*lunboCount;
+//				
+//				//初始位置
+//				for(var i=0;i<lunboCount;i++){
+//					$('.lunbo .one').eq(i).css({'left':lunboWidth*i});
+//					
+//					//点点初始化
+//					if(i==0){
+//						$('.pageOne').append('<span class="active"></span>')
+//					}else{
+//						$('.pageOne').append('<span></span>')
+//					}
+//				}
+//				
+//				var speeds=data.speed*1000;
+//				//定时轮播
+//			    var time1=setInterval(function(){	
+//					times=times+1;
+//					if(times>=lunboCount){
+//						times=0;
+//					}
+//					slideTimes(times);
+//				},speeds);
+//				//鼠标在banner轮播停止 否则继续
+//				$('.lunbo .one').hover(function(){
+//					clearInterval(time1);
+//				},function(){
+//					time1=setInterval(function(){	
+//					times=times+1;
+//					if(times>=lunboCount){
+//						times=0;
+//					}
+//					slideTimes(times);
+//				},speeds);
+//				});
+//				//点击小点轮播
+//				$('.pageOne span').click(function(){
+//					var index=$(this).index();
+//					times=index;
+//					slideTimes(index);
+//					//清除计时器
+//					clearInterval(time1);
+//				});
+//				
+//				//上一页
+//				var cur;
+//				$('.lunbo .leftOne').click(function(){
+//				 	cur=$('.pageOne .active').index();
+//				 	cur=cur-1;
+//				 	slideTimes(cur);
+//				 	//清除计时器
+//					clearInterval(time1);
+//				});
+//				//下一页
+//				$('.lunbo .rightOne').click(function(){
+//					cur=$('.pageOne .active').index();
+//					cur=cur+1;
+//				 	slideTimes(cur);
+//				 	//清除计时器
+//					clearInterval(time1);
+//				});
+//				//分页点的宽度的一半
+//				var _left=$('.pageOne').width()/2*(-1);
+//				$('.pageOne').css({'left':_left});
+//			}
+//			function slideTimes(times){
+//				//轮播宽度
+//				var lunboWidth=$('.lunbo').width();
+//				//轮播页数
+//				var lunboCount=$('.lunbo .one').length;
+//				if(times<0){
+//					times=lunboCount-1;
+//				}
+//				if(times>=lunboCount){
+//					times=0;
+//				};
+//				//点点选中
+//				$('.pageOne span').removeClass('active');
+//				$('.pageOne span').eq(times).addClass('active');
+//				//轮播后位置
+//				for(var a=0;a<lunboCount;a++){
+//					var _left=lunboWidth*a-lunboWidth*times;
+//					$('.lunbo .one').eq(a).animate({'left':_left});
+//				}
+//			}
+		</script>
+	</body>
+</html>

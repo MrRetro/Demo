@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			*{-webkit-transition:all 0.3s linear;-moz-transition:all 0.3s linear;-ms-transition:all 0.3s linear;-o-transition:all 0.3s linear}
+			.canvas{width: 500px;height: 300px;padding-top:200px;background-color: #c5f4ff;margin: 0 auto;position: relative;}
+			.dog{width: 112px;height: 144px;margin: 0 auto;position: absolute;left:200px;top:197px;z-index: 6;background: url(img/盾.png) center center no-repeat;}
+			.one{
+			    width: 97px;
+			    height: 163px;
+			    position: absolute;
+			    left: 175px;
+			    top: 142px;
+			   /*left: 205px;
+			    top: 175px;*/
+			    z-index: 5;
+			    display: none;
+			}
+			.two{
+			    width: 97px;
+			    height: 163px;
+			    position: absolute;
+			    left: 235px;
+			    top: 142px;
+			    /*left: 205px;
+			    top: 175px;*/
+			    z-index: 5;
+			    display: none;
+			}
+			
+			.oneHover{
+				left: 205px;
+			    top: 175px;
+			    transform: rotate(360deg);
+			    -ms-transform: rotate(360deg);
+			    -moz-transform: rotate(360deg);
+			    -webkit-transform: rotate(360deg);
+			    -o-transform: rotate(360deg);
+			}
+			.twoHover{
+				left: 205px;
+			    top: 175px;
+			    transform: rotate(-360deg);
+			    -ms-transform: rotate(-360deg);
+			    -moz-transform: rotate(-360deg);
+			    -webkit-transform: rotate(-360deg);
+			    -o-transform: rotate(-360deg);
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="canvas">
+			<div class="dog"></div>
+			<img class="one" src="img/剑.png"/>
+			<img class="two" src="img/剑1.png"/>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('.dog').hover(function(){
+					$('.one').stop().fadeIn().addClass('oneHover');
+					$('.two').stop().fadeIn().addClass('twoHover');
+				},function(){
+					$('.one').stop().fadeOut().removeClass('oneHover');
+					$('.two').stop().fadeOut().removeClass('twoHover');
+				})
+			})
+		</script>
+	</body>
+</html>

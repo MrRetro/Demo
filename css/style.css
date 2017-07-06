@@ -1,0 +1,90 @@
+/* Custom Stylesheet */
+body, html {
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      background:#fff;
+      text-align: center;
+      -webkit-transition: opacity 400ms;
+      -moz-transition: opacity 400ms;
+      transition: opacity 400ms;
+}
+
+body .header{
+  color: #000;
+}
+html {
+min-height: 100%;
+    }
+body {
+  padding: 0;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+.main  {
+  margin: 25px auto;
+  max-width: 980px;
+}
+.main p {
+  color: #000;
+  text-align: left;
+  font-size: 18px;
+  line-height: 180%;
+  font-weight: 100;
+}
+
+.nav-top a {
+  color: #000;
+}
+
+/* ALL DEMO */
+.demo5 body {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+}
+
+.demo2 .bg {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+.demo3 .bg {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+.demo4 .container {
+  text-align: center;
+}
+
+.demo4 .bg {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+}
+
+.demo1 .bg {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+.demo5 .bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.demo5 .nav-top, .demo5 .header, .demo5 .menu {
+  position: relative;
+}
+.demo5 .header {
+  color: white;
+}
+.demo5 .ibg-bg {
+  position: absolute;
+}

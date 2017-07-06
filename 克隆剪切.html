@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form id="form1">
+			<fieldset id="nihao">
+				<legend>无中生有</legend>
+
+			</fieldset>
+
+			<div class="div">aaaaaaa</div>
+		</form>
+		<script>
+			$(function() {
+				$("#nihao").next().appendTo($("#nihao"));
+				//			 var dd=$("#nihao").next().clone();
+				//			 $("#nihao").next().remove();
+				//			 $('#nihao').append(dd);
+			})
+		</script>
+	</body>
+
+</html>

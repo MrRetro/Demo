@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>中天彩票-首页</title>
+		<style>
+			.pCircle {
+				position: relative;
+				left: 0px;
+				top: 100px;
+				margin-left: 200px;
+			}
+			
+			.pCircle label {
+				transition: All 2s ease-in-out;
+				-webkit-transition: All 2s ease-in-out;
+				-moz-transition: All 2s ease-in-out;
+				-o-transition: All 2s ease-in-out;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				background-color: #000000;
+				display: block;
+				color: #fff;
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				border-radius: 50%;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			
+			.pCircle .active {
+				transform: rotate(720deg);
+				-webkit-transform: rotate(720deg);
+				-moz-transform: rotate(720deg);
+				-o-transform: rotate(720deg);
+				-ms-transform: rotate(720deg);
+			}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<p class="pCircle">
+			<label>03</label>
+			<label>06</label>
+			<label>11</label>
+			<label>03</label>
+			<label>06</label>
+			<label>11</label>
+			<label>03</label>
+			<label>06</label>
+			<label>11</label>
+		</p>
+		<script type="text/javascript">
+			$(function() {
+				$.fn.CirleScroll({
+					'className':'pCircle',//类名
+					'numList':[1,2,3,4,5,6,7,8,9],//开奖号码
+					'cirleWidth': $('.pCircle label').width(),//小球宽度
+					'spacing':5,//小球间距
+					'maxLeft': 1100,//最远小球的left长度
+					'speed':0.3//速度 单位s
+				});
+			});
+
+//			function CirleScroll(e) {
+//				var defaults = {
+//					'numList':[03,05,07,08,06,09,15,22,31],//开奖号码
+//					'cirleWidth': 55,                      //小球宽度
+//					'spacing':5,                           //小球间距
+//					'maxLeft': 800,                        //最远小球的left长度
+//					'speed':0.3                            //速度 单位s
+//				};
+//				var data = $.extend({}, defaults, e);
+//				var length = $('.pCircle label').length;
+//				var i = length;
+//				for(var a=0;a<length;a++){
+//					$('.pCircle label').eq(a).html(data.numList[a]);
+//				}
+//				while (i > 0) {
+//					i -= 1;
+//					circleAction(i, data.maxLeft, data.cirleWidth,data.spacing,data.speed);
+//				}
+//			};
+//			//小球开始滚动
+//			function circleAction(num, maxLeft, cirleWidth,spacing,speed) {
+//				var length = $('.pCircle label').length;
+//				var mLeft = maxLeft - (cirleWidth+spacing) * (length - 1 - num);
+//				var time = (length - num) * speed*1000;
+//				setTimeout(function() {
+//					$('.pCircle label').eq(num).addClass('active');
+//					$('.pCircle label').eq(num).css({
+//						'margin-left': mLeft
+//					});
+//				}, time)
+//			};
+		</script>
+	</body>
+
+</html>
+</div>

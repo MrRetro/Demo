@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文件base64-直接拖进来</title>
+</head>
+
+<body>
+	<div id="div"></div>
+<style>
+body { word-break: break-all; }
+body:before{content: '图片直接拖进来';}
+</style>
+<script>
+window.addEventListener("dragenter", function(event) { event.preventDefault(); }, false);
+window.addEventListener("dragover", function(event) { event.preventDefault(); }, false);
+window.addEventListener("drop", function(event) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      document.body.insertAdjacentHTML("afterBegin", '<p>' + e.target.result + '</p>');  // base64 encoded file data!
+      document.getElementById('div').innerHTML="<img src='"+e.target.result+"' alt='img' />";
+    };
+    reader.readAsDataURL(event.dataTransfer.files[0]);
+	event.preventDefault();
+}, false);
+</script>
+</body>
+</html>

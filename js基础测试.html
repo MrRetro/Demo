@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<button id=“test”></button>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<script type="text/javascript">
+			//3.请写出如下点击li的输出值，并用两种办法正确输出li里的数字。(12分)
+			 var list_li = document.getElementsByTagName("li");
+			  for (var i = 0; i < list_li.length; i++) {
+			          list_li[i].onclick = function() {
+			              console.log(this.innerText);
+			          }
+			  }
+		</script>
+		<script type="text/javascript">
+			//1.请写出弹出值，并解释为什么。(5分)
+			//		var a = 25;
+			//		(function() {
+			//			alert(a);
+			//			var a = 30;
+			//		})();
+
+			//2.请写出如下输出值，并写出把注释掉的代码取消注释的值，并解释为什么(8分)
+			//			this.a = 20;
+			//			var test = {
+			//				a: 40,
+			//				init: function() {
+			//					function go() {
+			//						//this.a = 60;
+			//						console.log(this.a);
+			//					}
+			//					go.prototype.a = 50;
+			//					return go;
+			//				}
+			//			};
+			//			var p = test.init();
+			//			p();
+			//			new(test.init())();
+
+			//4.写出输出值，并解释为什么。(5分)
+			//			function test(m) {
+			//			    m = {v: 5}
+			//			}
+			//			var m = {k: 30};
+			//			test(m);
+			//			alert(m.k);
+
+			//5.请在下面写出JavaScript面向对象编程的混合式继承。并写出ES6版本的继承。要求：汽车是父类，Cruze是子类。父类有颜色、价格属性，有售卖的方法。Cruze子类实现父类颜色是红色，价格是140000,售卖方法实现输出如下语句：将 红色的Cruze买给了小王价格是14万。（20分）
+			//			function Car(color,price){
+			//				this.color=color;
+			//				this.price=price;
+			//			}
+			//			Car.prototype.snail=function(){
+			//				console.log(this.color+"卖了"+this.price+"元")
+			//			}
+			//			function Cruze(color,price){
+			//				Car.call(this,color,price);
+			//			}
+			//			inherit(Car,Cruze);
+			//			function inherit(superClass,subClass){
+			//				var _proto=Object.create(superClass.prototype);
+			//				_proto.constructor=subClass;
+			//				subClass.prototype=_proto;
+			//			}
+			//			var f=new Cruze("red",4000);
+			//			console.log(f.snail())
+			//			var s=new Car("blue",5000);
+			//			console.log(s.snail())
+
+			//			8. 请问点击 < buttion id = “test” > < /button>会有反应么？为什么？（5分）
+			//			$('#test').click(function(argument) {
+			//				console.log(1);
+			//			});
+			//			setTimeout(function() {
+			//				console.log(2);
+			//			}, 0);
+			//			while(true) {
+			//				console.log(3);
+			//			}
+		</script>
+	</body>
+
+</html>

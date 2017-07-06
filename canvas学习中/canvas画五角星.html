@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" style="border:1px solid #aaa;margin: 50px auto;display: block;"></canvas>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById('canvas');
+				
+				canvas.width=1200;
+				canvas.height=800;
+				
+				var context=canvas.getContext("2d");
+				
+//				context.lineWidth=10;
+//				context.lineJoin="miter";
+//				context.miterLimit=10;
+
+				//黑色背景
+				//context.fillStyle="black";
+				
+				//线性渐变背景
+				var skyStyle=context.createLinearGradient(0,0,0,canvas.height);
+				skyStyle.addColorStop(0.0,'black');
+				skyStyle.addColorStop(1.0,'#035');
+				context.fillStyle=skyStyle;
+				context.fillRect(0,0,canvas.width,canvas.height);
+				
+				for(var i=0;i<200;i++){
+					var r=Math.random()*5+5;
+					var x=Math.random()*canvas.width;
+					var y=Math.random()*canvas.height*0.65;
+					var a=Math.random()*360;
+					drawStar(context,r,r/2.0,x,y,a);
+				}
+				
+				
+			}
+			//动态画星星
+			//cxt表示文本上下文 r小圆半径 R大圆半径 x坐标 y坐标 rot旋转角度
+			function drawStar(cxt,r,R,x,y,rot){
+				cxt.beginPath();
+				for(var i=0;i<5;i++){
+					cxt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+					cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+				}
+				cxt.closePath();
+				
+				cxt.fillStyle="#fb3";
+				cxt.strokeStyle="#fd5";
+				cxt.lineWidth=3;
+//				cxt.lineJoin="round";
+				
+				cxt.fill();
+				cxt.stroke();
+			}
+		</script>
+	</body>
+</html>

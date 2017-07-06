@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>模拟模态窗台</title>
+	<style>
+	/*样式初始化*/
+	*{margin: 0;padding: 0;}
+	html{font-family:"微软雅黑",Arial,sans-serif;background-color: #efeded;}
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td{padding:0;margin:0;ffont-family:"微软雅黑"}
+	table{border-collapse:collapse;border-spacing:0}
+	fieldset,img{border:0}
+	a{text-decoration:none;color:#000;outline:none}
+	li{list-style:none}
+	caption,th{text-align:left}
+	h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+	input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+	input,button,textarea,select{*font-size:100%}
+	a{-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear}
+
+		html,body{width: 100%;height: 100%;background-color: blue;position:relative;text-align: center;}
+		.bgModal{width: 100%;height: 1777px;position: absolute;top: 0;float: left;z-index: 10001;}
+		.bgModal .bgColor{width: 100%;height: 100%;background-color: black;position: absolute;top:0px;left:0px;opacity:0.5;float: left;}
+		.bgModal .modalContent{width: 50%;background-color: white;position: fixed;border-radius: 5px;float: left;margin-left: 50%;left: -25%;top: 25%;}
+	</style>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<a href="javascript:openModal();" style="color: black;margin-top:200px;display: inline-block;">打开</a>
+	<div class="bgModal">
+		<div class="bgColor"></div>
+		<div class="modalContent">
+			<a href="javascript:closeModal()">x</a>
+			<p>dasdfasdfas</p>
+			<p>dasdfasdfas</p>
+			<p>dasdfasdfas</p>
+			<p>dasdfasdfas</p>
+			<p>dasdfasdfas</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var bHeight=$('html').height();
+			$('.bgModal').css({'height':bHeight});
+		})
+		function closeModal(){
+			$('.bgModal').fadeOut();
+		}
+		function openModal(){
+			$('.bgModal').fadeIn();
+		}
+	</script>
+</body>
+</html>

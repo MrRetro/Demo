@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN">
+<meta name="viewport" content="user-scalable=0" />
+<style>
+* {margin:0px;padding:0px;}
+.panel {
+  position:absolute;
+  left:0px;top:0px;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  background:rgba(0,0,0,0.1);
+}
+.picture {
+  position:absolute;
+  left:0px;top:0px;
+  height:100%;
+  width:100%;
+}
+.picture img {
+  position:absolute;
+  left:50%;top:50%;
+  margin:-162px -225px;
+}
+</style>
+<script>
+//文档加载完成事件，如果SCRIPT标签在尾部就可以不用它
+window.onload=function(){
+  //获取元素
+  var picture=document.getElementById("picture");
+  //添加触屏开始事件
+  picture.addEventListener("touchstart",function(e){
+    var p,f1,f2;
+    //由于触屏的坐标是个数组，所以取出这个数组的第一个元素
+    e=e.touches[0];
+    //保存picture和开始触屏时的坐标差
+    p={
+      x:picture.offsetLeft-e.clientX,
+      y:picture.offsetTop-e.clientY
+    };
+    //添加触屏移动事件
+    document.addEventListener("touchmove",f2=function(e){
+      //获取保触屏坐标的对象
+      var t=t=e.touches[0];
+      //把picture移动到初始计算的位置加上当前触屏位置
+      picture.style.left=p.x+t.clientX+"px";
+      picture.style.top=p.y+t.clientY+"px";
+      //阻止默认事件
+      e.preventDefault();
+    },false);
+    //添加触屏结束事件
+    document.addEventListener("touchend",f1=function(e){
+      //移除在document上添加的两个事件
+      document.removeEventListener("touchend",f1);
+      document.removeEventListener("touchmove",f2);
+    },false);
+  },false);
+};
+</script>
+<div class="panel">
+  <div class="picture" id="picture">
+    <img src="http://www.web-tinker.com/images/TheMagicConch.jpg" />
+  </div>
+</div>

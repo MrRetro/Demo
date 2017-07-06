@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form id="form1">
+			<input type="text" id="txtName" value="" placeholder="请输入用户名" />
+			<input type="text" id="txtPhone" value="" placeholder="请输入电话" />
+			<input type="text" id="txtEmail" value="" placeholder="请输入邮箱" />
+			<select id="sels">
+				<option id="op1" value="0">你好！</option>
+				<option id="op2" value="1">大家好！</option>
+			</select>
+			<br />
+			<select id="pro"></select>
+			<select id="city"></select>
+			<select id="area"></select>
+			<br />
+			<select id="year"></select>
+			<select id="month"></select>
+			<select id="day"></select>
+			<a href="javascript:click()">提交</a>
+		</form>
+	</body>
+	<script>
+		$(document).ready(function() {
+			//根据选项的值默认选择下来选项
+			$.fn.dropDownSelected('sels','1')
+			
+			//判断浏览器是否为ie版本 后做处理
+			//$.fn.actBrowser()
+			
+			//手机页面跳转
+			//$.fn.pcOrPhone('http://mpay.juqinet.cn', 'http://www.juqinet.cn/product.aspx')
+			
+			//地址选择器
+			$.fn.addressInit('pro', 'city', 'area', '福建', '厦门市', '湖里区');
+			
+			//年月日选择器
+			$.fn.ms_DatePicker({
+				YearSelector: "#year",
+				MonthSelector: "#month",
+				DaySelector: "#day"
+			});
+		})
+
+		function click() {
+			//验证表单是否为空
+			$.fn.validateForm(['txtName','txtPhone'],['姓名不能为空！','电话不能为空！']);
+			
+			//验证手机号码输入是否正确
+			//$.fn.validateTel('txtPhone');
+			
+			//验证邮箱输入是否正确
+			//$.fn.validateEmail('txtEmail');
+		}
+	</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Responsive Nav &middot; Multiple Navigations Combined Demo</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="responsive-nav.css">
+		<link rel="stylesheet" href="styles.css">
+		<style>
+			.logo{
+				background: url(../img/logo.png) left top no-repeat !important;
+				width: 40%;
+				height: 67px;
+				background-size: cover;
+			}
+		</style>
+		<script src="responsive-nav.js"></script>
+	</head>
+
+	<body>
+		<div class="header_box" style="position: relative;">
+			<a class="nav-toggle logo" href="#" style="position: absolute;left: 0px;top:0px;z-index: 2;">Menu</a>
+			<nav class="nav-collapse">
+				<ul class="main">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Blog</a></li>
+				</ul>
+
+				<!--<ul class="alt">
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Sign In</a></li>
+      </ul>-->
+
+			</nav>
+		</div>
+		<script>
+			var navigation = responsiveNav(".nav-collapse");
+		</script>
+
+	</body>
+
+</html>

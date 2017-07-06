@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title></title>
+</head>
+<body>
+</body>
+<script>
+window.onload=function(){
+	alert(getBrowserInfo());
+}
+function getBrowserInfo()
+{
+var agent = navigator.userAgent.toLowerCase() ;
+
+var regStr_ie = /msie [\d.]+;/gi ;
+var regStr_ff = /firefox\/[\d.]+/gi
+var regStr_chrome = /chrome\/[\d.]+/gi ;
+var regStr_saf = /safari\/[\d.]+/gi ;
+//IE
+if(agent.indexOf("msie") > 0)
+{
+return agent.match(regStr_ie) ;
+}
+
+//firefox
+if(agent.indexOf("firefox") > 0)
+{
+return agent.match(regStr_ff) ;
+}
+
+//Chrome
+if(agent.indexOf("chrome") > 0)
+{
+return agent.match(regStr_chrome) ;
+}
+
+//Safari
+if(agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0)
+{
+return agent.match(regStr_saf) ;
+}
+
+}
+</script>
+<!--判断浏览器ie是否在ie9以上-->
+<!--<script>
+    window.onload = function () {
+        var browser = getBrowserInfo();
+        var verinfo = (browser + "").replace(/[^0-9.]/ig, "");//版本号
+        //判断是否ie浏览器
+        if (browser.toString().split(" ")[0] == "msie") {
+            //ie浏览器版本低于10的就提示文字
+            if (parseInt(verinfo) < 10) {
+                //alert(verinfo);
+                $('body').html("您的ie浏览器版本过低，请更新最新的ie浏览器或者使用其他浏览器(例如：谷歌或者火狐或者Safari) !!!");
+            }
+        }
+    };
+    function getBrowserInfo() {
+        var agent = navigator.userAgent.toLowerCase();
+
+        var regStr_ie = /msie [\d.]+;/gi;
+        var regStr_ff = /firefox\/[\d.]+/gi
+        var regStr_chrome = /chrome\/[\d.]+/gi;
+        var regStr_saf = /safari\/[\d.]+/gi;
+        //IE
+        if (agent.indexOf("msie") > 0) {
+            return agent.match(regStr_ie);
+        }
+
+        //firefox
+        if (agent.indexOf("firefox") > 0) {
+            return agent.match(regStr_ff);
+        }
+
+        //Chrome
+        if (agent.indexOf("chrome") > 0) {
+            return agent.match(regStr_chrome);
+        }
+
+        //Safari
+        if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
+            return agent.match(regStr_saf);
+        }
+
+    }
+</script>-->
+</html>

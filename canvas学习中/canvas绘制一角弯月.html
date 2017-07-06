@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" style="border:1px solid #aaa;margin: 50px auto;display: block;"></canvas>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var canvas=document.getElementById('canvas');
+			canvas.width=800;
+			canvas.height=800;
+			var context=canvas.getContext('2d');
+			
+			//arc(x坐标，y坐标，半径，起始角度，结束角度，true逆时针)
+			context.arc(400,400,300,0.5*Math.PI,1.5*Math.PI,true);
+			context.moveTo(400,100);
+			//arcTo(x1坐标,y1坐标,x2坐标,y2坐标,r圆的半径)
+			context.arcTo(1200,400,400,700,(400-100)*dis(400,100,1200,400)/(1200-400));
+			context.stroke();
+		}
+		function dis(x1,y1,x2,y2){
+			return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+		}
+	</script>
+</html>

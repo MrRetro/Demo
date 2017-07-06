@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0px;padding: 0px;}
+			.bg{width: 100%;position: relative;}
+			.bg_img{width: 100%;}
+			.bgLoading{width:100%;position: absolute;left: 0px;top:0px;overflow: hidden;}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="bg">
+			<img class="bg_img" src="img/bgLoading1.jpg"/>
+			<div class="bgLoading"><img class="bgLoading_img" src="img/bgLoading2.jpg"/></div>
+		</div>
+		<div class="c"></div>
+		<script type="text/javascript">
+			$(function(){
+			   var img=$('.bg_img');
+			   $('.bgLoading_img').css({'width':img.width(),'height':img.height()});
+			   
+			   //计时器
+			   var times=0;
+			   setInterval(function(){
+			   	times++;
+			   	$('.bgLoading').css({'width':times+'%'});
+			   	if(times==101){
+			   		times=0;
+			   	}
+			   	$('.c').html(times+'%')
+			   },10);
+			   
+			   $(window).resize(function(){
+			   		var img1=$('.bg_img');
+			   		$('.bgLoading_img').css({'width':img1.width(),'height':img1.height()});
+			   });
+			});
+			
+		</script>
+	</body>
+</html>

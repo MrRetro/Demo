@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			.clip[style] {opacity: 0;}
+			.active .clip:not([style]) {opacity: 0;animation: fadeIn .1s .4s both;}
+			.active .clip[style] {will-change: transform;animation: noTransform .5s both;}
+			
+			@keyframes noTransform {
+				to {
+					opacity: 1;
+					transform: translate3d(0, 0, 0) rotate(0);
+				}
+			}
+			
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			.box {height: 190px;}
+			.text {position: absolute;width: 300px;}
+			.image {position: absolute;}
+		</style>
+		<script src="js/imgFly.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		
+		<svg height="0" width="0">
+		    <defs>
+		        <clipPath id="svgTextPath">
+		            <text x="0" y="300" textLength="800px" lengthAdjust="spacing" font-family="Vollkorn" font-size="230px" font-weight="700" font-style="italic"> Blossom </text>
+		        </clipPath>
+		    </defs>
+		</svg>
+		
+		
+		<!-- <img src="images/bac2.jpg" style="-webkit-clip-path: polygon(626px 463px,765px 236px,687px 31px,271px 100px,70px 10px,49px 250px,133px 406px,374px 462px,529px 393px);clip-path: polygon(626px 463px,765px 236px,687px 31px,271px 100px,70px 10px,49px 250px,133px 406px,374px 462px,529px 393px);"/>-->
+		<img src="images/bac2.jpg" style="-webkit-clip-path: url(#svgTextPath);clip-path: url(#svgTextPath);width: 850px;"/>
+  
+  		<br />
+		<strong>1. 普通带文本的元素</strong>
+		<div class="box active">
+			<p id="text" class="text clip">魔兽要上映了，由于我从来没有玩过《魔兽世界》，所以无感。但是，有一点我是知道的：不管是联盟狗还是部落猪，最后都是为了艾泽拉斯！</p>
+		</div>
+
+		<strong>2. 替换元素如图片</strong>
+		<div class="box active">
+			<div class="box active"><img class="image clip" src="images/pic_04.png"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 0px,30px 30px,60px 0px);-webkit-transform:translate(49.78400791189315px,292.7638339653593px) rotate(186deg);transform:translate(49.78400791189315px,292.7638339653593px) rotate(186deg);">
+				<img
+					class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 0px,0px 60px,30px 30px);-webkit-transform:translate(-93.57569031495791px,-194.6704412446288px) rotate(56deg);transform:translate(-93.57569031495791px,-194.6704412446288px) rotate(56deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(30px 30px,0px 60px,60px 60px);-webkit-transform:translate(194.01515339660668px,188.50316997408498px) rotate(-128deg);transform:translate(194.01515339660668px,188.50316997408498px) rotate(-128deg);">
+					<img
+						class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 0px,30px 30px,60px 60px);-webkit-transform:translate(-282.79179367560545px,-40.21668232930593px) rotate(-223deg);transform:translate(-282.79179367560545px,-40.21668232930593px) rotate(-223deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 60px,30px 90px,60px 60px);-webkit-transform:translate(-96.76673922306986px,-67.17744731259354px) rotate(-39deg);transform:translate(-96.76673922306986px,-67.17744731259354px) rotate(-39deg);">
+						<img
+							class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 60px,0px 120px,30px 90px);-webkit-transform:translate(165.18190365893054px,-176.2375672076193px) rotate(-117deg);transform:translate(165.18190365893054px,-176.2375672076193px) rotate(-117deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(30px 90px,0px 120px,60px 120px);-webkit-transform:translate(43.60758282226169px,117.3011080448167px) rotate(-81deg);transform:translate(43.60758282226169px,117.3011080448167px) rotate(-81deg);">
+							<img
+								class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 60px,30px 90px,60px 120px);-webkit-transform:translate(138.2384143287956px,-171.36152171933526px) rotate(-173deg);transform:translate(138.2384143287956px,-171.36152171933526px) rotate(-173deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 120px,30px 150px,60px 120px);-webkit-transform:translate(-130.9815601222267px,-110.73847255099957px) rotate(232deg);transform:translate(-130.9815601222267px,-110.73847255099957px) rotate(232deg);">
+								<img
+									class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 120px,0px 180px,30px 150px);-webkit-transform:translate(210.83158333793853px,198.62373160440785px) rotate(300deg);transform:translate(210.83158333793853px,198.62373160440785px) rotate(300deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(30px 150px,0px 180px,60px 180px);-webkit-transform:translate(86.40940893985625px,-56.45388200944041px) rotate(140deg);transform:translate(86.40940893985625px,-56.45388200944041px) rotate(140deg);">
+									<img
+										class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 120px,30px 150px,60px 180px);-webkit-transform:translate(103.40274663785549px,-39.836454015838505px) rotate(-189deg);transform:translate(103.40274663785549px,-39.836454015838505px) rotate(-189deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 180px,30px 210px,60px 180px);-webkit-transform:translate(-220.51285035569856px,-175.12901536315644px) rotate(198deg);transform:translate(-220.51285035569856px,-175.12901536315644px) rotate(198deg);">
+										<img
+											class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(0px 180px,0px 240px,30px 210px);-webkit-transform:translate(-12.402856892671466px,92.20210373667031px) rotate(120deg);transform:translate(-12.402856892671466px,92.20210373667031px) rotate(120deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(30px 210px,0px 240px,60px 240px);-webkit-transform:translate(-244.98252471438403px,99.47872688860633px) rotate(172deg);transform:translate(-244.98252471438403px,99.47872688860633px) rotate(172deg);">
+											<img
+												class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 180px,30px 210px,60px 240px);-webkit-transform:translate(205.39702750109115px,-293.1903671730395px) rotate(127deg);transform:translate(205.39702750109115px,-293.1903671730395px) rotate(127deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 0px,90px 30px,120px 0px);-webkit-transform:translate(3.5659384322450194px,161.0799901355258px) rotate(247deg);transform:translate(3.5659384322450194px,161.0799901355258px) rotate(247deg);">
+												<img
+													class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 0px,60px 60px,90px 30px);-webkit-transform:translate(-149.6468029519382px,5.685081425326821px) rotate(292deg);transform:translate(-149.6468029519382px,5.685081425326821px) rotate(292deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(90px 30px,60px 60px,120px 60px);-webkit-transform:translate(15.61639946143285px,229.79376200666147px) rotate(-261deg);transform:translate(15.61639946143285px,229.79376200666147px) rotate(-261deg);">
+													<img
+														class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 0px,90px 30px,120px 60px);-webkit-transform:translate(-179.05167392516987px,236.98885988992998px) rotate(74deg);transform:translate(-179.05167392516987px,236.98885988992998px) rotate(74deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 60px,90px 90px,120px 60px);-webkit-transform:translate(185.97195076862008px,-44.22087937185619px) rotate(78deg);transform:translate(185.97195076862008px,-44.22087937185619px) rotate(78deg);">
+														<img
+															class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 60px,60px 120px,90px 90px);-webkit-transform:translate(293.83004911128967px,148.5692280330945px) rotate(-209deg);transform:translate(293.83004911128967px,148.5692280330945px) rotate(-209deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(90px 90px,60px 120px,120px 120px);-webkit-transform:translate(-245.0350347616572px,-270.14987537184635px) rotate(-246deg);transform:translate(-245.0350347616572px,-270.14987537184635px) rotate(-246deg);">
+															<img
+																class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 60px,90px 90px,120px 120px);-webkit-transform:translate(178.2082690762457px,141.60957575393286px) rotate(100deg);transform:translate(178.2082690762457px,141.60957575393286px) rotate(100deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 120px,90px 150px,120px 120px);-webkit-transform:translate(287.24939189377864px,65.0674069585604px) rotate(283deg);transform:translate(287.24939189377864px,65.0674069585604px) rotate(283deg);">
+																<img
+																	class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 120px,60px 180px,90px 150px);-webkit-transform:translate(109.40583967611768px,-49.33942600044401px) rotate(220deg);transform:translate(109.40583967611768px,-49.33942600044401px) rotate(220deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(90px 150px,60px 180px,120px 180px);-webkit-transform:translate(224.65943140163483px,-191.00278608727172px) rotate(-65deg);transform:translate(224.65943140163483px,-191.00278608727172px) rotate(-65deg);">
+																	<img
+																		class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 120px,90px 150px,120px 180px);-webkit-transform:translate(-260.7083397461732px,-36.34093129906479px) rotate(311deg);transform:translate(-260.7083397461732px,-36.34093129906479px) rotate(311deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 180px,90px 210px,120px 180px);-webkit-transform:translate(-230.76290931649933px,-11.511804284982219px) rotate(-113deg);transform:translate(-230.76290931649933px,-11.511804284982219px) rotate(-113deg);">
+																		<img
+																			class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(60px 180px,60px 240px,90px 210px);-webkit-transform:translate(283.26852545940307px,-176.3548555136988px) rotate(-156deg);transform:translate(283.26852545940307px,-176.3548555136988px) rotate(-156deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(90px 210px,60px 240px,120px 240px);-webkit-transform:translate(-277.1511683098818px,141.31247140382035px) rotate(-182deg);transform:translate(-277.1511683098818px,141.31247140382035px) rotate(-182deg);">
+																			<img
+																				class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 180px,90px 210px,120px 240px);-webkit-transform:translate(154.0543303046013px,230.88744767325986px) rotate(10deg);transform:translate(154.0543303046013px,230.88744767325986px) rotate(10deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 0px,150px 30px,180px 0px);-webkit-transform:translate(-51.548541317269645px,125.39921777141655px) rotate(-288deg);transform:translate(-51.548541317269645px,125.39921777141655px) rotate(-288deg);">
+																				<img
+																					class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 0px,120px 60px,150px 30px);-webkit-transform:translate(292.2243658097578px,-227.55643721246233px) rotate(238deg);transform:translate(292.2243658097578px,-227.55643721246233px) rotate(238deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(150px 30px,120px 60px,180px 60px);-webkit-transform:translate(-288.97727524694443px,-229.6659108202426px) rotate(-1deg);transform:translate(-288.97727524694443px,-229.6659108202426px) rotate(-1deg);">
+																					<img
+																						class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 0px,150px 30px,180px 60px);-webkit-transform:translate(-137.84307118447927px,-67.67493887311575px) rotate(200deg);transform:translate(-137.84307118447927px,-67.67493887311575px) rotate(200deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 60px,150px 90px,180px 60px);-webkit-transform:translate(-194.99328393468636px,-40.216265251624606px) rotate(-16deg);transform:translate(-194.99328393468636px,-40.216265251624606px) rotate(-16deg);">
+																						<img
+																							class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 60px,120px 120px,150px 90px);-webkit-transform:translate(-224.99718486462666px,277.23203774530094px) rotate(-190deg);transform:translate(-224.99718486462666px,277.23203774530094px) rotate(-190deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(150px 90px,120px 120px,180px 120px);-webkit-transform:translate(264.2174747106764px,-200.14730937014974px) rotate(-146deg);transform:translate(264.2174747106764px,-200.14730937014974px) rotate(-146deg);">
+																							<img
+																								class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 60px,150px 90px,180px 120px);-webkit-transform:translate(-243.30244549221698px,158.01344377597584px) rotate(36deg);transform:translate(-243.30244549221698px,158.01344377597584px) rotate(36deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 120px,150px 150px,180px 120px);-webkit-transform:translate(233.34999025170896px,-292.58810190450396px) rotate(77deg);transform:translate(233.34999025170896px,-292.58810190450396px) rotate(77deg);">
+																								<img
+																									class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 120px,120px 180px,150px 150px);-webkit-transform:translate(-227.77325296481953px,108.23729543619382px) rotate(193deg);transform:translate(-227.77325296481953px,108.23729543619382px) rotate(193deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(150px 150px,120px 180px,180px 180px);-webkit-transform:translate(129.76331922633375px,231.48660018819967px) rotate(-96deg);transform:translate(129.76331922633375px,231.48660018819967px) rotate(-96deg);">
+																									<img
+																										class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 120px,150px 150px,180px 180px);-webkit-transform:translate(250.6723802125246px,-259.7544127688684px) rotate(310deg);transform:translate(250.6723802125246px,-259.7544127688684px) rotate(310deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 180px,150px 210px,180px 180px);-webkit-transform:translate(-283.9995263354527px,-132.16178237244094px) rotate(12deg);transform:translate(-283.9995263354527px,-132.16178237244094px) rotate(12deg);">
+																										<img
+																											class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(120px 180px,120px 240px,150px 210px);-webkit-transform:translate(-130.5167891076636px,-244.40844935150724px) rotate(-8deg);transform:translate(-130.5167891076636px,-244.40844935150724px) rotate(-8deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(150px 210px,120px 240px,180px 240px);-webkit-transform:translate(-57.19936773366201px,70.1569274787623px) rotate(-329deg);transform:translate(-57.19936773366201px,70.1569274787623px) rotate(-329deg);">
+																											<img
+																												class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 180px,150px 210px,180px 240px);-webkit-transform:translate(244.25522884405916px,-45.76460562507694px) rotate(11deg);transform:translate(244.25522884405916px,-45.76460562507694px) rotate(11deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 0px,210px 30px,240px 0px);-webkit-transform:translate(-176.24885032531466px,-53.937815996826274px) rotate(121deg);transform:translate(-176.24885032531466px,-53.937815996826274px) rotate(121deg);">
+																												<img
+																													class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 0px,180px 60px,210px 30px);-webkit-transform:translate(147.28490754556503px,85.88186480653826px) rotate(-307deg);transform:translate(147.28490754556503px,85.88186480653826px) rotate(-307deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(210px 30px,180px 60px,240px 60px);-webkit-transform:translate(-44.99563627607084px,135.9396419644438px) rotate(280deg);transform:translate(-44.99563627607084px,135.9396419644438px) rotate(280deg);">
+																													<img
+																														class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 0px,210px 30px,240px 60px);-webkit-transform:translate(191.17618523557485px,-128.62568143764938px) rotate(-130deg);transform:translate(191.17618523557485px,-128.62568143764938px) rotate(-130deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 60px,210px 90px,240px 60px);-webkit-transform:translate(-154.56596900422306px,286.195418923364px) rotate(54deg);transform:translate(-154.56596900422306px,286.195418923364px) rotate(54deg);">
+																														<img
+																															class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 60px,180px 120px,210px 90px);-webkit-transform:translate(180.7925244224387px,-229.08328739912395px) rotate(326deg);transform:translate(180.7925244224387px,-229.08328739912395px) rotate(326deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(210px 90px,180px 120px,240px 120px);-webkit-transform:translate(-84.90528764048584px,17.655307043357695px) rotate(333deg);transform:translate(-84.90528764048584px,17.655307043357695px) rotate(333deg);">
+																															<img
+																																class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 60px,210px 90px,240px 120px);-webkit-transform:translate(-190.61701917468548px,290.3488557439575px) rotate(14deg);transform:translate(-190.61701917468548px,290.3488557439575px) rotate(14deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 120px,210px 150px,240px 120px);-webkit-transform:translate(199.8448553716118px,6.097424120630457px) rotate(-339deg);transform:translate(199.8448553716118px,6.097424120630457px) rotate(-339deg);">
+																																<img
+																																	class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 120px,180px 180px,210px 150px);-webkit-transform:translate(55.47288448961258px,-86.82724006126921px) rotate(70deg);transform:translate(55.47288448961258px,-86.82724006126921px) rotate(70deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(210px 150px,180px 180px,240px 180px);-webkit-transform:translate(-8.111712542610494px,-252.1291715778867px) rotate(-223deg);transform:translate(-8.111712542610494px,-252.1291715778867px) rotate(-223deg);">
+																																	<img
+																																		class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 120px,210px 150px,240px 180px);-webkit-transform:translate(191.20400137465668px,38.79950005855242px) rotate(-297deg);transform:translate(191.20400137465668px,38.79950005855242px) rotate(-297deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 180px,210px 210px,240px 180px);-webkit-transform:translate(-223.10949599375527px,293.79547369365736px) rotate(-70deg);transform:translate(-223.10949599375527px,293.79547369365736px) rotate(-70deg);">
+																																		<img
+																																			class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(180px 180px,180px 240px,210px 210px);-webkit-transform:translate(-254.4818216781095px,267.98195924976034px) rotate(-146deg);transform:translate(-254.4818216781095px,267.98195924976034px) rotate(-146deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(210px 210px,180px 240px,240px 240px);-webkit-transform:translate(21.59754845076027px,149.1851430354039px) rotate(143deg);transform:translate(21.59754845076027px,149.1851430354039px) rotate(143deg);">
+																																			<img
+																																				class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 180px,210px 210px,240px 240px);-webkit-transform:translate(92.19027693916911px,240.90205381411144px) rotate(98deg);transform:translate(92.19027693916911px,240.90205381411144px) rotate(98deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 0px,270px 30px,300px 0px);-webkit-transform:translate(-263.0521553543362px,-8.525817258647583px) rotate(-314deg);transform:translate(-263.0521553543362px,-8.525817258647583px) rotate(-314deg);">
+																																				<img
+																																					class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 0px,240px 60px,270px 30px);-webkit-transform:translate(-159.48122638245562px,-72.1517420127058px) rotate(-338deg);transform:translate(-159.48122638245562px,-72.1517420127058px) rotate(-338deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(270px 30px,240px 60px,300px 60px);-webkit-transform:translate(-253.84338043306883px,122.59996220394353px) rotate(299deg);transform:translate(-253.84338043306883px,122.59996220394353px) rotate(299deg);">
+																																					<img
+																																						class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(300px 0px,270px 30px,300px 60px);-webkit-transform:translate(-214.30560219235147px,291.8938544347541px) rotate(221deg);transform:translate(-214.30560219235147px,291.8938544347541px) rotate(221deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 60px,270px 90px,300px 60px);-webkit-transform:translate(280.4161048991523px,142.0818097827813px) rotate(5deg);transform:translate(280.4161048991523px,142.0818097827813px) rotate(5deg);">
+																																						<img
+																																							class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 60px,240px 120px,270px 90px);-webkit-transform:translate(-182.38356678250605px,27.44389168238186px) rotate(-155deg);transform:translate(-182.38356678250605px,27.44389168238186px) rotate(-155deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(270px 90px,240px 120px,300px 120px);-webkit-transform:translate(-42.30965690112063px,-67.07733985039309px) rotate(-325deg);transform:translate(-42.30965690112063px,-67.07733985039309px) rotate(-325deg);">
+																																							<img
+																																								class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(300px 60px,270px 90px,300px 120px);-webkit-transform:translate(20.068383089445206px,-275.7475471016166px) rotate(25deg);transform:translate(20.068383089445206px,-275.7475471016166px) rotate(25deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 120px,270px 150px,300px 120px);-webkit-transform:translate(-92.7638731429071px,-74.40304338004592px) rotate(278deg);transform:translate(-92.7638731429071px,-74.40304338004592px) rotate(278deg);">
+																																								<img
+																																									class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 120px,240px 180px,270px 150px);-webkit-transform:translate(-101.45067990622141px,-67.86976616472664px) rotate(-144deg);transform:translate(-101.45067990622141px,-67.86976616472664px) rotate(-144deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(270px 150px,240px 180px,300px 180px);-webkit-transform:translate(-89.77545922048024px,-28.694103994728827px) rotate(-2deg);transform:translate(-89.77545922048024px,-28.694103994728827px) rotate(-2deg);">
+																																									<img
+																																										class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(300px 120px,270px 150px,300px 180px);-webkit-transform:translate(176.1129496661416px,174.38747174029845px) rotate(188deg);transform:translate(176.1129496661416px,174.38747174029845px) rotate(188deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 180px,270px 210px,300px 180px);-webkit-transform:translate(218.82866488954284px,96.65976863071255px) rotate(250deg);transform:translate(218.82866488954284px,96.65976863071255px) rotate(250deg);">
+																																										<img
+																																											class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(240px 180px,240px 240px,270px 210px);-webkit-transform:translate(34.30560403303038px,289.8672581267914px) rotate(249deg);transform:translate(34.30560403303038px,289.8672581267914px) rotate(249deg);"><img class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(270px 210px,240px 240px,300px 240px);-webkit-transform:translate(-256.4239901897165px,186.64585395003962px) rotate(202deg);transform:translate(-256.4239901897165px,186.64585395003962px) rotate(202deg);">
+																																											<img
+																																												class="image clip" src="images/pic_04.png" style="-webkit-clip-path: polygon(300px 180px,270px 210px,300px 240px);-webkit-transform:translate(-186.90458001165854px,271.6968054552524px) rotate(330deg);transform:translate(-186.90458001165854px,271.6968054552524px) rotate(330deg);"></div>
+		</div>
+		<script type="text/javascript">
+			var eleText = document.getElementById('text'),
+				eleImage = document.getElementById('image');
+
+			// 碎片特效初始化
+			clipPath(eleText);
+			clipPath(eleImage);
+		</script>
+	</body>
+
+</html>

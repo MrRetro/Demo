@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.p_ball label {
+				width: 40px;
+				font-size: 20px;
+				display: block;
+				float: left;
+				text-align: center;
+			}
+			
+			.p_ball label:nth-child(odd) {
+				background-color: rgb(202, 202, 232);
+			}
+		</style>
+		<!--<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<!--<script src="js/jquery-1-7-2-min.js" type="text/javascript" charset="UTF-8"></script>-->
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<p class="p_ball">
+			<label id="one">5</label>
+			<label id="two">5</label>
+			<label id="three">5</label>
+			<label id="four">5</label>
+			<label id="five">5</label>
+			<label id="six">5</label>
+			<label id="seven">5</label>
+		</p>
+		<script type="text/javascript">
+			window.onload = function() {
+				$.fn.rdScrollNum({
+					idLists: ['one', 'two', 'three', 'four', 'five', 'six', 'seven'], //id列表
+					numLists: ['08', '09', '03', '08', '66', '07', '33'], //显示值列表
+					showTime: 2, //N秒后停止滚动
+					lastNum: 36 //随机滚动最大出现值
+				});
+			};
+			//-----------------------彩票滚球滚动效果--------------------------------------------
+			//通过id列表设置滚动后要选中的数值 idList表示id列表 numList表示num的列表
+			function rdScrollNum(data) {
+				var stopTime = data.showTime * 1000;
+				var rd = setInterval(function() {
+					rdByIdList(data.idLists, data.lastNum);
+				}, 100);
+				setTimeout(function() {
+					clearInterval(rd);
+					selNum(data.idLists, data.numLists);
+				}, stopTime);
+			}
+			//通过id数据为其赋值随机数
+			function rdByIdList(idList, lastNum) {
+				var rd = '';
+				var idName = '';
+				for (var i = 0; i < idList.length; i++) {
+					idName = document.getElementById(idList[i]);
+					rd = parseInt(Math.random() * lastNum);
+					idName.innerHTML = rd;
+				}
+			}
+			//随机变化后要呈现的具体数字
+			function selNum(idList, numList) {
+				for (var i = 0; i < idList.length; i++) {
+					document.getElementById(idList[i]).innerHTML = numList[i];
+				}
+			}
+			//-----------------------------------------------------------------------------------
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="htmlDiv">dddddd</div>
+
+		<script type="text/javascript">
+			(function(jq) {
+				jq.fn.ShowHtmlToo = function() {
+					$(this).fadeOut(5000);
+				};
+				jq.fn.ShowHtmlToo2 = function() {
+					$(this).css({'color':'red'});
+				};
+			})($)
+			$("#htmlDiv").ShowHtmlToo();
+			$("#htmlDiv").ShowHtmlToo2();
+		</script>
+	</body>
+
+</html>

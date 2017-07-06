@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="div1">
+			<p class="row1">aaaaa</p>
+		</div>
+		<script>
+			$(function(){
+				$('.div1 p').on('click',function(e){
+					$('.div1').append('<p class="row1">111111111</p>');
+				});
+				$(".div1").on("click",".row1",{name:"aaaa"},function(event){
+    alert(event.data.name);
+})  
+				$(".div1,.div1 p").off();
+			})
+		</script>
+	</body>
+</html>

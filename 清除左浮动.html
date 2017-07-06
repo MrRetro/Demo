@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Clear float</title>
+		<style type="text/css">
+			.container {
+				margin: 30px auto;
+				width: 600px;
+				height: 300px;
+			}
+			
+			.p {
+				border: solid 3px #a33;
+			}
+			
+			.c {
+				width: 100px;
+				height: 100px;
+				background-color: #060;
+				margin: 10px;
+				float: left;
+			}
+			.p:after{content: '';display: block;clear: both;}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="p">
+				<div class="c"></div>
+				<div class="c"></div>
+				<div class="c"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

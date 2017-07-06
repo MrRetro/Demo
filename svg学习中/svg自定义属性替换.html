@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div>
+			<svg data-src="img/circle.svg"></svg>
+			我是svg图片
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('svg[data-src]').each(function(index,svg){
+					var src=$(svg).data('src');
+					
+					$.ajax({
+						type:"get",
+						url:src,
+						dataType:'xml',
+						success:function(svgDom){
+							$(svg).after(svgDom.documentElement).remove();
+						}
+					});
+				});
+			})
+		</script>
+	</body>
+</html>

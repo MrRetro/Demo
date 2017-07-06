@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery提示框插件Tipso.js演示_大头网</title>
+
+<link rel="stylesheet" href="css/tipso.min.css">
+<style>
+* { margin: 0; padding: 0;}
+body { font-family: "Microsoft Yahei";}
+h1 { padding: 45px 0; font: 32px "Microsoft Yahei"; text-align: center;}
+.datouwang { width: 500px; margin: 30px auto 0; border: 1px solid #ddd;}
+.datouwang h2 { padding: 10px; font-size: 16px; font-weight: 400; background-color: #f5f5f5;}
+.datouwang .inner { padding: 60px; text-align: center;}
+.datouwang p { margin-top: 10px; font-size: 14px;}
+.datouwang input { margin-right: 10px; padding: 5px; border: 1px solid #ddd; font-family: "Microsoft Yahei";}
+</style>
+
+</head>
+<body>
+<h1>jquery提示框插件Tipso.js演示</h1>
+<!-- 代码 开始 -->
+<div class="datouwang">
+	<h2>1、默认</h2>
+	<div class="inner"><span id="tip1" data-tipso="提示信息">Tipso</span></div>
+</div>
+
+<div class="datouwang">
+	<h2>1、默认</h2>
+	<div class="inner"><input type="text" id="tip0" data-tipso="提示信息" value="" /></div>
+</div>
+
+<div class="datouwang">
+	<h2>2、左边显示</h2>
+	<div class="inner"><span id="tip2" data-tipso="datouwang.com">Tipso</span></div>
+</div>
+
+<div class="datouwang">
+	<h2>3、背景颜色</h2>
+	<div class="inner"><span id="tip3" data-tipso="datouwang.com">Tipso</span></div>
+</div>
+
+<div class="datouwang">
+	<h2>4、使用title属性</h2>
+	<div class="inner"><span id="tip4" title="内容来自 title 属性">Tipso</span></div>
+</div>
+
+<div class="datouwang">
+	<h2>5、单击显示/隐藏</h2>
+	<div class="inner">
+		<span id="tip5" data-tipso="datouwang">Tipso</span>
+		<p><a id="btn5" href="javascript:">显示</a></p>
+	</div>
+</div>
+
+<div class="datouwang">
+	<h2>6、更新内容</h2>
+	<div class="inner">
+		<span id="tip6" data-tipso="datouwang.com">Tipso</span>
+		<p><input type="text"><a id="btn6" href="javascript:">更新</a></p>
+	</div>
+</div>
+
+<div class="datouwang">
+	<h2>7、在图片上使用</h2>
+	<div class="inner">
+		<img id="tip7" src="images/tipso.png" alt="" data-tipso="datouwang.com">
+	</div>
+</div>
+
+<div class="datouwang">
+	<h2>8、回调函数</h2>
+	<div class="inner">
+		<span id="tip8" data-tipso="datouwang.com">Tipso</span>
+		<p>状态：<em id="status"></em></p>
+	</div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/tipso.min.js"></script>
+<script>
+$(function() {
+	// 0
+	$('#tip0').tipso({
+		useTitle: false,
+		background:'black',
+		width:'auto',
+		offsetX:-45
+	});
+	// 1
+	$('#tip1').tipso({
+		useTitle: false,
+		background:'black',
+		width:'auto',
+		offsetX:-45
+	});
+
+	// 2
+	$('#tip2').tipso({
+		useTitle: false,
+		position: 'left'
+	});
+
+	// 3
+	$('#tip3').tipso({
+		useTitle: false,
+		background: 'tomato'
+	});
+
+	// 4
+	$('#tip4').tipso();
+
+	// 5
+	$('#tip5').tipso({
+		useTitle: false
+	});
+	$('#btn5').on({
+		click: function(e) {
+			if($(this).text() == '显示') {
+				$(this).text('隐藏');
+				$('#tip5').tipso('show');
+			} else {
+				$(this).text('显示');
+				$('#tip5').tipso('hide');
+			}
+			e.preventDefault();
+		}
+	});
+
+	// 6
+	$('#tip6').tipso({
+		useTitle: false
+	});
+	$('#btn6').on('click', function() {
+		var $val = $(this).prev().val();
+		if($val) {
+			$('#tip6').tipso('update', 'content', $val);
+		}
+	});
+
+	// 7
+	$('#tip7').tipso({
+		useTitle: false
+	});
+
+	// 8
+	$('#tip8').tipso({
+		useTitle: false,
+		onBeforeShow: function() {
+			$('#status').html('beforeShow');
+		},
+		onShow: function() {
+			$('#status').html('show');
+		},
+		onHide: function() {
+			$('#status').html('hide');
+		}
+	});
+});
+</script>
+<!-- 代码 结束 -->
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>来源：<a href="http://www.datouwang.com/" target="_blank">大头网</a></p>
+<p>转载请注明出处，此代码仅供学习交流，请勿用于商业用途。</p>
+<p><script src="http://www.datouwang.com/img/js/demo_ad.js"></script><center style="display:none"><script src="http://www.datouwang.com/img/js/demo_tj.js"></script></center></p>
+</div>
+
+</body>
+</html>

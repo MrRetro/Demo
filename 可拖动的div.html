@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>可拖动的div</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			body{overflow-x: hidden;}
+			.div {
+				width: 200px;
+				height: 50px;
+				background-color: wheat;
+				position: absolute;
+				left:100px;
+				top:100px;
+			}
+		</style>
+		<script src="js/jquery-1-7-2-min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="DragDiv" class="div"></div>
+		<script type="text/javascript">
+			var MoveDiv = function() {};
+
+			/**
+			 * @deprecated 移动div的方法
+			 * @param{id} id 要移动的层ID
+			 */
+			MoveDiv.Move = function(id) {
+				var o = document.getElementById(id);
+				var oo=$('#'+id);
+				var divW=parseInt(oo.css('width'),10)/-2.0;
+				var divH=parseInt(oo.css('height'),10)/-2.0;
+				var screenW=$(window).width()+divW; 
+				var screenH=$(window).height()+divH;
+				
+
+				o.onselectstart = function() {
+					return(false);
+				};
+
+				o.onmousedown = function(e) {
+					e = e || window.event;
+					var x = e.layerX || e.offsetX;
+					var y = e.layerY || e.offsetY;
+					x = x - document.body.scrollLeft;
+					y = y - document.body.scrollTop;
+					document.onmousemove = function(e) {
+						e = e || window.event;
+						var l=e.clientX - x;
+						var r=e.clientY - y;
+						if(l<divW){
+							o.style.left = divW + "px";
+						}else if(l>screenW){
+							o.style.left = screenW + "px";
+						}else{
+							o.style.left = l + "px";
+						}
+						
+						if(r<divH){
+							o.style.top = divH + "px";
+						}else if(r>screenH){
+							o.style.top = screenH + "px";
+						}else{
+							o.style.top = r + "px";
+						}
+					};
+
+					document.onmouseup = function() {
+						document.onmousemove = null;
+					};
+				};
+			}
+			MoveDiv.Move('DragDiv')
+		</script>
+	</body>
+
+</html>

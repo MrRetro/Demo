@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" type="text/css" href="animate.css" />-->
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			/* entire container, keeps perspective */
+			
+			.flip-container {
+				perspective: 1000;
+				transform-style: preserve-3d;
+			}
+			/*  UPDATED! flip the pane when hovered */
+			
+			.flip-container:hover .back {
+				transform: rotateY(0deg);
+			}
+			
+			.flip-container:hover .front {
+				transform: rotateY(180deg);
+			}
+			
+			.flip-container,
+			.front,
+			.back,
+			.flipper {
+				width: 112px;
+				height: 144px;
+			}
+			/* flip speed goes here */
+			
+			.flipper {
+				transition: 0.6s;
+				transform-style: preserve-3d;
+				position: relative;
+			}
+			/* hide back of pane during swap */
+			
+			.front,
+			.back {
+				backface-visibility: hidden;
+				transition: 0.6s;
+				transform-style: preserve-3d;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			/*  UPDATED! front pane, placed above back */
+			
+			.front {
+				z-index: 2;
+				transform: rotateY(0deg);
+			}
+			/* back, initially hidden pane */
+			
+			.back {
+				transform: rotateY(-180deg);
+			}
+			/* 
+	Some vertical flip updates 
+*/
+			
+			.vertical.flip-container {
+				position: relative;
+			}
+			
+			.vertical .back {
+				transform: rotateX(180deg);
+			}
+			
+			.vertical.flip-container:hover .back {
+				transform: rotateX(0deg);
+			}
+			
+			.vertical.flip-container:hover .front {
+				transform: rotateX(180deg);
+			}
+			
+			.front.pic {
+			    background: url(img/盾.png) 0 0 no-repeat;
+			}
+			.back.pic1{
+				background: url(img/盾.png) 0 0 no-repeat;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flip-container">
+			<div class="flipper">
+				<div class="front pic">
+					<!-- 前面内容 -->
+				</div>
+				<div class="back pic1">
+					<!-- 背面内容 -->
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

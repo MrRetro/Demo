@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ie6-7-8画圆</title>
+		<style>
+			.box {
+				width: 150px;
+				height: 150px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.radius {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: 149px dotted;
+				/* IE7,IE8圆尺寸要小1像素同时有1像素偏移 */
+				margin: 0 0 1px 1px;
+			    border-width: 0vw;
+			    margin: 0vw;
+				color: red;
+				background-color: currentcolor;
+
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="radius">
+			</div>
+		</div>
+	</body>
+
+</html>

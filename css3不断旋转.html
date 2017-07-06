@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/* css3 让一个图片不断翻转示例代码 */
+			
+			#gavinPlay {
+				/* background:color url x y repeat 图片来自百度图片，按需要更换 */
+				background: url("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2406548182,3889596045&fm=80") center no-repeat;
+				/* background-size:auto auto || cover 代表以宽或高填满元素背景 */
+				background-size: cover;
+				/* 随便设置宽高值，测试 */
+				width: 200px;
+				height: 200px;
+				/* 设置默认样式，开启3d硬件加速 */
+				-webkit-transform: translate3d(0, 0, 0);
+				-moz-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+				/* 设置动画，animation:动画名称 动画播放时长单位秒或微秒 动画播放的速度曲线linear为匀速 动画播放次数infinite为循环播放; */
+				/*设置原点 -moz-transform-origin: center center;
+				-webkit-transform-origin:center center;
+				-o-transform-origin:center center;*/
+				
+				-webkit-animation: play 10s linear infinite;
+				-moz-animation: play 10s linear infinite;
+				animation: play 3s linear infinite;
+			}
+			
+			@-webkit-keyframes play {
+				0% {
+					/*
+		水平翻转
+		*/
+					-webkit-transform: rotate(0deg);
+					
+					/*
+		垂直翻转
+		-webkit-transform:rotate(0deg);
+		顺时针旋转
+		-webkit-transform:rotate(0deg);
+		逆时针旋转
+		-webkit-transform:rotate(0deg);
+		*/
+				}
+				100% {
+					/* 水平翻转 */
+					-webkit-transform: rotate(360deg);
+					/* 垂直翻转
+		-webkit-transform:rotate(360deg);
+		顺时针旋转
+		-webkit-transform:rotate(360deg);
+		逆时针旋转
+		-webkit-transform:rotate(-360deg);
+		*/
+				}
+			}
+			
+			@-moz-keyframes play {
+				0% {
+					-moz-transform: rotate(0deg);
+					/*
+		-moz-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		*/
+				}
+				100% {
+					-moz-transform: rotate(360deg);
+					/*
+		-moz-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+		-moz-transform:rotate(-360deg);
+		*/
+				}
+			}
+			
+			@keyframes play {
+				0% {
+					transform:rotateX(45deg) rotateY(0deg) translateX(0px) scale(0.3);
+					transform-origin:50% 50%; 
+					opacity:0;
+					/*
+		transform:rotateX(0deg);
+		transform:rotate(0deg);
+		transform:rotate(0deg);
+		*/
+				}
+				100% {
+					transform:rotateX(45deg) rotateY(720deg) translateX(0px) scale(1);
+					opacity: 1;
+					/*
+		transform:rotateX(360deg);
+		transform:rotate(360deg);
+		transform:rotate(-360deg);
+		*/
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- html 布局代码 -->
+		<div id="gavinPlay"style="margin-left: 50%;left: -100px;margin-top: 70px;position: relative;"></div>
+	</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<bgsound class="bgau" src="img/bgMid.mid" loop=3>
+		<audio class="au" src="img/song.mp3" autoplay="autoplay" />
+</audio>
+	<a href="javascript:stop()">音乐结束</a>
+	<a href="javascript:start()">音乐开始</a>
+	<script type="text/javascript">
+		function stop(){
+			$('.bgau').attr('src','')
+			$('.au').attr('src','')
+		}
+		function start(){
+			$('.bgau').attr('src','img/song.mp3')
+			$('.au').attr('src','img/song.mp3')
+		}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" style="border:1px solid #aaa;margin: 50px auto;display: block;"></canvas>
+		<script type="text/javascript">
+			window.onload=function(){
+				var canvas=document.getElementById("canvas");
+				canvas.width=800;
+				canvas.height=800;
+				var context=canvas.getContext("2d");
+				
+				var linearGrad=context.createLinearGradient(-200,-200,1000,1000);
+				linearGrad.addColorStop(0.0,'white');//线性点
+				linearGrad.addColorStop(0.25,'yellow');
+				linearGrad.addColorStop(0.5,'green');
+				linearGrad.addColorStop(0.75,'blue');
+				linearGrad.addColorStop(1.0,'black');
+				context.fillStyle=linearGrad;
+				context.fillRect(200,200,600,600);
+			}
+		</script>
+	</body>
+</html>

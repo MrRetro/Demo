@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul{width: 600px;height:500px;overflow: hidden;position: relative;}
+			ul li{width:100%;height: 500px;position: absolute;left:0px;top:0px;}
+			ul li img{width: 100%;height: 100%;}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<ul>
+			<li style="left: 0%;"><img src="images/bac2.jpg" alt="img" /></li>
+			<li style="left: -100%;"><img src="images/bac3.jpg" alt="img" /></li>
+			<li style="left: -100%;"><img src="images/pic_04.png" alt="img" /></li>
+			<li style="left: -100%;"><img src="images/pic_05.png" alt="img" /></li>
+		</ul>
+		<script type="text/javascript">
+			$(function(){
+				setInterval(function(){
+					var sum=$('ul li').length;
+					$('ul li').each(function(){
+						var index=$(this).index();
+						if($(this).css("left")=='0px'){
+							if(index+1>=sum){
+								$('ul li').eq(0).css({'left':'100%'});
+								$('ul li').eq(0).animate({'left':'0%'});
+								$('ul li').eq(index).animate({'left':'-100%'});
+							}else{
+								$('ul li').eq(index).animate({'left':'-100%'});
+								$('ul li').eq(index+1).css({'left':'100%'});
+								$('ul li').eq(index+1).animate({'left':'0%'});
+							}
+						}
+					});
+				},3000)
+			})
+		</script>
+	</body>
+</html>

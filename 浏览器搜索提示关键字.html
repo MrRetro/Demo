@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>autocomplete demo</title>
+  <link rel="stylesheet" href="css/autocomplete.css">
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/autocomplete.js"></script>
+</head>
+<body>
+ 
+<label for="autocomplete">选择开发环境语言: </label>
+<input id="autocomplete">
+ 
+<script>
+$( "#autocomplete" ).autocomplete({
+  source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
+});
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE >
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8" />
+		<script type="text/javascript" src="js/jquery-1-7-2-min.js"></script>
+		<script>
+//			(function() {
+//				$.fn.extend({
+//					add: function(a, b) {
+//						var n = a + b;
+//						return n;
+//					},
+//					dev: function(a, b) {
+//						var n = a - b;
+//						return n;
+//					}
+//				});
+//			})(jQuery);
+			
+			(function() {
+				$.fn.add = function(options) {
+					var defaults = {
+						a: 0,
+						b: 0
+					};
+					var opts = $.extend({},defaults, options);
+					return opts.a + opts.b;
+				}
+				$.fn.dev = function(options) {
+					var defaults = {
+						a: 0,
+						b: 0
+					};
+					var opts = $.extend(defaults, options);
+					return opts.a - opts.b;
+				}
+			})(jQuery);
+			
+			(function() {
+				$.fn.randNum = function(options) {
+					var defaults = {
+						num:4
+					};
+					var opts = $.extend("",defaults, options);
+					var maxNum=Math.pow(10,opts.num);
+					var a=parseInt(Math.random()*maxNum,10);
+					return a;
+				}
+			})(jQuery);
+			
+			
+			$(function() {
+//				alert($(this).add({a:2,b:8}))
+//				alert($(this).randNum({num:6}))
+				var a= setInterval(function dd(){console.log(Math.random()*16)},500)
+			})
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

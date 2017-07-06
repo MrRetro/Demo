@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<!-- Tooltip classes -->
+	<!--<link rel="stylesheet" href="src/tip-yellow/tip-yellow.css" type="text/css" />-->
+	<!--<link rel="stylesheet" href="src/tip-violet/tip-violet.css" type="text/css" />-->
+	<!--<link rel="stylesheet" href="src/tip-darkgray/tip-darkgray.css" type="text/css" />-->
+	<!--<link rel="stylesheet" href="src/tip-skyblue/tip-skyblue.css" type="text/css" />-->
+	<link rel="stylesheet" href="src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+	<!--<link rel="stylesheet" href="src/tip-twitter/tip-twitter.css" type="text/css" />-->
+	<!--<link rel="stylesheet" href="src/tip-green/tip-green.css" type="text/css" />-->
+		<style type="text/css">
+			input{margin: 50px;}
+		</style>
+		<script src="includes/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/jquery.poshytip.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<input type="text" name="aa" id="aa" value="" title="dddddddddd" />
+		<script type="text/javascript">
+			$('#aa').poshytip({
+				className: 'tip-yellowsimple',
+				showOn: 'focus',
+				alignTo: 'target',
+				alignX: 'top',
+				offsetX: 0,
+				offsetY: 5,
+				showTimeout: 100
+			});
+			$(function(){
+				$('#aa').attr('title','ddddddffffffffff')
+			})
+			$('#aa').attr('title','ddddddffffffffff')
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype>
+<html>
+
+	<head>
+		<!--<meta charset="gb2312">-->
+		<meta charset="UTF-8" />
+		<title>- -</title>
+		<script>
+			function gograde() {
+				var a = document.getElementById("goods");
+				var b = document.getElementById("grade");
+				b.value = a.value;
+			}
+		</script>
+	</head>
+
+	<body>
+		<form name="myform">
+			<p>请选择您要购买的商品</p>
+			<select name="goods" id="goods" onchange="javascript:gograde()">
+				<option value="50积分">1笔记本</option>
+				<option value="40积分">2笔记本</option>
+				<option value="30积分">3笔记本</option>
+				<option value="20积分">4笔记本</option>
+			</select>
+			您购买商品获得的积分是
+			<input type="text" name="grade" id="grade" value="50积分">
+		</form>
+
+	</body>
+
+</html>

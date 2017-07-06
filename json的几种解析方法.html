@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+	<script>
+		$(function(){
+			//其一
+			var json='{"name":"CJ","age":18}';
+			data =(new Function("","return "+json))();
+			alert(data.name)
+			
+			
+			//其二
+			var data="{root: [{name:'1',value:'0'}, {name:'6101',value:'北京市'}, {name:'6102',value:'天津市'},{name:'6103',value:'上海市'},{name:'6104',value:'重庆市'},{name:'6105',value:'渭南市'},{name:'6106',value:'延安市'},{name:'6107',value:'汉中市'},{name:'6108',value:'榆林市'},{name:'6109',value:'安康市'},{name:'6110',value:'商洛市'}]}"; 
+			var dataObj=eval("("+data+")");//转换为json对象
+			alert(dataObj.root[2].name)
+
+			
+  			//其三
+  			var aa=jQuery.parseJSON('{"name":"John"}'); 
+			alert(aa.name)
+		});
+	</script>
+</html>

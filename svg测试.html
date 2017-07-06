@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+*{-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-ms-transition:all 0.2s linear;-o-transition:all 0.2s linear}
+		</style>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="p1" d="" id="svg_1" stroke-width="1.5" stroke="#000" fill="none"/>
+ </g>
+</svg>
+<script type="text/javascript">
+	$(function(){
+		var str="m339,225l-82,26l137,167l197,-272l-320,-41l-136,121l-17,162l27,60l219,39l174,-64l79,-250l-12,-54l-121,-33l-169,-22l-130,42l-19,30l-31,59l-35,110l6,33";
+		var arr=str.split(',');
+		var nowTxt='';
+		var i=0;
+	    var f1=setInterval(function(){
+			nowTxt+=arr[i]+' ';
+			$('#p1').attr('d',nowTxt);
+			i++;
+		},30);
+	})
+</script>
+	</body>
+</html>

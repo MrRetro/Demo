@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="div1">sssssss</div>
+		<p>dddddddddddddd</p>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		//第一种方法
+		$.fn.add1=function(a,b){return a+b;};
+		$.fn.val='我是！';
+		//第二种方法
+		$.fn.extend({
+			add:function(a,b){return a+b;},
+			del:'5'
+		})
+		$(function(){
+			console.log($.fn.add1(5,2))
+			console.log($.fn.val)
+			console.log($.fn.add(15,2))
+			console.log($.fn.del)
+		})
+	</script>
+	<!--
+		其实吧，jQuery.extend()这个方法，主要是用来拓展个全局函数啦，例如$.ajax()这种，
+		要不就是拓展个选择器啦，例如$.fn.each()，当选择器用。
+		大部分插件都是用jQuery.fn.extend()。
+	-->
+</html>

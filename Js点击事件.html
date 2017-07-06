@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*Reset css*/
+			body{font-family:"宋体";font-size:12px;background:#fff;color:#333;margin:0;padding:0;}
+			/*div,form,img,ul,ol,li,dl,dt,dd{margin:0;padding:0;border:0;}*/
+			li{list-style:none;}
+			table{border-collapse:collapse;}
+			h1,h2,h3,h4,h5,h6,p,select,td{margin:0;padding:0;font-size:12px;}
+			/*全局设置*/
+			a{color:#1D569C;text-decoration:none;}
+			a:hover{color:#ED3E22;text-decoration:underline;}
+			a:hover p{text-decoration:none;}
+		</style>
+	</head>
+
+	<body>
+		<div id="demo" style="width: 500px;height: 500px;background-color: red;display: block;">
+			<div id="demo1" style="width: 500px;height: 500px;background-color: blue;display: block;">
+				<img src="img/1.jpg" alt="img"/>
+			</div>
+		</div>
+	</body>
+	<script>
+		var click1 = function fo() {
+			var a = document.getElementById("demo1");
+			if (a.style.display == "block") {
+				a.style.display = "none";
+			} else {
+				a.style.display = "block";
+			}
+		}
+		window.onload = function() {
+			var a1 = document.getElementById("demo");
+			a1.addEventListener("click", click1, false);
+		}
+	</script>
+
+</html>
