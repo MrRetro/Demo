@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<setting>
+	<currency>
+		<name>快小可</name>
+		<address>中国福建省厦门市海沧区滨湖北路</address>
+		<tel>18778978978</tel>
+		<reserveGold>否</remarkMoney>
+		<mergingGold>是</mergingGold>
+		<goodsAdd>否</goodsAdd>
+		<sales>否</sales>
+		<repeat>否</repeat>
+		<brower>否</brower>
+		<setUp>否</setUp>
+	</currency>
+</setting>

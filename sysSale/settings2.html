@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="order-html">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统-系统设置</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/orderGoods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/settings.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pay-head">
+			<div class="left"><a href="main.html"><img src="img/goBack.png" alt="img"/></a></div>
+			<div class="center">系统设置</div>
+			<div class="right">
+				<p class="two order"><span><i>PT</i>加旅收银</span></p>
+			</div>
+		</div>
+		
+		<div class="order-content settings">
+			<div class="order-content-left">
+				<div class="order-nav-title">系统设置</div>
+				<div class="order-nav-txt"><p class="name"><a href="settings.html">通用设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings1.html">小票打印设置</a></p></div>
+				<div class="order-nav-txt active"><p class="name"><a href="settings2.html">标签打印设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings3.html">订单设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings4.html">功能设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings5.html">广告设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings6.html">电子秤设置</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings7.html">账户管理</a></p></div>
+				<div class="order-nav-txt"><p class="name"><a href="settings8.html">关于</a></p></div>
+				<div class="goinline"><p class="name">进入云·后台</p></div>
+			</div>
+			<div class="order-content-right">
+				<div class="settings-table">
+					<div class="txt"><p class="p-left">网口标签打印机</p><p class="p-right"></p></div>
+					<div class="txt"><p class="p-left">USB标签打印机</p><p class="p-right">
+						<select class="usbSels" name="usbSels" id="usbSels">
+							<option value="0"></option>
+						</select>
+					</p></div>
+					<div class="txt"><p class="p-left">标签纸规格</p><p class="p-right"><span class="sp-size"><input type="text" name="sizeHeight" id="sizeHeight" value="40" /></span><span class="opt">x</span><span class="sp-size"><input type="text" name="sizeWidth" id="sizeWidth" value="40" /></span></p></div>
+					<div class="txt"><p class="p-left">合并打标签</p><p class="p-right"><a class="btn">是</a><a class="btn active">否</a></p></div>
+					<div class="txt"><p class="p-left">堂食打标签</p><p class="p-right"><a class="btn">是</a><a class="btn active">否</a></p></div>
+					<div class="txt mulsels">
+						<p class="p-left">
+							<span class="sp-one">进货标签项</span>
+							<span class="sel active"><label class="name">尾注</label><label class="lb-imgOk"><img src="img/ck-yes-sels.png" alt="img"/></label></span>
+							<span class="sel"><label class="name">会员价</label><label class="lb-imgOk"><img src="img/ck-yes-sels.png" alt="img"/></label></span>
+							<span class="sel"><label class="name">售价</label><label class="lb-imgOk"><img src="img/ck-yes-sels.png" alt="img"/></label></span>
+							<span class="sel"><label class="name">品名</label><label class="lb-imgOk"><img src="img/ck-yes-sels.png" alt="img"/></label></span>
+							<span class="sel"><label class="name">条码</label><label class="lb-imgOk"><img src="img/ck-yes-sels.png" alt="img"/></label></span>
+						</p>
+						<p class="p-hint">注：该项仅用与进货商品标签</p>
+					</div>
+					<div class="txt smallLogo remark"><p class="p-left"><span class="sp-left">标签尾注:</span> <span class="sp-img" contenteditable="true"></span></p><p class="p-right"><label class="lb-advise">注：标签尾注每11个字要换行</label><a class="a-sel">驱动打印</a><input style="display: none;" type="file" name="newFile" id="newFile" value="" /></p></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

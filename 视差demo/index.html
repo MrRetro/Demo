@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.parallax.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#scene{float: left;width: 100%;}
+			.layer{float: left;width: 25%;left:30%;}
+		</style>
+	</head>
+	<body>
+		<ul class="scene">
+		  <li class="layer" data-depth="0.80"><img src="img/layer1.png"></li>
+		  <!--<li class="layer" data-depth="0.20"><img src="img/layer2.png"></li>
+		  <li class="layer" data-depth="0.40"><img src="img/layer3.png"></li>
+		  <li class="layer" data-depth="0.60"><img src="img/layer4.png"></li>-->
+		</ul> 
+		<script type="text/javascript">
+//			$('#scene').parallax(); ''
+			var $scene = $('.scene').parallax();
+//			$scene.parallax('enable');
+//			$scene.parallax('disable');
+//			$scene.parallax('updateLayers');
+//			$scene.parallax('calibrate', false, true);
+//			$scene.parallax('invert', false, true);
+//			$scene.parallax('limit', false, 10);
+			$scene.parallax('scalar', 2, 8);
+//			$scene.parallax('friction', 0.2, 0.8);
+//			$scene.parallax('origin', 0.0, 1.0);    
+		</script>
+	</body>
+</html>

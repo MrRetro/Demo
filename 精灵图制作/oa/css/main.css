@@ -1,0 +1,42 @@
+*{margin: 0;padding: 0;}
+html{font-family:"microsoft yahei",Arial,sans-serif;font-size: 1000px;}
+body{z-index: 500;float: left;width: 100%;position: relative;*overflow: hidden;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td{padding:0;margin:0;font-family:"microsoft yahei"}
+body{width: 100%;min-width:320px;max-width: 700px; overflow-x:hidden; background-color: rgb(240,240,240);}
+table{border-collapse:collapse;border-spacing:0}
+.tb_box table tr:nth-child(odd),.record_one table tr:nth-child(odd){background-color: #EFEFEF;}
+fieldset,img{border:0}
+a{text-decoration:none;color:#000;outline:none;}
+li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{*font-size:100%;outline: none;border: none;background-color: #fff;}
+
+.img01{float: left;}
+.img02{float: left;}
+
+.logo {
+background: url(../img/aa.png) -0rem -0rem no-repeat;
+height: 0.059rem;
+width: 0.061rem;
+background-size: 0.111rem 0.059rem;
+_background: none;
+_padding-left: 0rem;
+_margin-left: -0rem;
+_padding-top: 0rem;
+_margin-top: -0rem;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/aa.png");
+}
+.manage_blue_ico {
+background: url(../img/aa.png) -0.061rem -0rem no-repeat;
+height: 0.044rem;
+width: 0.050rem;
+_background: none;
+_padding-left: 0.061rem;
+_margin-left: -0.061rem;
+background-size: 0.111rem 0.059rem;
+_padding-top: 0rem;
+_margin-top: -0rem;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/aa.png");
+}

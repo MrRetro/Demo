@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<meta http-equiv="description" content="在线转二维码小工具">
+		<meta name="description" content="可以把任意的字符内容转换成二维码格式">
+		<meta name="keywords" content="工具, 二维码, canvas">
+		<meta name="author" content="">
+		<title>在线转二维码小工具</title>
+		<style>
+			html{font-size: 100px;}
+			h1{font-size: .6rem;text-align: center;}
+			.box{width: 8rem;max-width: 96%;font-size: .36rem;font-family: 'microsoft yahei';margin: auto;}
+			.input{width: 100%;line-height: 1.5;font-size: 100%;padding: .1rem;border: .1rem solid #a0b3d6;border-radius: .05rem;font-family: inherit;box-sizing: border-box;resize: none;outline: none;}
+			.submit{float: right;width: 1.8rem;line-height: .72rem;border-radius: .05rem;margin-left: .2rem;border: .1rem solid #a0b3d6;text-align: center;background-color: #f0f3f9;background-image: -webkit-linear-gradient(top, #f0f3f9, #cad5eb);background-image: linear-gradient(to bottom, #f0f3f9, #cad5eb);color: #34538b;text-decoration: none;}
+			.number{position: absolute;top: 10px;right: 10px;font-size: 100%;border: .1rem solid #a0b3d6;margin-left: .2rem;border-radius: .05rem;padding: .1rem;visibility: hidden;}
+			.submit:active{background-image: none;}
+			.follow{overflow: hidden;}
+			.output-x{text-align: center;margin: .3rem 0;}
+			.output-x p{color: red;font-size: .24rem;}
+			@media screen and (max-width: 800px){
+				html{font-size: calc(100px + (100vw - 800px) / 7);}
+				.number{display: none;}
+			}						
+		</style>
+	</head>
+
+	<body>
+		<h1>在线转二维码小工具</h1>
+		<div class="box">
+			<form id="form" class="input-x">
+				<input id="number" class="number" type="number" step="100" min="300" max="800" value="600" required="" style="visibility: visible;">
+				<label class="submit" for="submit">生成</label>
+				<input type="submit" id="submit" hidden="">
+				<div class="follow"><input id="input" class="input" required="" autocomplete="off" autofocus=""></div>
+			</form>
+			<div id="output" class="output-x">
+				<p>请输入需要转换的内容！</p>
+			</div>
+		</div>
+		<script type="text/javascript" async="" src="./在线转二维码小工具_files/ga.js"></script>
+		<script src="./在线转二维码小工具_files/jquery-1.2.6.pack.js"></script>
+		<script src="./在线转二维码小工具_files/jquery.qrcode.min.js"></script>
+		<script>
+			var elOutput = $('#output');
+			var elInput = $('#input');
+			var elNumber = $('#number');
+
+			if(localStorage.qrcodeSize) {
+				elNumber.val(localStorage.qrcodeSize);
+			} else if(screen.width <= 800) {
+				elNumber.val(300);
+			}
+
+			elNumber.css('visibility', 'visible');
+
+			var fnGenter = function() {
+				if(elInput.val() == '') {
+					elOutput.html('<p>请输入需要转换的内容！</p>');
+					elInput[0].focus();
+					return;
+				}
+
+				var size = elNumber.val() || 300;
+
+				elOutput.empty().qrcode({
+					width: size,
+					height: size,
+					text: elInput.val()
+				});
+
+				localStorage.qrcodeSize = size;
+
+				elInput.val('');
+			};
+
+			$('#form').submit(function(event) {
+				event.preventDefault();
+
+				fnGenter();
+			});
+
+			elNumber.change(fnGenter);
+		</script>
+
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-11205167-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = './在线转二维码小工具_files/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</body>
+
+</html>

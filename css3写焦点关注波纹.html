@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			.focusDot{position: absolute;left:0px;top:0px;width: 100px;height: 100px;}
+			.dot{z-index: 1;background-color: #6ad7e9;border: 1px solid rgba(0, 205, 236, .37);position: absolute;top: 45px;left: -6px;width: 10px;height: 10px;margin-left: 50%;-webkit-border-radius: 50%;-webkit-background-clip: padding-box;-moz-border-radius: 50%;-moz-background-clip: padding;border-radius: 50%;background-clip: padding-box;}
+			.p-box{width: 100px;height: 100px;position: absolute;left: -50px;top: 0px;display: inline-block;margin-left: 50%;}
+			.p-box:after{content: "";display: block;position: absolute;top: 0;right: 0;bottom: 0;left: 0;border-radius: 50%;border: 2px solid #00cdec;opacity: 0;}
+			.p-box1:after{-webkit-animation: ripple 4.5s ease-out 225ms infinite;animation: ripple 4.5s ease-out 225ms infinite;}
+			.p-box2{-webkit-animation: ripple 4.5s ease-out .9s infinite;animation: ripple 4.5s ease-out .9s infinite;}
+			.p-box3:after{-webkit-animation: ripple 4.5s ease-out 1.8s infinite;animation: ripple 4.5s ease-out 1.8s infinite;}
+			
+			@keyframes ripple {
+				0% {
+					opacity: 0;
+					-webkit-transform: scale(.1);
+					transform: scale(.1)
+				}
+				5% {
+					opacity: 1
+				}
+				to {
+					opacity: 0;
+					-webkit-transform: scale(1);
+					transform: scale(1)
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="focusDot">
+			<span class="dot"></span>
+			<div class="p-box p-box1"></div>
+			<div class="p-box p-box2"></div>
+			<div class="p-box p-box3"></div>
+		</div>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				focus()
+				$(window).resize(function(){focus()})
+			})
+			function focus(){
+				var w=$(window).width()-120;
+				var strHTML='';
+				var div='<div class="focusDot"><span class="dot"></span><div class="p-box p-box1"></div><div class="p-box p-box2"></div><div class="p-box p-box3"></div></div>';
+				for(var i=0;i<100;i++){
+					strHTML+=div;
+				}
+				$('body').append(strHTML);
+				
+				$('.focusDot').each(function(){
+					$(this).css({top:Math.random()*w,left:Math.random()*w});
+				})
+			}
+		</script>
+	</body>
+
+</html>

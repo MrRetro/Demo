@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统-付款页</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pay.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pay-head">
+			<div class="left"><img src="img/goBack.png" alt="img"/></div>
+			<div class="center">收款</div>
+			<div class="right">
+				<p class="two"><span class="sp-one"><img src="img/help-img.png" alt="img"/></span><span class="sp-two">帮助</span></p>
+				<p class="one"><span class="sp-one">牌号：<i></i></span><span class="sp-two">001</span></p>
+			</div>
+		</div>
+		
+		<div class="pay-content">
+			<div class="pay-content-left">
+				<p class="p-lb"><label>折扣</label><label>备注</label></p>
+				<p class="p-txt"><span class="one">
+					<label class="lb-one">总额：</label><input class="txt-two" type="text" name="" id="all-count" value="0" /><label class="img-three" for="all-count"><img src="img/write-img.png" alt="img" /></label>
+					<label id="cardMoney">次卡消费：￥50.00</label>
+				</span>
+				<span class="two active" id="cashMoney">现金</span>
+				</p>
+				<p class="p-txt p-cashes">
+					<span class="one showed">
+						<label class="lb-one">现金：</label><input class="txt-two" type="text" name="" id="all-cash" value="" /><label class="img-three" for="all-cash"><img src="img/write-img.png" alt="img" /></label>
+					</span>
+					<span class="one hidden">
+						<label class="lb-one">储值卡：</label><input class="txt-two" type="text" name="" id="all-save" value="" /><label class="img-three" for="all-save"><img src="img/write-img.png" alt="img" /></label>
+					</span>
+					<span class="one hidden">
+						<label class="lb-one">银联卡：</label><input class="txt-two" type="text" name="" id="all-bank" value="" /><label class="img-three" for="all-bank"><img src="img/write-img.png" alt="img" /></label>
+					</span>
+					<span class="two" id="Scard">储值卡</span>
+				</p>
+				<p class="p-txt"><span class="one"><label class="lb-one">找零：</label><input class="txt-two" type="text" name="" id="all-back" value="" /><label class="img-three" for="all-back"><img src="img/write-img.png" alt="img" /></label></span><span class="two" id="Ucard">银联卡</span></p>
+				<p class="p-ck"><span class="sp-pays"><label>组合支付</label><span class="sp-img"><img src="img/ck-yes.png" alt="img" /></span></span></p>
+			</div>
+			<div class="pay-content-right">
+				<p class="pay-info"><img src="img/alipay.png" alt="img" /></p>
+			</div>
+		</div>
+		
+		<div class="key-nums">
+			<div class="nums-center">
+				<p class="nums-one"><a>1</a><a>4</a><a>7</a><a>0</a></p>
+				<p class="nums-one"><a>2</a><a>5</a><a>8</a><a>00</a></p>
+				<p class="nums-one"><a>3</a><a>6</a><a>9</a><a>.</a></p>
+				<p class="nums-two"><a class="active">50</a><a class="active">100</a><a class="active">500</a><a class="active">1000</a></p>
+				<p class="nums-three"><a class="back-img"><img src="img/goClear.png" alt="img" /></a><a class="btn-ok">确认</a></p>
+			</div>
+		</div>
+		
+		<div class="search-dialog search-member" id="searchMember">
+            <div class="title"><span class="left">会员搜索</span><span class="right"><img src="img/close.png" alt="img" /></span></div>
+            <div class="search-content">
+                <p class="p-search"><input type="text" name="" id="" value="" /><a href="javascript:searchMb();">搜索</a></p>
+                <div class="search-table">
+                    <table>
+                        <thead>
+                            <tr><th>卡号</th><th>姓名</th><th>手机</th><th>积分</th><th>余额</th><th>折扣</th></tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>
+                            <tr><td>201609090099</td><td>张丽</td><td>18718718</td><td>0.00</td><td>0</td><td>83.33</td></tr>-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btns-bottom">
+                    <span class="left">
+
+                    </span>
+                    <span class="right">
+                        <a class="two" href="javascript:selTrGo();">选择</a><a class="one" href="javascript:cancelDialogMember();">取消</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

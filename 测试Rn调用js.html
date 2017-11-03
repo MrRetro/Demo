@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我是来测试的</title>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body{height: 500px;}
+		</style>
+	</head>
+	<body>
+		<span id="sp">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span><br />
+		<a href="javascript:aa()">点我调用RN方法</a>
+	</body>
+	<script type="text/javascript">
+		function returnEval() {};
+		
+		function aa(){
+			var t = 'aaaaaaaaaaaaaaa'; 
+			var sp=document.getElementById('sp')
+			returnEval('this.setText("' + t + '")');
+			
+			sp.innerHTML='ddddddd';
+//			location.href='http://www.baidu.com?id=10001'
+		}
+	</script>
+</html>

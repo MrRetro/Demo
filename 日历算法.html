@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <style type="text/css">
+  	*{margin: 0px;padding: 0px;}
+  	#calendar-oto table{float: left;width: 100%;text-align: center;}
+  	#calendar-oto table th{width: 14.2857%;}
+  	input{width: 300px;height: 30px;margin:6px;}
+  </style>
+	<script src="jqTips/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script LANGUAGE="JavaScript">
+		// 给定年月获取当月天数 
+		function GetMDay(y, m) {
+		    var mday = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); 
+		    if ((y % 40 == 0 && y % 100 != 0) || y % 400 == 0)//判断是否是闰月 
+		        mday[1] = 29; 
+		    return mday[m - 1];
+		} 
+		
+		// 获取星期数
+		function WeekNumber(y, m, d) {
+		    var wk;
+		    if (m <= 12 && m >= 1) { 
+		        for (var i = 1; i < m; ++i) { 
+		            d += GetMDay(y, i); 
+		        }
+		    }
+		    /*根据日期计算星期的公式*/
+		    wk = (y - 1 + (y - 1) / 4 - (y - 1) / 100 + (y - 1) / 400 + d) % 7; 
+		    //0对应星期天，1对应星期一 
+		    return parseInt(wk); 
+		}
+		
+		function SetCalendar(year, month) { 
+		    var daynumber = GetMDay(year, month); //当月天数  
+			//alert("当月天数  "+daynumber);
+		    var firstnumber = WeekNumber(year, month, 1); //当月第一天星期  
+			//alert("当月第一天星期   "+firstnumber);
+		    var lastnumber = WeekNumber(year, month, daynumber); //当月最后一天星期  
+			//alert("当月最后一天星期   "+lastnumber);
+		    var weeknumber = (daynumber - (7 - firstnumber) - (lastnumber + 1)) / 7; //除去第一个星期和最后一个星期的周数  
+			//alert("除去第一个星期和最后一个星期的周数 "+weeknumber);
+		    var day = 1; 
+		    var name; 
+		    var calendar = "";
+		    var preYear=(month-1)<1?(year-1):year;
+		    var preMonth=(month-1)<1?12:(month-1);
+		    var nextYear=(month+1)>12?(year+1):year;
+		    var nextMonth=(month+1)>12?1:(month+1);
+		    calendar += "<p>当前时间："+year+"年"+month+"月：<input type='button' onclick='gotoMonth(["+preYear+','+preMonth+"])' value='上个月'/><input type='button' onclick='gotoMonth(["+nextYear+','+nextMonth+"])' value='下个月'/></p><table border=\"0\" cellspacing=\"1\" style=\"background-color:#a0c6e5\">";
+		    calendar += "<tr>";
+		    calendar += "<th>星期天</th>";
+		    calendar += "<th>星期一</th>";
+		    calendar += "<th>星期二</th>";
+		    calendar += "<th>星期三</th>";
+		    calendar += "<th>星期四</th>";
+		    calendar += "<th>星期五</th>";
+		    calendar += "<th>星期六</th>";
+		    calendar += "</tr>";
+		    calendar += "<tr>";
+		    var i = 0;
+		    for (i = 0; i < firstnumber; i++)//第一个星期 
+		    {
+		       calendar += "<td></td>";
+		    }
+		    for (i = firstnumber; i < 7; i++) {
+		        name = year + "-" + month + "-" + day;
+		        calendar += "<td id=\"" + name + "\">" + day + "</td>";
+		        day++;
+		    }
+		    calendar += "</tr>";
+		    var number = 0;//星期数，末尾添加空行用，统一样式。
+		    for (i = 0; i < weeknumber; i++)//其他星期 
+		    {
+		        calendar += "<tr>"; 
+		        for (var k = daynumber - (7 - firstnumber) - (weeknumber - 1) * 7; k < daynumber - (7 - firstnumber) - (weeknumber - 1) * 7 + 7; k++) { 
+					name = year + "-" + month + "-" + day;
+			        calendar += "<td id=\"" + name + "\">" + day + "</td>";
+			        day++;
+		    	} 
+		        calendar += "</tr>";
+		        number++;
+		    } 
+		
+		    calendar += "<tr>"; 
+		    for (i = 0; i < lastnumber + 1; i++)//最后一个星期 
+		    { 
+		        name = year + "-" + month + "-" + day;
+		        calendar += "<td id=\"" + name + "\">" + day + "</td>";
+		        day++;
+		    }
+		    for (i = lastnumber + 1; i < 7; i++) {
+		        calendar += "<td>";
+		        calendar += "</td>";
+		    }
+		    calendar += "</tr>";
+		    
+		    if (number == 3) {
+		        calendar += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+		    }
+		    
+		    calendar += "</table>";
+		    return calendar;
+		}
+		
+		function show(){
+		 $("td").each(function(){
+		  if($(this).attr("id")=="2017-3-3"){
+		   $(this).append("<br /><span style='color:red;'>我是备注^_^____</span>")
+		  }
+		 })
+		}
+	</script>
+ </HEAD>
+
+ <BODY>
+ <div id="calendar-oto">
+ </div>
+	<script>
+		$('#calendar-oto').html(SetCalendar(2017,3))
+		//	 document.write(SetCalendar(2017,2));
+			 document.write("<input type='button' onclick='show()' value='点我添加2017年3月3号份备注'/>");
+			 document.write("<input type='button' onclick='gotoMonth([2017,2])' value='点我到2017年2月'/>");
+			 document.write("<input type='button' onclick='gotoMonth([2017,3])' value='点我到2017年3月'/>");
+		
+		//跳转到 月份
+		function gotoMonth(arry){
+			$('#calendar-oto').html(SetCalendar(arry[0],arry[1]))
+		}
+	</script>
+
+ </BODY>
+</HTML>

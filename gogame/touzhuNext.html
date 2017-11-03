@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>投注页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body class="touzhu-body">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+			<a class="mui-icon mui-pull-right btnClear opt">清空</a>
+			<h1 class="mui-title">购彩篮</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab buyCar">
+			<div class="div-ones">
+				<div class="left-box">
+					<p class="p-word">
+						<span class="sp-word">倍数：</span>
+					</p>
+					<p class="p-inputs">
+						<span class="sp-sub opt">-</span>
+						<input class="input-txt" type="text" name="" id="" value="1" />
+						<span class="sp-add opt">+</span>
+					</p>
+				</div>
+				<div class="right-box">
+					<p class="p-word">
+						<span class="sp-word">追号：</span>
+					</p>
+					<p class="p-inputs">
+						<span class="sp-sub opt">-</span>
+						<input class="input-txt" type="text" name="" id="" value="1" />
+						<span class="sp-add opt">+</span>
+					</p>
+				</div>
+				<div class="left-box">
+					<p class="p-word">
+						<span class="sp-word">返点：</span>
+					</p>
+					<p class="p-inputs backMark">
+						<span class="sp-sel">1950-0%</span>
+						<span class="sp-angle-top sp-add">︿</span>
+						<span class="selTypes">
+							<span class="sp-item">1950-0%</span>
+							<span class="sp-item">1950-0%</span>
+							<span class="sp-item">1950-0%</span>
+						</span>
+					</p>
+				</div>
+				<div class="right-box">
+					<p class="p-word">
+						<input type="checkbox" name="" id="ckBingo" value="" />
+						<label for="ckBingo" class="sp-word">中奖后停止追号</label>
+					</p>
+				</div>
+				<div class="row-box">
+					<span class="sp-word">余额：   ¥87.7</span>
+				</div>
+				<div class="row-box">
+					<span class="sp-word sp-black">共追号 <span class="sp-red">1</span> 期， <span class="sp-red">1</span> 注， 共 ¥<span class="sp-red">2</span></span>
+				</div>
+			</div>
+			<div class="div-twos">
+				<a class="a-btn opt">确认投注</a>
+			</div>
+		</nav>
+
+		<div class="mui-content burCar safe getMoney">
+			<div class="inputList">
+				<p class="p-space"></p>
+				<div class="p-bank-info">
+					<p class="p-info-one">
+						<span class="sp-one">
+							<span class="sp-red">3</span> | <span class="sp-red">3</span> | <span class="sp-red">3</span></span><br />
+						<span class="sp-two">后三直选复式      1注 1倍 2元</span>
+					</p>
+					<p class="p-close opt">
+						<span class="sp-img">✖</span>
+					</p>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="dialog-box hidden">
+			<div class="dialog-txts">
+				<div class="sels-type">
+					<p class="p-title">玩法选择</p>
+					<ul class="sel-items">
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt active">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+						<li class="opt">五星</li>
+					</ul>
+				</div>
+				<div class="group-sels">
+					<div class="item">
+						<p class="p-left">直选：</p>
+						<p class="p-right">
+							<span class="sp-item opt active">
+								直选复式
+							</span>
+							<span class="sp-item opt">
+								直选复式
+							</span>
+							<span class="sp-item opt">
+								直选复式
+							</span>
+							<span class="sp-item opt">
+								直选复式
+							</span>
+						</p>
+					</div>
+					<div class="item">
+						<p class="p-left">组选：</p>
+						<p class="p-right">
+							<span class="sp-item opt">
+								组三
+							</span>
+							<span class="sp-item opt">
+								组六
+							</span>
+							<span class="sp-item opt">
+								组选和值
+							</span>
+							<span class="sp-item opt">
+								组六
+							</span>
+						</p>
+					</div>
+					<div class="item">
+						<p class="p-left">其他：</p>
+						<p class="p-right">
+							<span class="sp-item opt">
+								组三
+							</span>
+							<span class="sp-item opt">
+								组六
+							</span>
+							<span class="sp-item opt">
+								组选和值
+							</span>
+							<span class="sp-item opt">
+								组六
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="dialog-btn opt">
+					<a class="a-btn">确定</a>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/mui.min.js"></script>
+		<script>
+			mui.init();
+			$(function(){
+				//返点
+				$('.touzhu-body .mui-bar.buyCar .div-ones .p-inputs.backMark').on('tap',function(){
+					$('.touzhu-body .mui-bar.buyCar .div-ones .p-inputs .selTypes').animate({
+						height:27*$('.touzhu-body .mui-bar.buyCar .div-ones .p-inputs .selTypes .sp-item').length
+					})
+				});
+			})
+		</script>
+	</body>
+
+</html>

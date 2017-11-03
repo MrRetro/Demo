@@ -1,0 +1,1028 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>福彩信息-首页</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			.banner>img{width: 100%;opacity: 0;position: absolute;left:0px;top:0px;}
+			.banner .pgCount{position: absolute;bottom: 26px;width:500px;height: 8px;text-align: center;margin-left: 50%;left:-250px;}
+			.banner .pgCount i{width: 50px;height: 8px;background-color: #CCCCCC;display: inline-block;margin-left: 6px;cursor: pointer;border-radius: 4px;}
+			.banner .pgCount .cured{background-color: #1EAE8A;box-shadow: initial;border-bottom: none;}
+			.zhezhao{width: 0%;height: 100%;position: fixed;/*background-color: rgba(0,0,0,.8)*/;z-index: 10025;}
+			body{/*-moz-user-select:none;-webkit-user-select:none;user-select:none;*//*-moz-user-select:initial;-webkit-user-select:initial;user-select:initial;*/  }
+			
+			/*flip */
+			.flip-container {perspective: 1000;transform-style: preserve-3d;}
+			.flip-container:hover .back,.flip-container.cur .back {transform: rotateY(0deg);}
+			
+			.flip-container:hover .front,.flip-container.cur .front {transform: rotateY(180deg);}
+			
+			.flip-container,.front,.back,.flipper {width: 100%;height: 100%;}
+			
+			.flipper {transition: 0.6s;transform-style: preserve-3d;position: relative;}
+			
+			.front,.back {backface-visibility: hidden;transition: 0.6s;transform-style: preserve-3d;position: absolute;top: 0;left: 0;}
+			
+			.front {z-index: 2;transform: rotateY(0deg);}
+			
+			.back {transform: rotateY(-180deg);}
+			
+			.back .p-box{width: 100%;height: 100%;background:url(img/index/baFlower.png) left top repeat;}
+			.back .p-back{font-size: 14px;color: white;padding: 25px;text-align: justify;/*width: 237px;height: 190px;*/}
+			.back .p-back b.name{margin-top: 20px;display: inline-block;}
+			
+			.vertical.flip-container {position: relative;}
+			
+			.vertical .back {transform: rotateX(180deg);}
+			
+			.vertical.flip-container:hover .back,.vertical.flip-container.cur .back {transform: rotateX(0deg);}
+			
+			.vertical.flip-container:hover .front,.vertical.flip-container.cur .front {transform: rotateX(180deg);}
+			
+			/*.front.pic {background: url(img/index/index_img31.png) center center no-repeat;}
+			.back.pic1{background: url(img/index/index_img31.png) center center no-repeat;}
+			*/
+			
+			.ie6{display: none;}
+		</style>
+		<!--[if lt IE 7]>
+		<style type="text/css">
+			.ie6{width: 100%;height: 40px;line-height:40px;position: fixed;text-align: center;font-size: 16px;z-index:99999;display:block;background-color:#ffff9b;color:#e27839;}
+			.ie6 a{text-decoration: none;color:#0088cc;}
+		</style>
+		<![endif]-->
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="min-width: 1200px;" class="gold">
+		<div class="ie6">您现在使用的浏览器版本过低，可能会导致部分图片和信息的缺失，为获得更好的用户体验。请立即<a href="http://www.microsoft.com/china/windows/IE/upgrade/index.aspx">免费升级</a>或下载使用最新版<a href="http://www.microsoft.com/china/windows/IE/upgrade/index.aspx">浏览器</a></div>
+		<div class="zhezhao">
+			<div style="width: 136px;height: 136px;position: fixed;left:90%;top:80%;z-index: 10001;">
+				<p id="DragOnline" style="position: absolute;width: 136px;height: 104px;left: 0px;top:0px;cursor: move;" title="拖拽可移动哦！"></p>
+				<span style="height: 136px;width: 136px;overflow: hidden;display:inline-block;cursor: move;"><span class="gopng_kefu"></span></span>
+				<p style="width: 100%;height: 32px;position: absolute;left: 0px;bottom: 0px;z-index: 10002;cursor: pointer;"></p><p class="showTxt"><a>说不定休息休息手气又回来了呢，到时候赢了钱还不是像老哥一样想吃什么就吃点什么。</a><i></i></p></div>
+		</div>
+		<div class="header_top">
+			<div class="header">
+				<div class="top">
+					<div class="tp_l tp_lines">
+						<div class="tp_name"><label class="lb_change">线路切换：<span><span class="gopng_indexNew_02"></span></span></span></label>
+							<div class="tp_other">
+								<p><a>线路</a><span class="speed"><b>手动测速</b><i class="i-img"></i></span></p>
+								<p><a>线路1</a><span>00ms</span></p>
+								<p><a>线路2</a><span>30ms</span></p>
+								<p><a>线路3</a><span>60ms</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r">
+						<div>
+							<div style="float:left;margin-left: 23px;"><label class="userIco"><span class="gopng_indexNew_01"></span></span></label><a class="userName lb_change cur" href="#">xun2016</a> 欢迎您</div>
+							<div class="tp_l tp_lines tp-eyes" style="margin-left: 25px;padding-left: 10px;">
+								<div class="tp_name tp_cash" style="padding-left: 15px;padding-right: 2px;"><label class="lb_change lb_eyes" price="999,999,999">
+									<span class="eye">
+										<span class="gopng_eyes_outer"><span class="gopng_eyes"></span></span>
+									</span>
+									余额：<a>999,999,999</a><span><span class="gopng_indexNew_02"></span></span></label>
+									<div class="tp_other" style="left: -10px;">
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye">
+											<span class="gopng_eyes_outer"><span class="gopng_eyes"></span></span>
+										</span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye">
+											<span class="gopng_eyes_outer"><span class="gopng_eyes"></span></span>
+										</span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye">
+											<span class="gopng_eyes_outer"><span class="gopng_eyes"></span></span>
+										</span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye">
+											<span class="gopng_eyes_outer"><span class="gopng_eyes"></span></span>
+										</span>AA余额：<a>999,999,999</a></label></p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+					
+					
+					<div class="tp_r_r tp_l tp_c">
+						<a class="a_quit cur" href="#"><label class="quit"><span class="gopng_indexNew_04"></span></span></label>退出</a>
+					</div>
+					<div class="tp_r_r tp_l tp_lines">
+						<div class="tp_name tp_cash" style="padding-left: 9px;padding-right: 9px;"><label class="lb_change">换肤<span><span class="gopng_indexNew_02"></span></span></label>
+							<div class="tp_other skin">
+								<p><label rel="gold">蓝色炫彩</label></p>
+								<p><label rel="purple">粉色炫彩</label></p>
+								<p><label rel="green">绿色炫彩</label></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r_r tp_l tp_lines">
+						<div class="tp_name tp_cash" style="padding-left: 9px;padding-right: 9px;"><label class="lb_change">声音<span><span class="gopng_indexNew_02"></span></span></label>
+							<div class="tp_other voice">
+								<p><label>打开</label></p>
+								<p><label>关闭</label></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r_r tp_l tp_c"><label class="info"><span class="email"><span class="gopng_indexNew_03"></span></span></span>信息(<a class="cur" href="#">99</a>)</label></div>
+					<div class="tp_r_r tp_l tp_c"><a class="save tp_name" href="pay_online.html">提现</a></div>
+					<div class="tp_r_r tp_l tp_c"><a class="save tp_name" href="pay_online.html">转账</a></div>
+					<div class="tp_r_r tp_l tp_c">
+						<a class="save tp_name" href="pay_online.html">
+						<label class="save-money">
+						<!--<img src="img/index/money-img.png" alt="img"/>-->
+						<span class="gopng_money-img_outer"><span class="gopng_money-img"></span></span>
+						存款</label>
+					</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="header_box">
+			<div class="nav_box">
+				<div class="nav">
+					<div class="nav-left"><a href="index.html"><img src="img/index/indexNew_logo.png" alt="img" /></a></div>
+					<div class="nav-right">
+						<ul>
+							<li><a href="index.html">游戏首页</a></li>
+							<li><a href="member.html">会员中心</a></li>
+							<li><a href="buyroom.html">合买大厅</a></li>
+							<li><a href="notice.html">通知公告</a></li>
+							<li><a href="down.html">下载大厅</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content_box" style="background-position: center 478px;*min-height: 2100px;">
+			<div class="banner">
+				<span><img src="img/banner-01-04.jpg" style="width:100%;visibility: hidden;"/></span>
+				<img src="img/banner-01-04.jpg" alt="img" style="display:inline;opacity: 1;" />
+				<img src="img/banner-01-03.jpg" alt="img" />
+				<img src="img/banner-01-02.jpg" alt="img" />
+				<img src="img/banner-01-01.jpg" alt="img" />
+				<div class="pgCount"><i class="cured"></i><i></i><i></i><i></i></div>
+			</div>
+			<div class="vioce">
+				<div class="vioce_txt">
+					<span class="gopng_notice_outer"><span class="gopng_notice"></span></span>
+					<ul style="margin-top: -92px;">
+						<li>通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>1通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>2通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>3通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>4通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>5通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>6通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>7通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>8通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>9通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+						<li>10通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划通知标题：通知内容奥斯卡级法师快捷回复看见爱上很多刚卡机还是赶快结婚撒地方各级俺是快乐到家话费卡技术的规划</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="lottery-game">
+					<p class="game-name"><span class="sp-title"><i class="i-block"></i>彩票游戏</span>
+						<!--<span class="sp-title-small">LOTTERY<br />GAME</span>-->
+						<b style="font-weight: initial;font-size: 32px;">LOTTERY</b>
+					</p>
+					<ul class="ul-gameType">
+						<li class="li-one">
+							<div class="sel div-li-top flip-container bg-color-clear">
+								<a href="touzhu.html">
+									<div class="flipper">
+										<div class="front pic bg-color1">
+											<span class="gopng_index_img01_outer"><span class="gopng_index_img01"></span></span>
+											<div class="sel-name"><p class="sel-p-title">多乐妙妙彩</p></div>
+										</div>
+										<div class="back pic1 bg-color1">
+											<div class="p-box">
+												<p class="p-back">
+													完全自主研发的即开型高频时时彩游戏。开奖速度快，一对一开奖，无需等待；想开就开想停就停，24小时不间断随买随开；采用国际标准同步，受NCGAC机构监管。
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="sel div-li-bot flip-container bg-color-clear">
+								<a href="touzhu.html">
+									<div class="flipper">
+										<div class="front pic bg-color2">
+											<span class="gopng_index_img02_outer"><span class="gopng_index_img02"></span></span>
+											<div class="sel-name"><p class="sel-p-title">韩国1.5分彩</p></div>
+										</div>
+										<div class="back pic1 bg-color2">
+											<div class="p-box">
+												<p class="p-back">
+													是由韩国J-Lotto所发行的Keno号码进行组合取尾数的彩票游戏，简单刺激，全天无休。<br />
+													<b class="name">销售时间：</b><br />
+													00:00-24:00，90秒一期，全天960期
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color3">
+										<span class="gopng_index_img03_outer"><span class="gopng_index_img03"></span></span>
+										<div class="sel-name"><p class="sel-p-title">重庆时时彩</p></div>
+									</div>
+									<div class="back pic1 bg-color3">
+										<div class="p-box">
+											<p class="p-back">
+												国内最早的时时彩游戏，也是目前最主流的玩法。<br />
+												<b class="name">销售时间：</b><br />
+												10:00-22:00（10分钟一期，共72期）22:00-02:00（5分钟一期，共48期）全天120期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-three flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color4">
+										<span class="gopng_index_img04_outer"><span class="gopng_index_img04"></span></span>
+										<div class="sel-name"><p class="sel-p-title">多乐分分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color4">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“一分钟一开奖”的时时彩，与流行的重庆时时彩玩法和开奖方式相同；采用国际标准同步，受NCGAC机构监管。<br />
+												<b class="name">销售时间：</b><br />
+												07:00至次日06:00，1分钟/期，全天1380期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-four flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color5">
+										<span class="gopng_index_img05_outer"><span class="gopng_index_img05"></span></span>
+										<div class="sel-name"><p class="sel-p-title">北京PK10</p></div>
+									</div>
+									<div class="back pic1 bg-color5">
+										<div class="p-box">
+											<p class="p-back">
+												中国福利彩票“PK拾” 游戏，简称“PK拾”，由中国福利彩票发行管理中心统一发行，由北京市福利彩票发行中心承销的趣味型彩票游戏。<br />
+												<b class="name">销售时间：</b><br />
+												09:05-11:55，5分钟一期，共180期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-three flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color6">
+										<span class="gopng_index_img06_outer"><span class="gopng_index_img06"></span></span>
+										<div class="sel-name"><p class="sel-p-title">山东11选5</p></div>
+									</div>
+									<div class="back pic1 bg-color6">
+										<div class="p-box">
+											<p class="p-back">
+												又名“十一运夺金”，全国首家11选5玩法。玩法简单多样，中奖非常容易，是目前最划算的小盘彩票。<br />
+												<b class="name">销售时间：</b><br />
+												09:05-21:55，10分钟/期，全天78期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-four flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color7">
+										<span class="gopng_index_img07_outer"><span class="gopng_index_img07"></span></span>
+										<div class="sel-name"><p class="sel-p-title">福彩3D</p></div>
+									</div>
+									<div class="back pic1 bg-color7">
+										<div class="p-box">
+											<p class="p-back">
+												中国福利彩票出品的数字型彩票，玩法简单，是更易组合和分析的智力型彩种。<br />
+												<b class="name">销售时间：</b><br />
+												当日20:20停止销售，20:30开奖，每天1期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<p class="ul-right">展开<span><span class="gopng_indexNew_down_outer"><span class="gopng_indexNew_down"></span></span></span></p>
+					</ul>
+					
+					<ul class="ul-gameType-small">
+						<li class="sel flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color11">
+										<span class="gopng_index_img21_outer"><span class="gopng_index_img21"></span></span>
+										<div class="sel-name"><p class="sel-p-title">多乐11选5</p></div>
+									</div>
+									<div class="back pic1 bg-color11">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“一分钟一开奖”的11选5彩票游戏，简单刺激，玩法和山东、广东11选5完全一致。<br />
+												<b class="name">销售时间：</b><br />
+												00:00-23:00，1分钟/期，全天1380期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color12">
+										<span class="gopng_index_img22_outer"><span class="gopng_index_img22"></span></span>
+										<div class="sel-name"><p class="sel-p-title">新疆时时彩</p></div>
+									</div>
+									<div class="back pic1 bg-color12">
+										<div class="p-box">
+											<p class="p-back">
+												开奖节奏快、中奖率高、玩法多样、简单。<br />
+												<b class="name">销售时间：</b><br />
+												12:10-02:00，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color13">
+										<span class="gopng_index_img23_outer"><span class="gopng_index_img23"></span></span>
+										<div class="sel-name"><p class="sel-p-title">江西11选5</p></div>
+									</div>
+									<div class="back pic1 bg-color13">
+										<div class="p-box">
+											<p class="p-back">
+												又称“多乐彩”，既可玩乐透，又可选排列，投注方式灵活玩法简单多样，中奖率返奖率高。<br />
+												<b class="name">销售时间：</b><br />
+												09:00-22:00，10分钟/期，全天78期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color14">
+										<span class="gopng_index_img24_outer"><span class="gopng_index_img24"></span></span>
+										<div class="sel-name"><p class="sel-p-title">广东11选5</p></div>
+									</div>
+									<div class="back pic1 bg-color14">
+										<div class="p-box">
+											<p class="p-back">
+												奖金/返奖固定、开奖快、返奖高、投注灵活、好玩易中、经济实惠。<br />
+												<b class="name">销售时间：</b><br />
+												09:10-23:00，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color15">
+										<span class="gopng_index_img25_outer"><span class="gopng_index_img25"></span></span>
+										<div class="sel-name"><p class="sel-p-title">多乐3D</p></div>
+									</div>
+									<div class="back pic1 bg-color15">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“一分钟一开奖”的3D彩票游戏，简单刺激，玩法和福彩3D完全一致。<br />
+												<b class="name">销售时间：</b><br />
+												00:00-23:00，1分钟/期，全天1380期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color16">
+										<span class="gopng_index_img26_outer"><span class="gopng_index_img26"></span></span>
+										<div class="sel-name"><p class="sel-p-title">上海时时乐</p></div>
+									</div>
+									<div class="back pic1 bg-color16">
+										<div class="p-box">
+											<p class="p-back">
+												上海时时乐是指从000-999的数字中选择一个3位数、2位数或1位数为投注号码进行投注的数字型彩票，投注方式分为单选投注、组选投注。
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color17">
+										<span class="gopng_index_img27_outer"><span class="gopng_index_img27"></span></span>
+										<div class="sel-name"><p class="sel-p-title">体彩P3P5</p></div>
+									</div>
+									<div class="back pic1 bg-color17">
+										<div class="p-box">
+											<p class="p-back">
+												中国体育彩票出品的数字型彩票，玩法简单，是更易组合和分析的智力型彩种。<br />
+												<b class="name">销售时间：</b><br />
+												当日20:20停止销售，20:30开奖，每天1期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color18">
+										<span class="gopng_index_img28_outer"><span class="gopng_index_img28"></span></span>
+										<div class="sel-name"><p class="sel-p-title">江苏快三</p></div>
+									</div>
+									<div class="back pic1 bg-color18">
+										<div class="p-box">
+											<p class="p-back">
+												开奖快速、趣味性强、返奖率高。<br />
+												<b class="name">销售时间：</b><br />
+												08:30-22:10，10分钟一期，共82期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color19">
+										<span class="gopng_index_img29_outer"><span class="gopng_index_img29"></span></span>
+										<div class="sel-name"><p class="sel-p-title">多乐三分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color19">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“三分钟一开奖”的时时彩，不快不慢刚刚好，与流行的重庆时时彩玩法和开奖方式相同；采用国际标准同步，受NCGAC机构监管。<br />
+												<b class="name">销售时间：</b><br />
+												07:00至次日06:00，3分钟/期，全天460期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color19-0">
+										<span class="gopng_index_img30_outer"><span class="gopng_index_img30"></span></span>
+										<div class="sel-name"><p class="sel-p-title">多乐五分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color19-0">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“五分钟一开奖”的时时彩，全天候享受高速开奖带来的乐趣，与流行的重庆时时彩玩法和开奖方式相同；采用国际标准同步，受NCGAC机构监管。<br />
+												<b class="name">销售时间：</b><br />
+												07:00至次日06:00，1分钟/期，全天276期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color19-1">
+										<span class="gopng_index_img30-1_outer"><span class="gopng_index_img30-1"></span></span>
+										<div class="sel-name"><p class="sel-p-title">天津时时彩</p></div>
+									</div>
+									<div class="back pic1 bg-color19-1">
+										<div class="p-box">
+											<p class="p-back">
+												在线即投、即开、即兑，简单刺激，玩法多样，五星到一星，大小单双应有尽有。<br />
+												<b class="name">销售时间：</b><br />
+												09:00-23:05，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!--2016-10-10start-->
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color18">
+										<span class="gopng_index_img28_outer"><span class="gopng_index_img30-2"></span></span>
+										<div class="sel-name"><p class="sel-p-title">北京五分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color18">
+										<div class="p-box">
+											<p class="p-back">
+												开奖快速、趣味性强、返奖率高。<br />
+												<b class="name">销售时间：</b><br />
+												08:30-22:10，10分钟一期，共82期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color19-0">
+										<span class="gopng_index_img30_outer"><span class="gopng_index_img30-3"></span></span>
+										<div class="sel-name"><p class="sel-p-title">台湾五分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color19-0">
+										<div class="p-box">
+											<p class="p-back">
+												完全自主研发“五分钟一开奖”的时时彩，全天候享受高速开奖带来的乐趣，与流行的重庆时时彩玩法和开奖方式相同；采用国际标准同步，受NCGAC机构监管。<br />
+												<b class="name">销售时间：</b><br />
+												07:00至次日06:00，1分钟/期，全天276期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color14">
+										<span class="gopng_index_img24_outer" style="height: 124px;"><span class="gopng_index_img30-4"></span></span>
+										<div class="sel-name"><p class="sel-p-title">新加坡2分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color14">
+										<div class="p-box">
+											<p class="p-back">
+												奖金/返奖固定、开奖快、返奖高、投注灵活、好玩易中、经济实惠。<br />
+												<b class="name">销售时间：</b><br />
+												09:10-23:00，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!--2016-10-10end-->
+						<!--2016-11-18start-->
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color18">
+										<span class="gopng_index_img30_outer" style="width:137px;height: 85px;"><span class="gopng_index_img30-4" style="background-position: -128px -1200px;"></span></span>
+										<div class="sel-name"><p class="sel-p-title">纷纷PK10</p></div>
+									</div>
+									<div class="back pic1 bg-color18">
+										<div class="p-box">
+											<p class="p-back">
+												奖金/返奖固定、开奖快、返奖高、投注灵活、好玩易中、经济实惠。<br />
+												<b class="name">销售时间：</b><br />
+												09:10-23:00，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color15">
+										<span class="gopng_index_img30-1_outer" style="width: 138px;height: 113px;"><span class="gopng_index_img30-1" style="background-position: 0px -1326px;"></span></span>
+										<div class="sel-name"><p class="sel-p-title">东京1.5分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color15">
+										<div class="p-box">
+											<p class="p-back">
+												在线即投、即开、即兑，简单刺激，玩法多样，五星到一星，大小单双应有尽有。<br>
+												<b class="name">销售时间：</b><br>
+												09:00-23:05，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!--2016-11-18end-->
+						<!--2016-12-8-->
+						<li class="sel li-two flip-container bg-color-clear">
+							<a href="touzhu.html">
+								<div class="flipper">
+									<div class="front pic bg-color14">
+										<span class="gopng_index_img24_outer" style="width: 138px;height: 118px;"><span class="gopng_index_img30-4" style="background-position: -147px -1321px;"></span></span>
+										<div class="sel-name"><p class="sel-p-title">新东京1.5分彩</p></div>
+									</div>
+									<div class="back pic1 bg-color14">
+										<div class="p-box">
+											<p class="p-back">
+												奖金/返奖固定、开奖快、返奖高、投注灵活、好玩易中、经济实惠。<br />
+												<b class="name">销售时间：</b><br />
+												09:10-23:00，10分钟/期，全天84期
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!--2016-12-8-->
+					</ul>
+					
+				</div>
+				
+				<div class="lottery-game">
+					<p class="game-name"><span class="sp-title"><i class="i-block"></i>电子游戏</span><b style="font-weight: initial;font-size: 32px;margin-left: 4px;">E-Game</b></p>
+					<ul class="ul-gameType">
+						<li class="sel flip-container">
+							<a href="javascript:;">
+								<div class="flipper">
+									<div class="front pic bg-color1">
+										<span class="gopng_index_img31_outer"><span class="gopng_index_img31"></span></span>
+										<div class="sel-name"><p class="sel-p-title">捕鱼天下</p></div>
+									</div>
+									<div class="back pic1 bg-color1">
+										<div class="p-box">
+											<p class="p-back">
+													目前市面上玩得最好游戏机之一，游戏采用可供多人同时娱乐的六人机台，100%完美移植。玩家可以在
+	多种模式下进行游戏，开动捕鱼炮击向画面中各种不同品种及花色的鱼类，从而获得奖励。
+												</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-three flip-container">
+							<a href="javascript:;">
+								<div class="flipper">
+									<div class="front pic bg-color6">
+										<span class="gopng_index_img32_outer"><span class="gopng_index_img32"></span></span>
+										<div class="sel-name"><p class="sel-p-title">水果机</p></div>
+									</div>
+									<div class="back pic1 bg-color6">
+										<div class="p-box">
+											<p class="p-back">
+												是一款以新颖的水果机作为游戏主题，融合了博彩类游戏元素。实体机台100%完美移值。在爽快的消除中，来享受的有趣的水果大餐吧。
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-three flip-container">
+							<a href="javascript:;">
+								<div class="flipper">
+									<div class="front pic bg-color2">
+										<span class="gopng_index_img33_outer"><span class="gopng_index_img33"></span></span>
+										<div class="sel-name"><p class="sel-p-title">单挑王</p></div>
+									</div>
+									<div class="back pic1 bg-color2">
+										<div class="p-box">
+											<p class="p-back">
+												游戏厅非常流行的一款休闲类游戏，又称扑克老虎机。实体机台100%完美移值。简单操作，比拼运气，刺激疯狂，比一比谁才是赌场大亨。
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="sel li-four flip-container">
+							<a href="javascript:;">
+								<div class="flipper">
+									<div class="front pic bg-color7">
+										<span class="gopng_index_img34_outer"><span class="gopng_index_img34"></span></span>
+										<div class="sel-name"><p class="sel-p-title">金鲨银鲨</p></div>
+									</div>
+									<div class="back pic1 bg-color7">
+										<div class="p-box">
+											<p class="p-back">
+												这是目前游戏厅里最流行最刺激的大型老虎机。实体机台100%完美移植。游戏操作简单，极易上手，是打发无聊时间的神器。
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="lottery-game">
+					<p class="game-name"><span class="sp-title"><i class="i-block"></i>竞技体育</span><b style="font-weight: initial;font-size: 32px;margin-left: 4px;">Sports</b></p>
+					<ul class="ul-gameType">
+						<li class="sel li-long bg-color21">
+							<!--<div class="sel-name"><p class="sel-p-title">多乐分分彩</p><p class="sel-p-title-small">夜间独有...</p></div>
+							<span class="mask"><span><i></i><em>多乐<br>秒秒彩</em></span></span>-->
+						</li>
+						<li class="sel li-three bg-color4">
+							<p style="margin-top: 88px;color: white;font-size: 30px;line-height: 32px;text-align: center;font-weight: bolder;">敬请<br />期待</p>
+							<!--<div class="sel-name"><p class="sel-p-title">多乐分分彩</p><p class="sel-p-title-small">夜间独有...</p></div>
+							<span class="mask"><span><i></i><em>多乐<br>秒秒彩</em></span></span>-->
+						</li>
+						<li class="sel li-four bg-color7">
+							<p style="margin-top: 88px;color: white;font-size: 30px;line-height: 32px;text-align: center;font-weight: bolder;">敬请<br />期待</p>
+							<!--<div class="sel-name"><p class="sel-p-title">多乐分分彩</p><p class="sel-p-title-small">夜间独有...</p></div>
+							<span class="mask"><span><i></i><em>多乐<br>秒秒彩</em></span></span>-->
+						</li>
+					</ul>
+					
+				</div>
+				
+				
+			</div>
+		
+		
+		</div>
+		
+		<div class="footer">
+			<div class="partner">
+				<p class="partner-name">合作平台：</p>
+				<div class="partner-txt">
+					<p class="partner-imgs">
+						<!--<img src="img/index/indexNew_06.png" alt="img"/>
+						<img src="img/index/indexNew_07.png" alt="img"/>
+						<img src="img/index/indexNew_08.png" alt="img"/>
+						<img src="img/index/indexNew_09.png" alt="img"/>
+						<img src="img/index/indexNew_10.png" alt="img"/>
+						<img src="img/index/indexNew_11.png" alt="img"/>
+						<img src="img/index/indexNew_12.png" alt="img"/>
+						<img src="img/index/indexNew_15.png" alt="img"/>-->
+						<span class="gopng_indexNew_06_outer"><span class="gopng_indexNew_06"></span></span>
+						<span class="gopng_indexNew_07_outer"><span class="gopng_indexNew_07"></span></span>
+						<span class="gopng_indexNew_08_outer"><span class="gopng_indexNew_08"></span></span>
+						<span class="gopng_indexNew_09_outer"><span class="gopng_indexNew_09"></span></span>
+						<span class="gopng_indexNew_10_outer"><span class="gopng_indexNew_10"></span></span>
+						<span class="gopng_indexNew_11_outer"><span class="gopng_indexNew_11"></span></span>
+						<span class="gopng_indexNew_12_outer"><span class="gopng_indexNew_12"></span></span>
+						<span class="gopng_indexNew_15_outer"><span class="gopng_indexNew_15"></span></span>
+					</p>
+					<div class="partner-ma2">
+						<span class="sp-img">
+						<!--<img src="img/index/indexNew_13.png" alt="img" />-->
+						<span class="gopng_mobile_hover_outer"><span class="gopng_mobile_hover"></span></span>
+						</span>
+						<p class="p-ts">
+							<span class="sp-name">二维码信息</span><br />
+							<span class="sp-txt">二维码信息二维码信息</span><br />
+							<span class="sp-user">微信账号：zhogtiancaipiao</span>
+						</p>
+					</div>
+					<div class="partner-ma2" style="border-left: 1px dashed white;padding-left: 20px;">
+						<span class="sp-img">
+						<!--<img src="img/index/indexNew_13.png" alt="img" />-->
+						<span class="gopng_wxpublic_hover_outer"><span class="gopng_wxpublic_hover"></span></span>
+						</span>
+						<p class="p-ts">
+							<span class="sp-name">二维码信息</span><br />
+							<span class="sp-txt">二维码信息二维码信息</span><br />
+							<span class="sp-user">微信账号：zhogtiancaipiao</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="footBottom-box">
+				<div class="footBottom">
+					<div class="left">2010 – 2016 福彩信息 版权所有 All Rights Reserved.</div>
+					<div class="right">
+						<span><a href="index.html">游戏首页</a></span>
+						<span>|</span>
+						<span><a href="member.html">会员中心</a></span>
+						<span>|</span>
+						<span><a href="buyroom.html">合买大厅</a></span>
+						<span>|</span>
+						<span><a href="notice.html">通知公告</a></span>
+						<span>|</span>
+						<span><a href="down.html">下载大厅</a></span>
+						<span>|</span>
+						<span><a href="help.html">帮助中心</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<bgsound class="bgau" src="img/video/bgMid.mid" loop=3 />
+		<audio class="au" src="img/video/song.mp3" autoplay="autoplay"  loop="loop"></audio>
+
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//音乐开始关闭
+			function stop(){
+			$('.bgau').attr('src','')
+			$('.au').attr('src','')
+			}
+			function start(){
+				$('.bgau').attr('src','img/video/bgMid.mid')
+				$('.au').attr('src','img/video/song.mp3')
+			}
+			
+		
+			//切换
+			function changes(index){
+				//小矩形切换
+				$('.banner .pgCount i').removeClass('cured');
+				$('.banner .pgCount i').eq(index).addClass('cured');
+				
+				//大图切换
+				$('.banner>img').eq(index).siblings('img').stop().animate({"opacity":"0"},1000);
+				$('.banner>img').eq(index).stop().animate({"opacity":"1"},1000);
+			}
+			//自动随机翻牌
+			function autoFilp(){
+//				var lenOne=$('.lottery-game .ul-gameType').eq(0).find('.sel').length;
+//				setInterval(function(){
+//					var rd=Math.floor(Math.random()*lenOne);
+//					$('.lottery-game .ul-gameType').eq(0).find('.sel').removeClass('cur');
+//					$('.lottery-game .ul-gameType').eq(0).find('.sel').eq(rd).addClass('cur');
+//				},3000);
+//				
+//				var lenTwo=$('.lottery-game').eq(1).find('.sel').length;
+//				setInterval(function(){
+//					var rd1=Math.floor(Math.random()*lenTwo);
+//					$('.lottery-game').eq(1).find('.sel').find('.mask').removeClass('cur');
+//					$('.lottery-game').eq(1).find('.sel').eq(rd1).find('.mask').addClass('cur');
+//					$('.lottery-game').eq(1).find('.sel').removeClass('cur');
+//					$('.lottery-game').eq(1).find('.sel').eq(rd1).addClass('cur');
+//				},3500);
+				
+				
+				//客服抖动
+				setInterval(function(){
+					var l=$('.DragOnline').css("left")
+					var t=$('.DragOnline').css("top")
+					autoShade(l,t)
+				},10000)
+				//客服说话
+				if (window.navigator.userAgent.indexOf("MSIE")>=1) {
+					$('.showTxt').remove()
+				}
+				setInterval(function(){
+					var txts=[
+						'啥也别说了，赶紧筹钱吧。',
+						'爱拼才会赢，敢下就会红！',
+						'只要思想不滑坡，办法总比困难多！',
+						'搏一搏，单车变摩托，赌一赌，摩托变路虎！',
+						'要想富，下重注，不怕输的苦，就怕断了赌！',
+						'小赌养家糊口，大赌发家致富！',
+						'哪家小孩天天哭，哪个赌友天天输？',
+						'说不定休息休息手气又回来了呢，到时候赢了钱还不是像老哥一样想吃什么就吃点什么。',
+						'点我头像可以拖拽着走哦！'
+						]
+					var rd1=Math.floor(Math.random()*txts.length)
+					autoShowDialog(txts[rd1])
+				},8000)
+			
+				
+			}
+			
+		function autoShade(l,t){
+			var cos=0;
+		    var f1=setInterval(function(){
+				cos++;
+				var v=Math.cos(cos)>0?1:-1
+				var rd=Math.random()*5*v
+				$('.DragOnline').css({'left':parseInt(l,10)+rd,'top':parseInt(t,10)+rd*0.08})
+				if(cos>50){
+					$('.DragOnline').css({'left':l,'top':t})
+					clearInterval(f1)
+				}
+			},10)
+		}
+		function autoShowDialog(txt){
+			var time=0
+			$('.showTxt a').html(txt)
+			var f2=setInterval(function(){
+				time++
+				if(time>500){
+					$('.showTxt').removeClass('show')
+					clearInterval(f2)
+				}else{
+					$('.showTxt').addClass('show')
+				}
+			},10)
+		}
+		$(function() {
+				autoFilp();
+				
+				//音乐打开关闭
+				$('.header .top .tp_name .tp_other.voice p').on('click',function(){
+					var id=$(this).index()
+					switch(id){
+						case 0:
+							start()
+							break
+						case 1:
+							stop()
+							break
+					}
+				})
+				
+				//睁眼 闭眼
+				$('.lb_eyes .eye').on('click',function(){
+					if(!$(this).parent().hasClass('eyc')){
+						$(this).parent().addClass('eyc')
+						$(this).parent().children('a').html('***********')
+					}else{
+						$(this).parent().removeClass('eyc')
+						$(this).parent().children('a').html($(this).parent().attr('price'))
+					}
+				})
+				
+				//banner切换
+				var index=0,count=$('.banner>img').length,
+					f1,f2,
+					state=false;
+				f1=setInterval(function(){
+					index=index+1;
+					if(index>=count){
+						index=0;
+					}
+					changes(index);
+				},7000);
+				$('.banner .pgCount i').on('click mouseover',function(){
+					index=$(this).index();
+					
+					changes(index);
+					
+					clearInterval(f1);
+					clearTimeout(f2);
+					f2=setTimeout(function(){
+						f1=setInterval(function(){
+							index=index+1;
+							if(index>=count){
+								index=0;
+							}
+							changes(index);
+						},7000);
+					},5000)
+				})
+				
+				//滚轮滚动页顶即可浮动
+				$(window).scroll(function() {
+					if ($(this).scrollTop() != 0) {
+						$('.header_top').addClass('cur');
+					} else {
+						$('.header_top').removeClass('cur');
+					};
+				});
+				//广播按一定时间自动切换
+				var count_li = $('.vioce_txt ul li').length;
+				var height_li = $('.vioce_txt ul li').eq(0).height();
+				var sumHeight = count_li * height_li;
+				var h = 0;
+				setInterval(function() {
+					h = h - height_li;
+					if (h * (-1) == sumHeight) {
+						height_li = (-1) * height_li;
+						h = h - height_li;
+					} else if (h == 0) {
+						height_li = (-1) * height_li;
+					}
+					$('.vioce_txt ul').animate({
+						'marginTop': h
+					});
+				}, 5000);
+				
+				//展示更多类型
+				$('.content .ul-gameType .ul-right').on("click",function(){
+					if($(this).text()=="展开"){
+						$(this).html('收起<span><span class="gopng_indexNew_up_outer"><span class="gopng_indexNew_up"></span></span></span>');
+						$('.ul-gameType-small').stop().slideDown();
+					}else{
+						$(this).html('展开<span><span class="gopng_indexNew_down_outer"><span class="gopng_indexNew_down"></span></span></span>');
+						$('.ul-gameType-small').stop().slideUp();
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

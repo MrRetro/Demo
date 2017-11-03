@@ -1,0 +1,899 @@
+<!doctype html>
+<html class="gold">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>福彩信息-首页</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<style>
+			/*漏斗旋转*/
+			@-webkit-keyframes rotateIn {
+			  from {
+			    -webkit-transform-origin: center;
+			    transform-origin: center;
+			    -webkit-transform: rotate3d(0, 0, 1, -400deg);
+			    transform: rotate3d(0, 0, 1, -400deg);
+			    opacity: 0;
+			  }
+			
+			  to {
+			    -webkit-transform-origin: center;
+			    transform-origin: center;
+			    -webkit-transform: none;
+			    transform: none;
+			    opacity: 1;
+			  }
+			}
+			
+			@keyframes rotateIn {
+			  from {
+			    -webkit-transform-origin: center;
+			    transform-origin: center;
+			    -webkit-transform: rotate3d(0, 0, 1, -400deg);
+			    transform: rotate3d(0, 0, 1, -400deg);
+			    opacity: 0;
+			  }
+			
+			  to {
+			    -webkit-transform-origin: center;
+			    transform-origin: center;
+			    -webkit-transform: none;
+			    transform: none;
+			    opacity: 1;
+			  }
+			}
+			
+			.rotateIn {
+			  -webkit-animation-name: rotateIn;
+			  animation-name: rotateIn;
+			}
+
+			.animated {
+			  -webkit-animation-duration: 1s;
+			  animation-duration: 1s;
+			  -webkit-animation-fill-mode: both;
+			  animation-fill-mode: both;
+			}
+			
+			.animated.infinite {
+			  -webkit-animation-iteration-count: infinite;
+			  animation-iteration-count: infinite;
+			}
+			
+			.animated.hinge {
+			  -webkit-animation-duration: 2s;
+			  animation-duration: 2s;
+			}
+			
+			.animated.flipOutX,
+			.animated.flipOutY,
+			.animated.bounceIn,
+			.animated.bounceOut {
+			  -webkit-animation-duration: .75s;
+			  animation-duration: .75s;
+			}
+
+			/*漏斗报警摇晃*/
+			.alert img {
+			  position: relative;
+			  /*margin: -38px auto;*/
+			  width: 29px;
+			  height: 38px;
+			  -webkit-animation: alarm-2 0.1s infinite;
+			  animation: alarm-2 0.1s infinite;
+			}
+			@-webkit-keyframes alarm-2 {
+			  from {
+			    -webkit-transform: rotate(4deg);
+			  }
+			
+			  to {
+			    -webkit-transform: rotate(-4deg);
+			  }
+			}
+			@keyframes alarm-2 {
+			  from {
+			    transform: rotate(4deg);
+			  }
+			
+			  to {
+			    transform: rotate(-4deg);
+			  }
+			}
+			body{overflow-x: hidden;background-color: #051A3B;}
+			.zhezhao{width: 100%;height: 100%;background-color: black;opacity: .8;filter:alpha(opacity=80);position: absolute;left: 0px;top:0px;z-index: 999;display: none;}
+			.content_box{width:1285px;position: relative;margin-left:50%;left:-642.5px;top:0px;z-index: 999;}
+			
+			.content_box .content_touzhu .lottery_nav2 .alertInfo .alertInfo_r a.a-ifo{padding: 1px 6px;margin-left: 8px;border: 1px dotted #dc572e;font-size: 14px;cursor: pointer;}
+			.content_box .content_touzhu .lottery_nav2 .alertInfo .alertInfo_r a.a-ifo:hover,.content_box .content_touzhu .lottery_nav2 .alertInfo .alertInfo_r a.a-ifo.active{background-color: #dc572e;color: white;}
+			.box-touzhu{background-color: #051A3B !important;}
+		</style>
+		<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="gold body-touzhu">
+		<div class="zhezhao"></div>
+		<div class="header_top">
+			<div class="header">
+				<div class="top">
+					<div class="tp_l tp_lines">
+						<div class="tp_name"><label class="lb_change">线路切换：<span><span class="gopng_indexNew_02"></span></span></span></label>
+							<div class="tp_other">
+								<p><label>线路</label><span>延迟</span></p>
+								<p><label>线路1</label><span>00ms</span></p>
+								<p><label>线路2</label><span>30ms</span></p>
+								<p><label>线路3</label><span>60ms</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r">
+						<div>
+							<div style="float:left;margin-left: 23px;"><label class="userIco"><span class="gopng_indexNew_01"></span></span></label><a class="userName lb_change cur" href="#">xun2016</a> 欢迎您</div>
+							<div class="tp_l tp_lines" style="margin-left: 25px;padding-left: 10px;">
+								<div class="tp_name tp_cash" style="padding-left: 15px;padding-right: 2px;"><label class="lb_change lb_eyes" price="999,999,999"><span class="eye"></span>余额：<a>999,999,999</a><span><span class="gopng_indexNew_02"></span></span></label>
+									<div class="tp_other" style="left: -10px;">
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye"></span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye"></span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye"></span>AA余额：<a>999,999,999</a></label></p>
+										<p><label class="lb_eyes" price="999,999,999"><span class="eye"></span>AA余额：<a>999,999,999</a></label></p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+					
+					
+					<div class="tp_r_r tp_l tp_c">
+						<a class="a_quit cur" href="#"><label class="quit"><span class="gopng_indexNew_04"></span></span></label>退出</a>
+					</div>
+					<div class="tp_r_r tp_l tp_lines">
+						<div class="tp_name tp_cash" style="padding-left: 9px;padding-right: 9px;"><label class="lb_change">换肤<span><span class="gopng_indexNew_02"></span></span></label>
+							<div class="tp_other skin">
+								<p><label rel="gold">蓝色炫彩</label></p>
+								<p><label rel="purple">粉色炫彩</label></p>
+								<p><label rel="green">绿色炫彩</label></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r_r tp_l tp_lines">
+						<div class="tp_name tp_cash" style="padding-left: 9px;padding-right: 9px;"><label class="lb_change">声音<span><span class="gopng_indexNew_02"></span></span></label>
+							<div class="tp_other voice">
+								<p><label>打开</label></p>
+								<p><label>关闭</label></p>
+							</div>
+						</div>
+					</div>
+					<div class="tp_r_r tp_l tp_c"><label class="info"><span class="email"><span class="gopng_indexNew_03"></span></span></span>信息(<a class="cur" href="#">99</a>)</label></div>
+					<div class="tp_r_r tp_l tp_c"><a class="save tp_name" href="pay_online.html">提现</a></div>
+					<div class="tp_r_r tp_l tp_c"><a class="save tp_name" href="pay_online.html">转账</a></div>
+					<div class="tp_r_r tp_l tp_c"><a class="save tp_name" href="pay_online.html">存款</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="header_box">
+			<div class="nav_box">
+				<div class="nav">
+					<div class="nav-left"><a href="index.html"><img src="img/index/indexNew_logo.png" alt="img" /></a></div>
+					<div class="nav-right">
+						<ul>
+							<li><a href="index.html">游戏首页</a></li>
+							<li><a href="member.html">会员中心</a></li>
+							<li><a href="buyroom.html">合买大厅</a></li>
+							<li><a href="notice.html">通知公告</a></li>
+							<li><a href="javascript:;">下载大厅</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content_box box-touzhu">
+				<div class="banner_touzhu">
+					<div class="banner_tz">
+						<div class="btzOne">
+							<p>天津时时彩<label></label></p>
+							<!--下拉列表-->
+							<div class="btzOneDrop">
+								<p class="rect_top"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+								<p class="rect_center"></p>
+								<p class="btzOneDrop_Txt">
+									<span class="title"><img src="img/index/touzhu_titile.png" alt="img" /></span>
+									<span class="contenTxt"><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a><a href="#">急速秒秒彩 </a></span>
+								</p>
+							</div>
+							<!--下拉列表-->
+						</div>
+						<div class="btzTwo">
+							<div class="btzTwo_l">
+								<p>第<a href="#">20160419-026</a>期&nbsp;&nbsp;&nbsp;&nbsp;截止时间还有：</p>
+							</div>
+							<div class="btzTwo_r">
+								<img src="img/touzhu_loudou.png" alt="img" style="margin-right:10px;float: left;"/>
+								<span class="timebg">19</span>
+								<span class="maohao"><label></label><label></label></span>
+								<span class="timebg">19</span>
+								<span class="maohao"><label></label><label></label></span>
+								<span class="timebg">30</span>
+							</div>
+						</div>
+						<div class="btzThree group">
+							<div class="btzThree_l">
+								<p>第<a href="#">20160419-02500000000</a>期</p>
+							</div>
+							<div class="btzThree_c more5"><a id="1">3</a><a id="2">5</a><a id="3" class="cur">6</a><a id="4" class="cur">7</a><a id="5" class="cur">8</a><a id="6">3</a><a id="7">5</a><a id="8">6</a><a id="9">7</a><a id="10">8</a></div>
+							
+							<div class="btzThree_c_c">
+								<p><label class="name">三星状态：</label><label class="desc">组六</label></p>
+								<p class="spacel"><label class="name">二星和值：</label><label class="desc">9</label></p>
+								<p><label class="name">三星和值：</label><label class="desc">18</label></p>
+								<p><label class="name">大小单双：</label><label class="desc">小大 </label><label class="desc">小单 </label><label class="desc">双大 </label><label class="desc">双单 </label></p>
+							</div>
+							
+							<div class="btzThree_r">
+								<!--<img style="margin-top: 10px;" src="img/index/touzhu01.png" alt="img" />-->
+								<span class="gopng_touzhu01_outer"><span class="gopng_touzhu01"></span></span>
+								<p style="text-align: center;color: white;">号码走势</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+	
+				<div class="content_touzhu">
+				<!--玩法导航-->
+					<div class="nav-touzhu">
+						<div class="nav-ul">
+							<a class="cur"><span class="li-before"></span><span>最多五个字</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+							<a><span class="li-before"></span><span>五星</span></a>
+						</div>
+					</div>
+				<!--玩法导航-->
+				
+				<!--我的投注与历史投注-->
+					<div class="bet-right">
+						<div class="bet-list bet-spe">
+							<p class="title">我的投注</p>
+							<div class="bet-table">
+								<table>
+									<tr><th class="th-1">期号</th><th class="th-2">开奖号码</th><th class="th-3">前三组</th><th class="th-4">前三组</th></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+									<tr><td>20160419</td><td><a>01</a><a>01</a><a>01</a><a>01</a><a>01</a></td><td>组三</td><td>组六</td></tr>
+								</table>
+							</div>
+						</div>
+						
+						<div class="bet-list">
+							<p class="title">历史投注记录</p>
+							<div class="bet-table record-history">
+								<table>
+									<tr><th class="th-1">期号</th><th class="th-2">玩法</th><th class="th-3">投注</th><th class="th-4">状态</th></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td><a>未开奖</a></td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+										<tr><td>20160419-033</td><td>前三复式</td><td>999.9999</td><td>未开奖</td></tr>
+									</table>
+							</div>
+						</div>
+					</div>
+				<!--我的投注与历史投注-->
+				
+				<!--玩法内容-->
+				<div class="lottery_nav2">
+					<ul class="ul_type">
+						<li>
+							<span>后三直选:</span>
+							<span>                
+									<a class="lottery_nav2_xuanzhong">复式</a>
+									<a>单式</a>
+									<a>直选和值</a>
+								</span>
+						</li>
+						<li>
+							<span>后三组选:</span>
+							<span>                
+									<a>组三</a>
+									<a>组六</a>
+									<a>混合组选</a>
+								</span>
+						</li>
+					</ul>
+					<!--提示信息-->
+					<div class="alertInfo">
+						<div class="alertInfo_l"><a>玩法提示:</a>从个、十、百位各选一个号码组成一注。</div>
+						<div class="alertInfo_r"><a class="a-ifo active">冷</a><a class="a-ifo">漏</a></div>
+					</div>
+					<!--提示信息-->
+					<!--投注选号区-->
+					<div class="lottery_num">
+						<ul class="ul_unit">
+							<li>
+								<span class="lottery_num_ws">百位</span>
+								<span class="lottery_num_ball">   
+									<a class="ball" name="PCK_S_BALL" sidx="0_0" dtcpv="0" value="0">0</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_1" dtcpv="1" value="1">1</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_2" dtcpv="2" value="2">2</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_3" dtcpv="3" value="3">3</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_4" dtcpv="4" value="4">4</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_5" dtcpv="5" value="5">5</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_6" dtcpv="6" value="6">6</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_7" dtcpv="7" value="7">7</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_8" dtcpv="8" value="8">8</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="0_9" dtcpv="9" value="9">9</a>
+								</span>
+								<span class="lottery_num_tool"> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_Q">全</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_D">大</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_X">小</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_J">奇</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_EV">偶</a>									
+									<a class="tool" name="QCK_CL_RS" dtcpv="CL_RS">清</a>
+								</span>
+							</li>
+							<li name="PCK_R" idx="1" rpg="P_Q" rmin="1" rmax="10" pid="F2D_C" sely="ballxz" seln="ball">
+								<span class="lottery_num_ws" name="PCK_S_LAB">十位</span>
+								<span class="lottery_num_ball">   
+									<a class="ball" name="PCK_S_BALL" sidx="1_0" dtcpv="0" value="0">0</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_1" dtcpv="1" value="1">1</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_2" dtcpv="2" value="2">2</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_3" dtcpv="3" value="3">3</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_4" dtcpv="4" value="4">4</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_5" dtcpv="5" value="5">5</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_6" dtcpv="6" value="6">6</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_7" dtcpv="7" value="7">7</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_8" dtcpv="8" value="8">8</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_9" dtcpv="9" value="9">9</a>
+								</span>
+								<span class="lottery_num_tool"> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_Q">全</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_D">大</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_X">小</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_J">奇</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_EV">偶</a>									
+									<a class="tool" name="QCK_CL_RS" dtcpv="CL_RS">清</a>
+								</span>
+							</li>
+							<li name="PCK_R" idx="1" rpg="P_Q" rmin="1" rmax="10" pid="F2D_C" sely="ballxz" seln="ball">
+								<span class="lottery_num_ws" name="PCK_S_LAB">个位</span>
+								<span class="lottery_num_ball">   
+									<a class="ball" name="PCK_S_BALL" sidx="1_0" dtcpv="0" value="0">0</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_1" dtcpv="1" value="1">1</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_2" dtcpv="2" value="2">2</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_3" dtcpv="3" value="3">3</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_4" dtcpv="4" value="4">4</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_5" dtcpv="5" value="5">5</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_6" dtcpv="6" value="6">6</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_7" dtcpv="7" value="7">7</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_8" dtcpv="8" value="8">8</a>   
+									<a class="ball" name="PCK_S_BALL" sidx="1_9" dtcpv="9" value="9">9</a>
+								</span>
+								<span class="lottery_num_tool"> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_Q">全</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_D">大</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_X">小</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_J">奇</a> 
+									<a class="tool" name="QS_TAG" dtcpv="FV_EV">偶</a>									
+									<a class="tool" name="QCK_CL_RS" dtcpv="CL_RS">清</a>
+								</span>
+							</li>
+						</ul>
+					</div>
+					<!--投注选号区-->
+				</div>
+				<!--玩法内容-->
+				
+				<!--奖金调节栏-->
+				<div class="adjust">
+					<div class="adjust_l">
+						<p class="unit"><a class="unit_c active">元</a><a class="unit_c">角</a><a class="unit_c">分</a><a>厘</a></p>
+						<p class="times"><a onmousedown="whichElement(event,'sub')" onmouseup="whichOut()">-</a><input type="text" class="input1" value="1" id="btf_tt_multiple"><a onmousedown="whichElement(event,'add')" onmouseup="whichOut()">+</a></p>
+						<p class="lb_n">倍</p>
+					</div>
+					<div class="adjust_c"><p>已选<a class="num">2000</a>注    共<a class="price">2.00</a>元</p></div>
+				</div>
+				<!--奖金调节栏-->
+				
+				<!--展示区-->
+				<div class="showInfo">
+					<div class="showInfo_l">
+	                    <ul id="dv_selected_num_pool">
+	                    	<li>
+	                    		<p class="p-txt"><span class="one">[后三码-直选复式] -，-，2，2，2</span>
+		                    		<span class="tzmoney" name="SEL_C_ZY">  
+		                    			<label class="times">1</label>
+										<label>注</label>
+		                    			<label class="times" name="SCZY_TT">1</label>  
+		                    			<label>倍</label>  
+		                    			<label class="times" name="SCZY_M">4.0000</label>  
+		                    			<label>元</label></span>
+		                    		<span class="lottery_close" name="SEL_CLOSE">删除</span>
+	                    		</p>
+	                    		<p class="p-info"><span class="angle-top"></span><span class="sp-text">大教室的发欧舒丹<br>大教室的发欧舒丹大教室的发欧舒丹</span>
+	                    		</p>
+	                    	</li>
+	                    </ul>
+	                    <div class="rd-sels">
+	                    	<a>机选一注</a>
+	                    	<a style="margin-top:23px;">机选五注</a>
+	                    </div>
+					</div>
+					<div class="showInfo_r">
+						
+						<div class="adjust_r">
+							<p class="p_percent" style="width: 50px;margin-top: 7px;float: right;"><a class="val">1898/2.3%</a></p>
+							<p class="drag" style="float: right;"></p>
+							<p style="width: 65px;margin-top: 7px;float: right;">奖金调节</p>
+						</div>
+						
+						<p>
+							<a class="right a_clear" href="javascript:;">
+								<!--<label style="background-image:url(img/touzhu_clear.png);"></label>-->
+								<span class="gopng_touzhu_clear_outer"><span class="gopng_touzhu_clear"></span></span>
+								清空列表</a>
+							<a class="right a_add" href="javascript:;">
+								<!--<label style="background-image: url(img/touzhu_add.png);"></label>-->
+								<span class="gopng_touzhu_add_outer"><span class="gopng_touzhu_add"></span></span>
+								添加号码</a></p>
+						<p>
+							<a class="right" href="javascript:;">
+								<!--<label></label>-->
+								<span class="gopng_touzhu_partner_outer"><span class="gopng_touzhu_partner"></span></span>
+								合买跟单</a>
+							<a class="right" href="javascript:;">
+								<!--<label style="background-image:url(img/touzhu_click.png);"></label>-->
+								<span class="gopng_touzhu_click_outer"><span class="gopng_touzhu_click"></span></span>
+								我要追号</a></p>
+						<div class="subBet">
+							<a href="#">
+								<label>确认投注</label><span><span class="timeDown">倒计时</span><span>00</span>:<span>05</span>:<span>41</span></span>
+							</a>
+						</div>
+					</div>
+					
+	                <div class="showInfo_count"><p>总计：已选【<a>1</a>】  共<a>2</a>元</p><p class="dateTime"><select name="selbet">
+	                	<option value="0">一期</option>
+	                </select></p></div>
+				</div>
+				<!--展示区-->
+			</div>
+		</div>
+		
+		<div class="footer">
+			<div class="partner">
+				<p class="partner-name">合作平台：</p>
+				<div class="partner-txt">
+					<p class="partner-imgs">
+						<!--<img src="img/index/indexNew_06.png" alt="img"/>
+						<img src="img/index/indexNew_07.png" alt="img"/>
+						<img src="img/index/indexNew_08.png" alt="img"/>
+						<img src="img/index/indexNew_09.png" alt="img"/>
+						<img src="img/index/indexNew_10.png" alt="img"/>
+						<img src="img/index/indexNew_11.png" alt="img"/>
+						<img src="img/index/indexNew_12.png" alt="img"/>-->
+						<span class="gopng_indexNew_06_outer"><span class="gopng_indexNew_06"></span></span>
+						<span class="gopng_indexNew_07_outer"><span class="gopng_indexNew_07"></span></span>
+						<span class="gopng_indexNew_08_outer"><span class="gopng_indexNew_08"></span></span>
+						<span class="gopng_indexNew_09_outer"><span class="gopng_indexNew_09"></span></span>
+						<span class="gopng_indexNew_10_outer"><span class="gopng_indexNew_10"></span></span>
+						<span class="gopng_indexNew_11_outer"><span class="gopng_indexNew_11"></span></span>
+						<span class="gopng_indexNew_12_outer"><span class="gopng_indexNew_12"></span></span>
+						<img src="img/index/indexNew_15.png" alt="img"/>
+					</p>
+					<div class="partner-ma2">
+						<span class="sp-img">
+						<!--<img src="img/index/indexNew_13.png" alt="img" />-->
+						<span class="gopng_indexNew_13_outer"><span class="gopng_indexNew_13"></span></span>
+						</span>
+						<p class="p-ts">
+							<span class="sp-name">二维码信息</span><br />
+							<span class="sp-txt">二维码信息二维码信息</span><br />
+							<span class="sp-user">微信账号：zhogtiancaipiao</span>
+						</p>
+					</div>
+					<div class="partner-ma2" style="border-left: 1px dashed white;padding-left: 20px;">
+						<span class="sp-img">
+						<!--<img src="img/index/indexNew_13.png" alt="img" />-->
+						<span class="gopng_indexNew_14_outer"><span class="gopng_indexNew_14"></span></span>
+						</span>
+						<p class="p-ts">
+							<span class="sp-name">二维码信息</span><br />
+							<span class="sp-txt">二维码信息二维码信息</span><br />
+							<span class="sp-user">微信账号：zhogtiancaipiao</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="footBottom-box">
+				<div class="footBottom">
+					<div class="left">2010 – 2016 福彩信息 版权所有 All Rights Reserved.</div>
+					<div class="right">
+						<span><a href="index.html">游戏首页</a></span>
+						<span>|</span>
+						<span><a href="member.html">会员中心</a></span>
+						<span>|</span>
+						<span><a href="buyroom.html">合买大厅</a></span>
+						<span>|</span>
+						<span><a href="notice.html">通知公告</a></span>
+						<span>|</span>
+						<span><a href="down.html">下载大厅</a></span>
+						<span>|</span>
+						<span><a href="help.html">帮助中心</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//漏斗摇晃
+				$('.btzTwo_r img').addClass('animated rotateIn');
+				var state=true;
+				setInterval(function(){
+				    if(state){
+				    	$('.btzTwo_r img').removeClass('animated rotateIn');
+				    	state=false;
+				    }else{
+				    	$('.btzTwo_r img').addClass('animated rotateIn');
+				    	state=true;
+				    }
+				},5000);
+
+				//漏斗警报摇晃
+				//$('.btzTwo_r').addClass('alert');
+				
+				
+				//时分计时
+				$('.banner_touzhu .banner_tz .btzTwo .btzTwo_r .timebg').html('00');
+				$('.banner_touzhu .banner_tz .btzTwo .btzTwo_r .timebg:last-child').html('60');
+				var second=setInterval(function(){
+					var nowSecond=$('.banner_touzhu .banner_tz .btzTwo .btzTwo_r .timebg:last-child').html();
+					var newSecond=nowSecond-1;
+					if(newSecond<0){
+						newSecond=60;
+					}else if(newSecond<10){
+						newSecond='0'+newSecond;
+					}
+					$('.banner_touzhu .banner_tz .btzTwo .btzTwo_r .timebg:last-child').html(newSecond);
+				},1000)
+				
+				//分类选中 样式变换
+				$('.content_box .content_touzhu .nav-touzhu .nav-ul a').click(function(){
+					$('.content_box .content_touzhu .nav-touzhu .nav-ul a').removeClass('cur');
+					$(this).addClass('cur');
+				});
+				//分类子项选中 样式变换
+				$('.content_box .content_touzhu .lottery_nav2 .ul_type li span a').click(function(){
+					$('.content_box .content_touzhu .lottery_nav2 .ul_type li span a').removeClass('lottery_nav2_xuanzhong');
+					$(this).addClass('lottery_nav2_xuanzhong');
+				});
+				//号码球选中
+				$('.content_box .content_touzhu .lottery_nav2 .lottery_num .ball').click(function(){
+					if($(this).hasClass('active')){
+						$(this).removeClass('active');
+					}else{
+						$(this).addClass('active');
+					}
+				});
+				//号码球批量选中
+				$('.content_box .content_touzhu .lottery_nav2 .lottery_num .tool').click(function(){
+					var txt=$(this).html();
+					var f=0;//li的索引
+					f=$(this).parent().parent().index();
+					//清除全部样式
+					$('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball').removeClass('active');
+					switch(txt){
+						case '全':
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball').addClass('active');
+						  break;
+						case '大':
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball:nth-child(n+6)').addClass('active');
+						  break;
+						case '小':
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball').addClass('active');
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball:nth-child(n+6)').removeClass('active');
+						  break;
+						case '奇':
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball:nth-child(even)').addClass('active');
+						  break;
+						case '偶':
+						  $('.content_box .content_touzhu .lottery_nav2 .lottery_num .ul_unit li').eq(f).children('.lottery_num_ball').children('.ball:nth-child(odd)').addClass('active');
+						  break;
+						case '清':
+						  break;
+					}
+				});
+				
+				//点击元角分
+				$('.content_box .content_touzhu .adjust .adjust_l .unit a').click(function(){
+					$('.content_box .content_touzhu .adjust .adjust_l .unit a').removeClass('active');
+					$(this).addClass('active');
+				});
+				
+				//加减倍数
+				$('.content_box .content_touzhu .adjust .adjust_l .times a').click(function(){
+					var index =$(this).index();
+					var val=$('.content_box .content_touzhu .adjust .adjust_l .times input').val();
+					val=parseInt(val);
+					if(index==0){
+						val=val-1;
+					}else{
+						val=val+1
+					}
+					if((typeof val)=="number"){
+						if(val<=0){
+							$('.content_box .content_touzhu .adjust .adjust_l .times input').val('1');
+						}else{
+							$('.content_box .content_touzhu .adjust .adjust_l .times input').val(val);
+						}
+					}else{
+						$('.content_box .content_touzhu .adjust .adjust_l .times input').val('1');
+					}
+				});
+				//加倍文本文本框只能输入数字
+				$('.content_box .content_touzhu .adjust .adjust_l .times input').keyup(function(){       
+			        var tmptxt=$(this).val();       
+			        $(this).val(tmptxt.replace(/\D|^0/g,'1'));       
+			    }).bind("paste",function(){       
+			        var tmptxt=$(this).val();       
+			        $(this).val(tmptxt.replace(/\D|^0/g,'1'));       
+			    }).css("ime-mode", "disabled"); 
+			    
+			    //删除已选号码
+				$('.content_box .content_touzhu .showInfo .showInfo_l ul li .lottery_close').live('click',function(){
+					$(this).parent().parent().remove();
+				})
+			    
+			    //添加号码
+				$('.a_add').click(function(){
+					$('.content_box .content_touzhu .showInfo ul').append('<li><p class="p-txt"><span class="one">[后三码-直选复式] -，-，2，2，2</span><span class="tzmoney" name="SEL_C_ZY">  <label class="times">1</label><label>注</label><label class="times" name="SCZY_TT">1</label><label>倍</label><label class="times" name="SCZY_M">4.0000</label> <label>元</label></span><span class="lottery_close" name="SEL_CLOSE">删除</span></p><p class="p-info"><span class="angle-top"></span><span class="sp-text">大教室的发欧舒丹<br>大教室的发欧舒丹大教室的发欧舒丹</span></p></li>')
+				});
+				
+				//清空列表
+				$('.a_clear').click(function(){
+					$('.content_box .content_touzhu .showInfo ul').html('');
+				});
+				
+				var bool=true;
+				//导航左 下拉
+				$('.banner_touzhu .banner_tz .btzOne').mouseenter(function(){
+					$('.banner_touzhu .banner_tz .btzOne .btzOneDrop').stop().slideDown();
+				}).mouseleave(function(){
+					bool=true;
+					$('.banner_touzhu .banner_tz .btzOne .btzOneDrop').mouseenter(function(){
+						bool=false;
+					}).mouseleave(function(){
+						bool=true;
+					});
+					if(bool){
+						$('.banner_touzhu .banner_tz .btzOne .btzOneDrop').stop().slideUp();
+					}
+				});
+				
+				//导航右 下拉
+				$('.banner_touzhu .banner_tz .btzThree .btzThree_l').mouseenter(function(){
+					$('.banner_touzhu .banner_tz .btzThree .btzThreeDrop').stop().slideDown();
+				}).mouseleave(function(){
+					$('.banner_touzhu .banner_tz .btzThree .btzThreeDrop').slideUp();
+				})
+				
+				//我的投注 下拉
+				$('.banner_touzhu .banner_tz .btzThree .btzThree_r .myBet').mouseenter(function(){
+					$('.myBetDrop').stop().slideDown();
+				}).mouseleave(function(){
+					$('.myBetDrop').stop().slideUp();
+				})
+			});
+			
+			//奖金调整
+			(function($) {
+				$.fn.drag = function(options) {
+					var x, drag = this,
+						isMove = false,
+						defaults = {};
+					var options = $.extend(defaults, options);
+					//添加背景，文字，滑块
+					var html = '<div class="drag_bg"></div>' +
+						'<div class="drag_text" onselectstart="return false;" unselectable="on"></div>' +
+						'<div class="handler handler_bg"><p><label></label><label></label><label></label></p></div>';
+					this.append(html);
+					var handler = drag.find('.handler');
+					var drag_bg = drag.find('.drag_bg');
+					var text = drag.find('.drag_text');
+					var maxWidth = drag.width() - handler.width(); //能滑动的最大间距
+					//鼠标按下时候的x轴的位置
+					handler.mousedown(function(e) {
+						isMove = true;
+						x = e.pageX - parseInt(handler.css('left'), 10);
+					});
+					//鼠标指针在上下文移动时，移动距离大于0小于最大间距，滑块x轴位置等于鼠标移动距离
+					$(document).mousemove(function(e) {
+						var _x = e.pageX - x;
+						if (isMove) {
+							if (_x > 0 && _x <= maxWidth) {
+								handler.css({
+									'left': _x
+								});
+								drag_bg.css({
+									'width': _x + 11
+								});
+							};
+							var val=_x/maxWidth*100;
+							var price=1897;
+							val=parseFloat(val);
+							val= Math.round(val*100)/100;
+							price=Math.round(1897*val/100*100)/100;
+							$('.val').html(price+'/'+val +'%');//百分比~~~~~~~~~~~^_^~~~~~~~
+							if(_x>maxWidth){
+								$('.val').html('1898/100%');
+							}
+							if(_x<0){
+								$('.val').html('0.00/0.00%');
+							}
+						}
+					}).mouseup(function(e) {
+						isMove = false;
+					});
+				};
+			})(jQuery);
+			$('.drag').drag();
+		</script>
+		<script>
+			//快速累加 累减
+			var evl;
+			var timer_alert;
+			//e表示当前对象 operate表示四则运算
+			function whichElement(e, operate) {
+				var i = parseInt($('.content_box .content_touzhu .adjust .adjust_l .times input').val());
+				switch (operate) {
+					case "add":
+						timer_alert = setTimeout(function() {
+							if (e.which == 1) {
+								evl = setInterval(function() {
+									i++;
+									$('.content_box .content_touzhu .adjust .adjust_l .times input').val(i);
+								}, 50);
+							}
+						}, 1000);
+						break;
+					case 'sub':
+						timer_alert = setTimeout(function() {
+							if (e.which == 1) {
+								evl = setInterval(function() {
+									i--;
+									if (i <= 0) {
+										i = 1;
+									}
+									$('.content_box .content_touzhu .adjust .adjust_l .times input').val(i);
+								}, 50);
+							}
+						}, 1000);
+						break;
+				}
+			}
+
+			function whichOut() {
+				clearInterval(evl);
+				clearTimeout(timer_alert);
+			}
+			
+			
+			
+			
+			window.onload = function() {
+				rdScrollNum({
+					idLists: ['1', '2', '3', '4', '5','6','7','8','9','10'], //id列表
+					numLists: ['08', '09', '03', '08', '66','11', '19', '13', '18', '16'], //显示值列表
+					showTime: 2, //N秒后停止滚动
+					lastNum: 36 //随机滚动最大出现值
+				});
+			};
+			//-----------------------彩票滚球滚动效果--------------------------------------------
+			//通过id列表设置滚动后要选中的数值 idList表示id列表 numList表示num的列表
+			function rdScrollNum(data) {
+				var stopTime = data.showTime * 1000;
+				var rd = setInterval(function() {
+					rdByIdList(data.idLists, data.lastNum);
+				}, 100);
+				setTimeout(function() {
+					clearInterval(rd);
+					selNum(data.idLists, data.numLists);
+				}, stopTime);
+			}
+			//通过id数据为其赋值随机数
+			function rdByIdList(idList, lastNum) {
+				var rd = '';
+				var idName = '';
+				for (var i = 0; i < idList.length; i++) {
+					idName = document.getElementById(idList[i]);
+					rd = parseInt(Math.random() * lastNum);
+					idName.innerHTML = rd;
+				}
+			}
+			//随机变化后要呈现的具体数字
+			function selNum(idList, numList) {
+				for (var i = 0; i < idList.length; i++) {
+					document.getElementById(idList[i]).innerHTML = numList[i];
+				}
+			}
+			//-----------------------------------------------------------------------------------
+		</script>
+	</body>
+
+</html>

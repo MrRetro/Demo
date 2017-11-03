@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银-充值</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/recharge.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="pay-head">
+			<div class="left"><a href="main.html"><img src="img/goBack.png" alt="img"/></a></div>
+			<div class="center">充值</div>
+			<div class="right">
+				<p class="two"><span class="sp-one"><img src="img/help-img.png" alt="img"/></span><span class="sp-two">帮助</span></p>
+				<p class="one"><span class="sp-one history"><img src="img/history.png" alt="img" />消费历史</span></p>
+			</div>
+		</div>
+
+		<div class="recharge-content">
+			<div class="dialogGuide">
+				<div class="title">选择导购员<b class="b-close"></b></div>
+				<div class="guideTable">
+					<div class="search"><label for="numInfo"><img src="img/search-img.png" alt="img"/></label><input type="text" name="numInfo" id="numInfo" value="按工号，姓名，手机号搜索" /><span class="closed"><i><img src="img/close.png" alt="img"/></i></span></div>
+				</div>
+				<div class="btns"><a class="a-cancel">取消</a><a class="a-ok">选择</a></div>
+			</div>
+			
+			<!--充值界面-->
+			<div class="rechargeCenter">
+				<div class="regLeft">
+					<p class="p-top">
+						<label for="money">充值金额</label>
+						<span>
+							<b>￥</b>
+							<input type="text" name="money" id="money" value="0.00" />
+						</span>
+					</p>
+					<p class="p-bottom">
+						<label for="outMoney">赠送金额</label>
+						<span>
+							<b>￥</b>
+							<input type="text" name="outMoney" id="outMoney" value="0.00" />
+						</span>
+					</p>
+				</div>
+				<div class="regright">
+					<div class="angle"></div>
+					
+					<div class="matchs">
+						<p class="p-one"><a>1</a><a class="a-center">2</a><a>3</a></p>
+						<p class="p-one"><a>4</a><a class="a-center">5</a><a>6</a></p>
+						<p class="p-one"><a>7</a><a class="a-center">8</a><a>9</a></p>
+						<p class="p-one"><a>.</a><a class="a-center">0</a><a><img src="img/goBacked.png" alt="img"/></a></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="banks"><a class="cash active">现金</a><a class="bank">银联卡</a><a class="bank">支付宝</a><a class="bank">微信</a><a class="bank">储蓄卡</a></div>
+			<div class="sels">
+				<p class="p-trick"><label>购买成功后打印小票</label><span class="sp-img"><img class="one" src="img/ck-yes3.png" alt="img" /><img class="sel" src="img/ck-yes3-sel.png" alt="img" /></span></p>
+				<p class="p-guide">
+					<label>导购员：</label>
+					<a>点击选择</a>
+				</p>
+				<p class="p-btnOk"><a>确认购买</a></p>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

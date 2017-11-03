@@ -1,0 +1,776 @@
+.game-img{display:inline-block;margin-right: 10px;box-shadow: 1px 2px 3px rgba(0,0,0,.5);*margin-top: 5px;}
+.game-img>span{display: inline-block;}
+.game-txt .p-imgs.p-imgTwo .game-img{margin-right: 0px;*margin-right: 3px;}
+
+#gopng_help032_outer {
+height: 400px;
+width: 740px;
+overflow: hidden;
+}
+#gopng_help032 {
+background: url(../img/help/help-game1.png) -0px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help019_outer {height: 400px;width: 740px;overflow: hidden;}
+#gopng_help019 {background: url(../img/help/help-game1.png) -0px -400px no-repeat;width: 100%;height: 100%;_background: none;_padding-left: 0px;_margin-left: -0px;_padding-top: 400px;_margin-top: -400px;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");}
+#gopng_help003_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help003 {
+background: url(../img/help/help-game1.png) -740px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help006_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help006 {
+background: url(../img/help/help-game1.png) -866px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 866px;
+_margin-left: -866px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help007_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help007 {
+background: url(../img/help/help-game1.png) -992px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 992px;
+_margin-left: -992px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help004_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help004 {
+background: url(../img/help/help-game1.png) -1118px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1118px;
+_margin-left: -1118px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help008_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help008 {
+background: url(../img/help/help-game1.png) -740px -121px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 121px;
+_margin-top: -121px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help005_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help005 {
+background: url(../img/help/help-game1.png) -866px -121px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 866px;
+_margin-left: -866px;
+_padding-top: 121px;
+_margin-top: -121px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help010_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help010 {
+background: url(../img/help/help-game1.png) -992px -121px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 992px;
+_margin-left: -992px;
+_padding-top: 121px;
+_margin-top: -121px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help013_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help013 {
+background: url(../img/help/help-game1.png) -1118px -121px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1118px;
+_margin-left: -1118px;
+_padding-top: 121px;
+_margin-top: -121px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help009_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help009 {
+background: url(../img/help/help-game1.png) -740px -242px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 242px;
+_margin-top: -242px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help011_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help011 {
+background: url(../img/help/help-game1.png) -866px -242px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 866px;
+_margin-left: -866px;
+_padding-top: 242px;
+_margin-top: -242px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help012_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help012 {
+background: url(../img/help/help-game1.png) -992px -242px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 992px;
+_margin-left: -992px;
+_padding-top: 242px;
+_margin-top: -242px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help018_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help018 {
+background: url(../img/help/help-game1.png) -1118px -242px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1118px;
+_margin-left: -1118px;
+_padding-top: 242px;
+_margin-top: -242px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help014_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help014 {
+background: url(../img/help/help-game1.png) -740px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help001_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help001 {
+background: url(../img/help/help-game1.png) -866px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 866px;
+_margin-left: -866px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help015_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help015 {
+background: url(../img/help/help-game1.png) -992px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 992px;
+_margin-left: -992px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help017_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help017 {
+background: url(../img/help/help-game1.png) -1118px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1118px;
+_margin-left: -1118px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help002_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help002 {
+background: url(../img/help/help-game1.png) -740px -521px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 521px;
+_margin-top: -521px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help016_outer {
+height: 121px;
+width: 126px;
+overflow: hidden;
+}
+#gopng_help016 {
+background: url(../img/help/help-game1.png) -866px -521px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 866px;
+_margin-left: -866px;
+_padding-top: 521px;
+_margin-top: -521px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help033_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help033 {
+background: url(../img/help/help-game1.png) -992px -521px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 992px;
+_margin-left: -992px;
+_padding-top: 521px;
+_margin-top: -521px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help034_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help034 {
+background: url(../img/help/help-game1.png) -1117px -521px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1117px;
+_margin-left: -1117px;
+_padding-top: 521px;
+_margin-top: -521px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help035_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help035 {
+background: url(../img/help/help-game1.png) -740px -642px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 642px;
+_margin-top: -642px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help036_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help036 {
+background: url(../img/help/help-game1.png) -865px -642px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 865px;
+_margin-left: -865px;
+_padding-top: 642px;
+_margin-top: -642px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help037_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help037 {
+background: url(../img/help/help-game1.png) -990px -642px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 990px;
+_margin-left: -990px;
+_padding-top: 642px;
+_margin-top: -642px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help038_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help038 {
+background: url(../img/help/help-game1.png) -1115px -642px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1115px;
+_margin-left: -1115px;
+_padding-top: 642px;
+_margin-top: -642px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help039_outer {
+height: 80px;
+width: 125px;
+overflow: hidden;
+}
+#gopng_help039 {
+background: url(../img/help/help-game1.png) -0px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help029_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help029 {
+background: url(../img/help/help-game1.png) -740px -722px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 722px;
+_margin-top: -722px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help020_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help020 {
+background: url(../img/help/help-game1.png) -855px -722px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 855px;
+_margin-left: -855px;
+_padding-top: 722px;
+_margin-top: -722px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help023_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help023 {
+background: url(../img/help/help-game1.png) -970px -722px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 970px;
+_margin-left: -970px;
+_padding-top: 722px;
+_margin-top: -722px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help022_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help022 {
+background: url(../img/help/help-game1.png) -1085px -722px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 1085px;
+_margin-left: -1085px;
+_padding-top: 722px;
+_margin-top: -722px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help021_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help021 {
+background: url(../img/help/help-game1.png) -125px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 125px;
+_margin-left: -125px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help024_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help024 {
+background: url(../img/help/help-game1.png) -240px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 240px;
+_margin-left: -240px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help025_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help025 {
+background: url(../img/help/help-game1.png) -355px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 355px;
+_margin-left: -355px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help026_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help026 {
+background: url(../img/help/help-game1.png) -470px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 470px;
+_margin-left: -470px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help027_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help027 {
+background: url(../img/help/help-game1.png) -585px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 585px;
+_margin-left: -585px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help028_outer {
+height: 75px;
+width: 115px;
+overflow: hidden;
+}
+#gopng_help028 {
+background: url(../img/help/help-game1.png) -700px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 700px;
+_margin-left: -700px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help030_outer {
+height: 65px;
+width: 117px;
+overflow: hidden;
+}
+#gopng_help030 {
+background: url(../img/help/help-game1.png) -815px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 815px;
+_margin-left: -815px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help031_outer {
+height: 65px;
+width: 118px;
+overflow: hidden;
+}
+#gopng_help031 {
+background: url(../img/help/help-game1.png) -932px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 932px;
+_margin-left: -932px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game1.png");
+}
+#gopng_help040_outer {
+height: 400px;
+width: 740px;
+overflow: hidden;
+}
+#gopng_help040 {
+background: url(../img/help/help-game2.png) -0px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help041_outer {
+height: 400px;
+width: 740px;
+overflow: hidden;
+}
+#gopng_help041 {
+background: url(../img/help/help-game2.png) -0px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help047_outer {
+height: 400px;
+width: 740px;
+overflow: hidden;
+}
+#gopng_help047 {
+background: url(../img/help/help-game2.png) -0px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help044_outer {
+height: 200px;
+width: 350px;
+overflow: hidden;
+}
+#gopng_help044 {
+background: url(../img/help/help-game2.png) -740px -0px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 0px;
+_margin-top: -0px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help048_outer {
+height: 200px;
+width: 350px;
+overflow: hidden;
+}
+#gopng_help048 {
+background: url(../img/help/help-game2.png) -740px -200px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 200px;
+_margin-top: -200px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help049_outer {
+height: 200px;
+width: 350px;
+overflow: hidden;
+}
+#gopng_help049 {
+background: url(../img/help/help-game2.png) -740px -400px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 400px;
+_margin-top: -400px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help042_outer {
+height: 200px;
+width: 400px;
+overflow: hidden;
+}
+#gopng_help042 {
+background: url(../img/help/help-game2.png) -740px -600px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 600px;
+_margin-top: -600px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help043_outer {
+height: 200px;
+width: 400px;
+overflow: hidden;
+}
+#gopng_help043 {
+background: url(../img/help/help-game2.png) -740px -800px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 800px;
+_margin-top: -800px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help045_outer {
+height: 200px;
+width: 400px;
+overflow: hidden;
+}
+#gopng_help045 {
+background: url(../img/help/help-game2.png) -740px -1000px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 740px;
+_margin-left: -740px;
+_padding-top: 1000px;
+_margin-top: -1000px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+#gopng_help046_outer {
+height: 200px;
+width: 400px;
+overflow: hidden;
+}
+#gopng_help046 {
+background: url(../img/help/help-game2.png) -0px -1200px no-repeat;
+width: 100%;
+height: 100%;
+_background: none;
+_padding-left: 0px;
+_margin-left: -0px;
+_padding-top: 1200px;
+_margin-top: -1200px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src="../img/help/help-game2.png");
+}
+
+

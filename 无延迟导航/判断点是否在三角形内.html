@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>判断鼠标是否在三角形内</title>
+		<style>
+			.box {
+				width: 0;
+				height: 0;
+				border: 100px solid transparent;
+				border-left-color: #000;
+				border-bottom-color: #000;
+				border-right-color: #369;
+				border-top-color: #369;
+				cursor: pointer;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oBox = document.getElementsByTagName('div')[0];
+
+				var tri1X1 = posLeft(oBox);
+				var tri1X2 = tri1X1 + oBox.offsetWidth;
+				var tri1X3 = tri1X2;
+
+				var tri1Y1 = posTop(oBox);
+				var tri1Y2 = tri1Y1;
+				var tri1Y3 = tri1Y2 + oBox.offsetHeight;
+
+				var tri2X1 = posLeft(oBox);
+				var tri2X2 = tri2X1;
+				var tri2X3 = tri2X2 + oBox.offsetWidth;
+
+				var tri2Y1 = posTop(oBox);
+				var tri2Y2 = tri2Y1 + oBox.offsetHeight;
+				var tri2Y3 = tri2Y2;
+
+				onTriangle(oBox, tri1X1, tri1Y1, tri1X2, tri1Y2, tri1X3, tri1Y3, function() {
+					oBox.style.borderTopColor = '#F00';
+					oBox.style.borderRightColor = '#F00';
+				}, function() {
+					oBox.style.borderTopColor = '#369';
+					oBox.style.borderRightColor = '#369';
+				}, function() {
+					alert('三角1');
+				});
+
+				onTriangle(oBox, tri2X1, tri2Y1, tri2X2, tri2Y2, tri2X3, tri2Y3, function() {
+					oBox.style.borderLeftColor = '#F00';
+					oBox.style.borderBottomColor = '#F00';
+				}, function() {
+					oBox.style.borderLeftColor = '#000';
+					oBox.style.borderBottomColor = '#000';
+				}, function() {
+					alert('三角2');
+				});
+			};
+
+			function onTriangle(obj, x1, y1, x2, y2, x3, y3, inFn, outFn, clickFn) {
+				bindEvent(obj, 'mouseover', function() {
+					var triAll = triangleArea(x1, y1, x2, y2, x3, y3);
+
+					bindEvent(obj, 'mousemove', function(ev) {
+						var ev = ev || window.event;
+
+						var disX = ev.clientX;
+						var disY = ev.clientY;
+
+						var tri1 = triangleArea(x1, y1, x2, y2, disX, disY);
+						var tri2 = triangleArea(x2, y2, x3, y3, disX, disY);
+						var tri3 = triangleArea(x3, y3, x1, y1, disX, disY);
+
+						var isIn = Math.abs(tri1 + tri2 + tri3 - triAll) < 1 / 10000;
+
+						if(isIn) {
+							if(inFn) {
+								inFn.call(this);
+							}
+
+							if(clickFn) {
+								bindEvent(obj, 'click', clickFn);
+							}
+						} else {
+							if(outFn) {
+								outFn.call(this);
+
+							}
+
+							if(clickFn) {
+								delEvent(obj, 'click', clickFn);
+							}
+						}
+					});
+				});
+
+				bindEvent(obj, 'mouseout', outFn);
+			}
+
+			function delEvent(obj, ev, fn) {
+				if(obj.removeEventListener) {
+					obj.removeEventListener(ev, fn, false);
+				} else {
+					obj.detachEvent('on' + ev, fn);
+				}
+			}
+
+			function bindEvent(obj, ev, fn) {
+				if(obj.addEventListener) {
+					obj.addEventListener(ev, fn, false);
+				} else {
+					obj.attachEvent('on' + ev, function() {
+						fn.call(obj);
+					});
+				}
+			}
+
+			function posLeft(obj) {
+				var left = 0;
+
+				while(obj) {
+					left += obj.offsetLeft;
+					obj = obj.offsetParent;
+				};
+
+				return left;
+			}
+
+			function posTop(obj) {
+				var top = 0;
+
+				while(obj) {
+					top += obj.offsetTop;
+					obj = obj.offsetParent;
+				}
+
+				return top;
+			}
+
+			function triangleArea(x1, y1, x2, y2, x3, y3) {
+				var a = dist(x1, y1, x2, y2);
+				var b = dist(x2, y2, x3, y3);
+				var c = dist(x3, y3, x1, y1);
+				var p = (a + b + c) / 2;
+				var area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+				return area;
+			};
+
+			function dist(x1, y1, x2, y2) {
+				return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+			}
+		</script>
+	</head>
+
+	<body>
+		<pre>
+		判断鼠标坐标是否在三角形内有很多种方法，比较简单的是面积法，即把一个大三角形（T）按照鼠标当前的点连接三个顶点，分成三份(A、B、C)，然后三个小三角形面积相加等于原来那个大三角形的面积，得出公式：T = A + B + C。但是JS有误差，所以用 Math.abs(A + B + C - T) < 0.0001 减小误差。
+		
+		如何求三角形面积呢？
+		
+		1. 首先要求得三条边的边长a, b, c，然后再令 p = (a + b + c) / 2
+		
+		2. 套用求三角形面积公式算出三角型面积S：即 S = Math.sqrt(p * (p - a) * (p - b) * (p - c))
+		
+		
+		现在还不知道三条边的边长，但是三角形三个顶点是已知的，那么可以用任意两点求得距离，算出三条边长。
+		
+		已知任意两点p1（x1, y1）、p2（x2, y2）的坐标如何求边长？
+		
+		X轴坐标之差的平方加上Y轴坐标之差的平方，然后对其值开根号就是这两点间的距离。
+		
+		得出公式
+		
+		L = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
+		
+		 
+		
+		至此即可求出三角形的面积，再根据鼠标当前位置算出大三角形跟三个小三角形的面积，即可判断出此点是否在三角形内。
+		
+		 
+		
+		下面提供示例：
+		
+		此方法已封装好直接调用即可
+		
+		onTriangle(obj, x1, y1, x2, y2, x3, y3, inFn, outFn, clickFn)
+		
+		obj为要判断的对象，x1、y1、x2、y2、x3、y3为三角形三个顶点的坐标，inFn为鼠标移入时的函数，outFn为鼠标移出时的函数，clickFn为鼠标点击时的函数。
+		</pre>
+		<div class="box"></div>
+	</body>
+
+</html>

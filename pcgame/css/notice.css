@@ -1,0 +1,146 @@
+/*滚轮样式*/
+	/*谷歌*/
+	/*---滚动条默认显示样式--*/
+	::-webkit-scrollbar-thumb{   
+	    background-color:#27e2b3;   
+	    height:50px;   
+	    outline-offset:-2px;   
+	    outline:2px solid #fff;   
+	    -webkit-border-radius:4px;   
+	    border: 2px solid #fff;   
+	}   
+	 
+	/*---鼠标点击滚动条显示样式--*/  
+	::-webkit-scrollbar-thumb:hover{   
+	    background-color:#1EAE8A;   
+	    height:50px;   
+	    -webkit-border-radius:4px;   
+	}   
+	 
+	/*---滚动条大小--*/  
+	::-webkit-scrollbar{   
+	    width:9px;   
+	    height:9px;   
+	}   
+	 
+	/*---滚动框背景样式--*/  
+	::-webkit-scrollbar-track-piece{   
+	    background-color:#fff;   
+	    -webkit-border-radius:0;   
+	}
+	.content_box .content_notice .content_notice_txt .notice_t_left,.content_box .content_notice .content_notice_txt .t_right_content{
+		/*ie*/
+		scrollbar-arrow-color: #1eae8a; /*图6,三角箭头的颜色*/
+		scrollbar-face-color: #27e2b3; /*图5,立体滚动条的颜色*/
+		scrollbar-3dlight-color: #1eae8a; /*图1,立体滚动条亮边的颜
+		
+		色*/
+		scrollbar-highlight-color: #ffffff; /*图2,滚动条空白部分的
+		
+		颜色*/
+		scrollbar-shadow-color: #ffffff; /*图3,立体滚动条阴影的颜
+		
+		色*/
+		scrollbar-darkshadow-color: #1eae8a; /*图4,立体滚动条强阴
+		
+		影的颜色*/
+		scrollbar-track-color: #ffffff; /*图7,立体滚动条背景颜色*/
+		
+		scrollbar-base-color:#f8f8f8; /*滚动条的基本颜色*/
+		Cursor:url(mouse.cur); /*自定义个性鼠标*/
+		
+	}
+
+.content_box .content_notice {
+	width: 990px;
+	border: 1px solid #1EAE8A;
+	margin: 0 auto;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-radius: 10px;
+	background-color: #eefffc;
+	float: left;
+	position: relative;
+	margin-top: 30px;
+	margin-left: 50%;
+	left: -485px;
+	z-index: 500;
+}
+.content_box .content_notice .content_notice_txt{float:left;width: 979px;border-top: 1px solid #1EAE8A;border-right: 1px solid #1EAE8A;border-bottom: 1px solid #1EAE8A;border-radius: 0px 10px 10px 0px;overflow: hidden;}
+.content_box .content_notice .content_notice_txt .notice_t_left{float: left;width: 310px;height: 568px;overflow-y: scroll;overflow-x: hidden;}
+.content_box .content_notice .content_notice_txt .notice_t_left ul{float: left;width: 100%;}
+.content_box .content_notice .content_notice_txt .notice_t_left ul li{
+    width: 100%;
+    height: 26px;
+    line-height: 22px;
+    background-color: #1eae8a;
+    border-top: 1px solid #1eae8a;
+    border-bottom: 1px solid #1eae8a;
+    margin-bottom: 8px;
+}
+.content_box .content_notice .content_notice_txt .notice_t_left ul li:last-child{margin-bottom: 0px;}
+.content_box .content_notice .content_notice_txt .notice_t_left ul li:hover,.content_box .content_notice .content_notice_txt .notice_t_left ul .active{background-color: white;}
+.content_box .content_notice .content_notice_txt .notice_t_left ul li:hover a,.content_box .content_notice .content_notice_txt .notice_t_left ul .active a{color: #1EAE8A;cursor: pointer;}
+.content_box .content_notice .content_notice_txt .notice_t_left ul li a{font-size: 12px;color: white;padding-left: 23px;width: 100%;height: 100%;display: inline-block;}
+.content_box .content_notice .content_notice_txt .leftFiexd{position: absolute;top:0px;left: 0px;}
+.content_box .content_notice .content_notice_txt .leftFiexd span{
+    width: 10px;
+    height: 37px;
+    display: inline-block;
+    background: url(../img/notice_02.png) left top no-repeat;
+    position: absolute;
+    top: 4px;
+    left: -9px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span{
+    top: 40px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span{
+    top: 76px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span{
+    top: 112px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span{
+    top: 148px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span{
+    top: 184px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span{
+    top: 220px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span{
+    top: 256px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span{
+    top: 292px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span{
+    top: 328px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span{
+    top: 364px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span+span{
+    top: 400px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span+span+span{
+    top: 436px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span+span+span+span{
+    top: 472px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span+span+span+span+span{
+    top: 508px;
+}
+.content_box .content_notice .content_notice_txt .leftFiexd span+span+span+span+span+span+span+span+span+span+span+span+span+span+span+span{
+    top: 544px;
+}
+.content_box .content_notice .content_notice_txt .notice_t_right{
+	float: left;
+    width: 669px;
+    height: 568px;
+    background-color: white;
+}
+.content_box .content_notice .content_notice_txt .t_right_content{float: left;width: 581px;height: 475px;margin-left: 50px;margin-top: 50px;overflow-y: auto;}

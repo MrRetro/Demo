@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>站内信</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body class="touzhu-body mem-body">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+			<h1 class="mui-title">站内信</h1>
+		</header>
+
+		<div class="mui-content safe">
+			<ul class="ul-msg">
+				<li class="active">
+					<p class="p-info">
+						<span class="sp-left looked">密码过期提醒</span>
+						<span class="sp-right">
+							2017-1-12 12:12:12
+							<span class="sp-angle">﹀</span>
+						</span>
+					</p>
+					<p class="p-words">
+						<span class="sp-one">尊敬的客户：</span>
+						<span class="sp-two">
+							因AG快乐彩管理中心游戏规则，2017年1月9日将下线AG急速LENO，如给您带来不便，敬请谅，解我们会继续为您带来更好的游戏和服务，感谢您的支持
+						</span>
+					</p>
+				</li>
+				<li>
+					<p class="p-info">
+						<span class="sp-left">密码过期提醒</span>
+						<span class="sp-right">
+							2017-1-12 12:12:12
+							<span class="sp-angle">﹀</span>
+						</span>
+					</p>
+					<p class="p-words">
+						<span class="sp-one">尊敬的客户：</span>
+						<span class="sp-two">
+							因AG快乐彩管理中心游戏规则，2017年1月9日将下线AG急速LENO，如给您带来不便，敬请谅，解我们会继续为您带来更好的游戏和服务，感谢您的支持
+						</span>
+					</p>
+				</li>
+				<li>
+					<p class="p-info">
+						<span class="sp-left looked">密码过期提醒</span>
+						<span class="sp-right">
+							2017-1-12 12:12:12
+							<span class="sp-angle">﹀</span>
+						</span>
+					</p>
+					<p class="p-words">
+						<span class="sp-one">尊敬的客户：</span>
+						<span class="sp-two">
+							因AG快乐彩管理中心游戏规则，2017年1月9日将下线AG急速LENO，如给您带来不便，敬请谅，解我们会继续为您带来更好的游戏和服务，感谢您的支持
+						</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/mui.min.js"></script>
+		<script>
+			mui.init();
+			$(function(){
+				$('.mui-content .ul-msg>li .p-info').on('tap',function(){
+					var state=$(this).parent().hasClass('active');
+					if(state){
+						$(this).parent().removeClass('active');
+					}else{
+						$(this).parent().addClass('active');
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>

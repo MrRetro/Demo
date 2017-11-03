@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东菜单无刷新</title>
+    <script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <style>
+    	*{padding: 0px;margin: 0px;}
+		.wrap{position:relative;width:200px;left:50px;top:50px;}
+		ul{list-style:none;background:#6c6669;color:#ffffff;border-right-width:0;float: left;}
+		li{height: 30px; line-height: 30px; cursor: pointer; font-size: 14px; position: relative; padding-left: 8%; float: left; width: 92%;}
+		li.active{background:#999395;}
+		li span:hover{color:#c81623;}
+		.none{display: none;}
+		#sub{width:600px;min-height: 800px;position: absolute;border:1px solid #f7f7f7;background:#f7f7f7;left: 200px;top:0;box-sizing:border-box;margin: 0px;padding:10px;}
+		.sub-content a{font-size:12px;color:#666;text-decoration:none;}
+		.sub-content dd a{border-left:1px solid #e0e0e0;padding: 0 20px;margin:4px 0;}
+		.sub-content dl{overflow:hidden;}
+		.sub-content dt{float: left;width:70px;font-weight: bold;clear:left;position:relative;}
+		.sub-content dd{float: left;margin-left: 5px;border-top:1px solid #eee;margin-bottom: 5px;}
+		.sub-content dt i{width:4px;height: 14px;font:400 9px/14px consolas;position: absolute;right:5px;top:5px;}
+    </style>
+</head>
+<body>
+<div class="wrap" id="test">
+<ul>
+    <li data-id="a">
+    <span>家用电器</span>    
+    </li>
+    <li data-id="b">
+    <span>手机 / 运营商 / 数码</span>    
+    </li>
+    <li data-id="c">
+    <span>电脑办公 / 办公</span>    
+    </li>
+    <li data-id="d">
+    <span>家居 / 家具 / 家装 / 厨具</span>    
+    </li>
+    <li data-id="e">
+    <span>男装 / 女装 / 童装 / 内衣 </span>    
+    </li>
+    <li data-id="f">
+    <span>美妆个护 / 宠物 </span>    
+    </li>
+</ul>
+    <div id="sub" class="none">
+        <div id="a" class="sub-content none">
+            <dl>
+                <dt>
+                    <a href="#">电视<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">曲面电视</a>
+                    <a href="#">超薄电视</a>
+                    <a href="#">HDR电视</a>
+                    <a href="#">DLED电视</a>
+                </dd>
+                <dt>
+                    <a href="#">空调<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">挂壁式空调</a>
+                    <a href="#">柜式空调</a>
+                    <a href="#">中央空调</a>
+                    <a href="#">以旧换新</a>
+                </dd>
+                <dt>
+                    <a href="#">洗衣机<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">滚筒式洗衣机</a>
+                    <a href="#">洗烘一体机</a>
+                    <a href="#">波轮洗衣机</a>
+                    <a href="#">迷你洗衣机</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="b" class="sub-content none">
+
+            <dl>
+                <dt>
+                    <a href="#">手机通讯<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">手机</a>
+                    <a href="#">对讲机</a>
+                    <a href="#">以旧换新</a>
+                    <a href="#">手机维修</a>
+                </dd>
+                <dt>
+                    <a href="#">运营商<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">合约机</a>
+                    <a href="#">选号机</a>
+                    <a href="#">固定电话</a>
+                    <a href="#">办宽带</a>
+                </dd>
+                <dt>
+                    <a href="#">手机配件<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">手机壳</a>
+                    <a href="#">贴膜</a>
+                    <a href="#">手机存储卡</a>
+                    <a href="#">数据线</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="c" class="sub-content none">
+            <dl>
+                <dt>
+                    <a href="#">电脑整机<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">笔记本</a>
+                    <a href="#">游戏本</a>
+                    <a href="#">平板电脑</a>
+                </dd>
+                <dt>
+                    <a href="#">电脑配件<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">显示器</a>
+                    <a href="#">CPU</a>
+                    <a href="#">主板</a>
+                </dd>
+                <dt>
+                    <a href="#">外设产品<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">鼠标</a>
+                    <a href="#">键盘</a>
+                    <a href="#">键盘套餐</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="d" class="sub-content none">
+            <dl>
+                <dt>
+                    <a href="#">厨具<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">烹饪锅具</a>
+                    <a href="#">刀剪配件</a>
+                    <a href="#">厨房配件</a>
+                    <a href="#">水具酒具</a>
+                </dd>
+                <dt>
+                    <a href="#">家纺<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">床品套件</a>
+                    <a href="#">被子</a>
+                    <a href="#">枕芯</a>
+                    <a href="#">蚊帐</a>
+                </dd>
+                <dt>
+                    <a href="#">生活日用<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">收纳用品</a>
+                    <a href="#">雨伞雨具</a>
+                    <a href="#">净化除味</a>
+                    <a href="#">浴室用品</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="e" class="sub-content none">
+            <dl>
+                <dt>
+                    <a href="#">女装<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">商城同款</a>
+                    <a href="#">当季热卖</a>
+                    <a href="#">2017新品</a>
+                    <a href="#">连衣裙</a>
+                </dd>
+                <dt>
+                    <a href="#">男装<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">商城同款</a>
+                    <a href="#">当季热卖</a>
+                    <a href="#">2017新品</a>
+                    <a href="#">牛仔裤</a>
+                </dd>
+            </dl>
+        </div>
+        <div id="f" class="sub-content none">
+            <dl>
+                <dt>
+                    <a href="#">面部护肤<i>&gt</i></a>
+                </dt>
+                <dd>
+                    <a href="#">补水保湿</a>
+                    <a href="#">卸妆</a>
+                    <a href="#">洁面</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</ul>
+<script type="text/javascript">
+	$(document).ready(function(){
+    var sub = $('#sub')
+
+    var activeRow
+    var activeMenu
+
+    var timer
+
+    var mouseInSub = false
+
+    sub.on('mouseenter',function(e){
+        mouseInSub = true
+    }).on('mouseleave',function(e){
+        mouseInSub = false
+    })
+
+    var mouseTrack = []
+
+    var moveHandler = function(e){
+        mouseTrack.push({
+            x:e.pageX,
+            y:e.pageY
+        })
+
+        if(mouseTrack.length > 3){
+            mouseTrack.shift()
+        }
+    }
+
+    $('#test')
+        .on('mouseenter',function(e){
+            sub.removeClass('none')
+
+            $(document).bind('mousemove',moveHandler)
+        })
+        .on('mouseleave',function(e){
+            sub.addClass('none')
+
+            if(activeRow){
+                activeRow.removeClass('active')
+                activeRow = null;
+            }
+
+            if(activeMenu){
+                activeMenu.addClass('none')
+                activeMenu = null;
+            }
+
+            //解绑
+            $(document).unbind('mousemove',moveHandler)
+        })
+
+        .on('mouseenter','li',function(e){
+            if(!activeRow){
+                activeRow = $(e.target).addClass('active')
+                activeMenu = $('#'+activeRow.data('id'))
+                activeMenu.removeClass('none')
+                return
+            }
+
+            //清除
+            if(timer){
+                clearTimeout(timer)
+            }
+
+            //鼠标当前坐标
+            var  currMousePos = mouseTrack[mouseTrack.length - 1]
+            //上次的坐标
+            var leftCorner = mouseTrack[mouseTrack.length-2]
+
+            var delay = needDelay(sub,leftCorner,currMousePos)
+
+            if(delay){
+                // 时间触发，设置一个缓冲期
+                timer = setTimeout(function(){
+                    //判断
+                    if(mouseInSub){
+                        return
+                    }
+                    if(activeRow){
+                    activeRow.removeClass('active')
+                    }
+                    if(activeMenu){
+                    activeMenu.addClass('none')
+                    }
+
+                    activeRow = $(e.target)
+                    activeRow.addClass('active')
+                    activeMenu = $('#'+ activeRow.data('id'))
+                    activeMenu.removeClass('none')
+
+                    timer = null
+                }, 300)
+            }else{
+                var prevActiveRow = activeRow
+                var prevActiveMenu = activeMenu
+
+                activeRow = $(e.target)
+                activeMenu = $('#' + activeRow.data('id'))
+
+                prevActiveRow.removeClass('active')
+                prevActiveMenu.addClass('none')
+
+                activeRow.addClass('active')
+                activeMenu.removeClass('none')
+            }
+        })
+})
+
+	//---------------------判断是否需要延迟----------------
+	function sameSign(a,b){
+	    return (a ^ b) >= 0
+	}
+	
+	function vector(a,b){
+	    return{
+	        x:b.x - a.x,
+	        y:b.y - a.y
+	    }
+	}
+	
+	function vectorProduct(v1,v2){
+	    return v1.x * v2.y - v2.x * v1.y
+	}
+	
+	function isPointInTrangle(p,a,b,c){
+	    var pa = vector(p,a)
+	    var pb = vector(p,b)
+	    var pc = vector(p,c)
+	
+	    var t1 = vectorProduct(pa,pb)
+	    var t2 = vectorProduct(pb,pc)
+	    var t3 = vectorProduct(pc,pa)
+	
+	    return sameSign(t1,t2) && sameSign(t2,t3)
+	} 
+	
+	function needDelay(elem,leftCorner,currMousePos){
+	    var offset = elem.offset()
+	
+	    var topLeft = {
+	        x:offset.left,
+	        y:offset.top
+	    }
+	
+	    var bottomLeft = {
+	        x:offset.left,
+	        y:offset.top + elem.height()
+	    }
+	
+	    return isPointInTrangle(currMousePos,leftCorner,topLeft,bottomLeft)
+	}
+	//---------------------
+
+</script>
+</body>
+</html>

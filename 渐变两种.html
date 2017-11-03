@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>渐变两种</title>
+		<style type="text/css">
+			*{padding: 10px 1%;margin: 0px;}
+			.p-name{float: left;width: 98%;font-size: 42px;color: #323232;}
+			.p-content{float: left;width: 98%;height: 100px;color: white;margin-bottom: 8px;}
+			.p-content.linear.one{
+				background: -webkit-linear-gradient(180deg, red, blue); /* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(180deg, red, blue); /* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(180deg, red, blue); /* Firefox 3.6 - 15 */
+				background: linear-gradient(180deg, red, blue); /* 标准的语法 */
+			}
+			.p-content.linear.two{
+				background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+				background: linear-gradient(red, blue); /* 标准的语法 */
+			}
+			.p-content.linear.three{
+			    background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Safari 5.1 - 6.0 */
+			    background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Opera 11.1 - 12.0 */
+			    background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Firefox 3.6 - 15 */
+			    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /* 标准的语法 */
+			}
+			.p-content.circle.one{
+				background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+				background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+				background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+				background: radial-gradient(red, green, blue); /* 标准的语法 */
+			}
+			.p-content.circle.two{
+				background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari 5.1 - 6.0 */
+				background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 - 12.0 */
+				background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 - 15 */
+				background: radial-gradient(circle, red, yellow, green); /* 标准的语法 */
+			}
+			.p-content.circle.three{
+				background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* Safari 5.1 - 6.0 */
+				background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* Opera 11.6 - 12.0 */
+				background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* Firefox 3.6 - 15 */
+				background: radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* 标准的语法 */
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p-name">线性渐变</p>
+		<div class="p-content linear one">
+<pre>
+background: -webkit-linear-gradient(180deg, red, blue); /* Safari 5.1 - 6.0 */
+background: -o-linear-gradient(180deg, red, blue); /* Opera 11.1 - 12.0 */
+background: -moz-linear-gradient(180deg, red, blue); /* Firefox 3.6 - 15 */
+background: linear-gradient(180deg, red, blue); /* 标准的语法 */
+</pre>
+		</div>
+		<div class="p-content linear two">
+<pre>
+background: -webkit-linear-gradient(red, blue); /* Safari 5.1 - 6.0 */
+background: -o-linear-gradient(red, blue); /* Opera 11.1 - 12.0 */
+background: -moz-linear-gradient(red, blue); /* Firefox 3.6 - 15 */
+background: linear-gradient(red, blue); /* 标准的语法 */
+</pre>
+		</div>
+		<div class="p-content linear three">
+<pre>
+background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Safari 5.1 - 6.0 */
+background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Opera 11.1 - 12.0 */
+background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);/* Firefox 3.6 - 15 */
+background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); /* 标准的语法 */
+</pre>
+		</div>
+		<p class="p-name">镜像渐变</p>
+		<div class="p-content circle one">
+<pre>
+background: -webkit-radial-gradient(red, green, blue); /* Safari 5.1 - 6.0 */
+background: -o-radial-gradient(red, green, blue); /* Opera 11.6 - 12.0 */
+background: -moz-radial-gradient(red, green, blue); /* Firefox 3.6 - 15 */
+background: radial-gradient(red, green, blue); /* 标准的语法 */
+</pre>
+		</div>
+		<div class="p-content circle two">
+<pre>
+background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari 5.1 - 6.0 */
+background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 - 12.0 */
+background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 - 15 */
+background: radial-gradient(circle, red, yellow, green); /* 标准的语法 */
+</pre>
+		</div>
+		<div class="p-content circle three">
+<pre>
+background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* Safari 5.1 - 6.0 */
+background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* Opera 11.6 - 12.0 */
+background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* Firefox 3.6 - 15 */
+background: radial-gradient(60% 55%, closest-side,blue,green,yellow,black);  /* 标准的语法 */
+</pre>
+		</div>
+	</body>
+</html>

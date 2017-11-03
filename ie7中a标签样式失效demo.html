@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			a:hover{background-color: #1d1d1d;color: red;}
+			a{display: inline-block;width: 88px;height: 38px;color: blue;text-align: center;line-height: 38px;}
+          /*
+           * 原因：应该是ie7把中a标签失去href属性后，伪类hover失效
+           * 处理方式1：给a标签加上href属性
+           * 处理方式2：把a标签换成其他行内元素
+           */
+		</style>
+	</head>
+	<body>
+		<a>aaaaaaaaa</a>
+	</body>
+</html>

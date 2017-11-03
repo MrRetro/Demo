@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{overflow: hidden;}
+			#cicle{width: 200px;height: 200px;line-height:200px;background-color: red;border-radius: 50%;position: absolute;left: 0px;top:0px;text-align: center;color: white;font-size: 30px;}
+		</style>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="cicle">来追我呀@--@</div>
+		<script type="text/javascript">
+			$(function(){
+				requestAnimateFrame()
+			});
+			var w,h,c=20,c1=20,nLeft,nTop;
+			function requestAnimateFrame(){
+				w=$(window).width()-200;
+				h=$(window).height()-200;
+				nLeft=$('#cicle').offset().left+c
+				nTop=$('#cicle').offset().top+c1
+				if(nLeft>w){
+					c=-c;
+				}
+				if(nLeft<0){
+					c=-c;
+				}
+				if(nTop>h){
+					c1=-c1;
+				}
+				if(nTop<0){
+					c1=-c1;
+				}
+				$('#cicle').css({'left':nLeft,'top':nTop});
+				
+				requestAnimationFrame(requestAnimateFrame);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="Content-type" name="viewport"  
+          content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">  
+    <meta http-equiv="Expires" content="0">  
+    <meta http-equiv="Pragma" content="no-cache">  
+    <meta http-equiv="Cache-control" content="no-cache">  
+    <meta http-equiv="Cache" content="no-cache">  
+    <title>抽屉滑动效果</title>  
+    <style>  
+    	*{padding: 0px;margin: 0px;}
+    	body{background-color: wheat;background-color: wheat;width: 100%;height: 100%;float: left;position: absolute;left: 0px;top: 0px;text-align: center;}
+    	.div-box{position: fixed;width: 100%;height: 100%;line-height:100%;top:-100%;left:-100%;background-color: goldenrod;z-index: 5;}
+    </style>  
+</head>  
+<body>
+	用手机移动端滑动屏幕试试！！！
+	<div class="div-box">
+		<table style="width: 100%;height: 100%;color: brown;">
+			<tr><td>
+				没错，我就是人间仁爱，花见花开的那道彩霞<br /><br />
+				你再滑动我试试看！！！
+			</td></tr>
+		</table>
+	</div>
+</div>  
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script>  
+	var startX,
+		startY,
+		endDir,
+		isShow=false,//默认不显示抽屉
+		starDir={
+			top:{top:'100%',left:'0%'},
+			bottom:{top:'-100%',left:'0%'},
+			left:{top:'0%',left:'100%'},
+			right:{top:'0%',left:'-100%'}
+			};
+    $('body').bind('touchstart',function(e){
+        startX = e.originalEvent.changedTouches[0].pageX,
+        startY = e.originalEvent.changedTouches[0].pageY;
+    });
+    $('body').bind('touchmove',function(e){
+        //获取滑动屏幕时的X,Y
+        endX = e.originalEvent.changedTouches[0].pageX,
+        endY = e.originalEvent.changedTouches[0].pageY;
+        //获取滑动距离
+        var distanceX = endX-startX;
+        var distanceY = endY-startY;
+        //判断滑动方向
+        if(!isShow){
+	        if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX>0){
+	            console.log('往右滑动');
+	            drawShow(distanceX,distanceY,'right');
+	        }else if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX<0){
+	            console.log('往左滑动');
+	            drawShow(distanceX,distanceY,'left');
+	        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY<0){
+	            console.log('往上滑动');
+	            drawShow(distanceX,distanceY,'top');
+	        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY>0){
+	            console.log('往下滑动');
+	            drawShow(distanceX,distanceY,'bottom');
+	        }else{
+	            console.log('点击未滑动');
+	        }
+        }else{
+        	if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX>0){
+	            console.log('往右滑动-关抽屉');
+	            drawClose(distanceX,distanceY,'right');
+	        }else if(Math.abs(distanceX)>Math.abs(distanceY) && distanceX<0){
+	            console.log('往左滑动-关抽屉');
+	            drawClose(distanceX,distanceY,'left');
+	        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY<0){
+	            console.log('往上滑动-关抽屉');
+	            drawClose(distanceX,distanceY,'top');
+	        }else if(Math.abs(distanceX)<Math.abs(distanceY) && distanceY>0){
+	            console.log('往下滑动-关抽屉');
+	            drawClose(distanceX,distanceY,'bottom');
+	        }else{
+	            console.log('点击未滑动');
+	        }
+        }
+
+    });
+    $('body').bind('touchend',function(e){
+  		//屏幕宽高
+  		var width=$(window).width();
+  		var height=$(window).height();
+  		var h,
+  			rax=5;//屏幕宽高倍数分之一
+  		if(!isShow){
+	    	switch(endDir){
+	  			case 'top':
+		  			h=Math.abs($('.div-box').css('top').replace("px",""));
+		    		if(height-h>height/rax){
+		    			//展开
+		    			showPage();
+		    		}else{
+		    			//关闭
+		    			closePage(starDir[endDir]);
+		    		}
+		  			break;
+	  			case 'bottom':
+		  			h=Math.abs($('.div-box').css('top').replace("px",""));
+		    		if(height-h>height/rax){
+		    			//展开
+		    			showPage();
+		    		}else{
+		    			//关闭
+		    			closePage(starDir[endDir]);
+		    		}
+		  			break;
+	  			case 'left':
+	  				w=Math.abs($('.div-box').css('left').replace("px",""));
+		    		if(width-w>width/rax){
+		    			//展开
+		    			showPage();
+		    		}else{
+		    			//关闭
+		    			closePage(starDir[endDir]);
+		    		}
+		  			break;
+	  			break;
+	  			case 'right':
+	  				w=Math.abs($('.div-box').css('left').replace("px",""));
+		    		if(width-w>width/rax){
+		    			//展开
+		    			showPage();
+		    		}else{
+		    			//关闭
+		    			closePage(starDir[endDir]);
+		    		}
+		  			break;
+	  		}
+    	}else{
+    		switch(endDir){
+	  			case 'top':
+		  			h=Math.abs($('.div-box').css('top').replace("px",""));
+		    		if(h>height/rax){
+		    			//关闭
+		    			closePage(starDir.bottom);
+		    		}else{
+		    			//展开
+		    			showPage();
+		    		}
+		  			break;
+	  			case 'bottom':
+		  			h=Math.abs($('.div-box').css('top').replace("px",""));
+		    		if(h>height/rax){
+		    			//关闭
+		    			closePage(starDir.top);
+		    		}else{
+		    			//展开
+		    			showPage();
+		    		}
+		  			break;
+	  			case 'left':
+	  				w=Math.abs($('.div-box').css('left').replace("px",""));
+		    		if(w>width/rax){
+		    			//关闭
+		    			closePage(starDir.right);
+		    		}else{
+		    			//展开
+		    			showPage();
+		    		}
+		  			break;
+	  			break;
+	  			case 'right':
+	  				w=Math.abs($('.div-box').css('left').replace("px",""));
+		    		if(w>width/rax){
+		    			//关闭
+		    			closePage(starDir.left);
+		    		}else{
+		    			//展开
+		    			showPage();
+		    		}
+		  			break;
+	  		}
+    	}
+    });
+    //展开抽屉
+    function showPage(){
+    	$('.div-box').animate({
+			top:0,
+			left:0
+		});
+		isShow=true;
+    }
+    //关闭抽屉
+    function closePage(obj){
+    	$('.div-box').animate({
+			top:obj.top,
+			left:obj.left
+		});
+		isShow=false;
+    }
+  	function drawShow(x,y,dir){
+  		endDir=dir;
+  		
+  		//方向-手指头滑动方向
+  		switch(dir){
+  			case 'top':
+  			$('.div-box').css(starDir.top);
+  			$('.div-box').css({
+  				top:parseInt($('.div-box').css('top').replace("px",""))-Math.abs(y)
+  			})
+  			break;
+  			case 'bottom':
+  			$('.div-box').css(starDir.bottom);
+  			$('.div-box').css({
+  				top:parseInt($('.div-box').css('top').replace("px",""))+Math.abs(y)
+  			})
+  			break;
+  			case 'left':
+  			$('.div-box').css(starDir.left);
+  			$('.div-box').css({
+  				left:parseInt($('.div-box').css('left').replace("px",""))-Math.abs(x)
+  			})
+  			break;
+  			case 'right':
+  			$('.div-box').css(starDir.right);
+  			$('.div-box').css({
+  				left:parseInt($('.div-box').css('left').replace("px",""))+Math.abs(x)
+  			})
+  			break;
+  			
+  		}
+  	}
+  	function drawClose(x,y,dir){
+  		endDir=dir;
+  		
+  		//方向-手指头滑动方向
+  		switch(dir){
+  			case 'top':
+  			$('.div-box').css({
+  				top:-Math.abs(y)
+  			})
+  			break;
+  			case 'bottom':
+  			$('.div-box').css({
+  				top:Math.abs(y)
+  			})
+  			break;
+  			case 'left':
+  			$('.div-box').css({
+  				left:-Math.abs(x)
+  			})
+  			break;
+  			case 'right':
+  			$('.div-box').css({
+  				left:Math.abs(x)
+  			})
+  			break;
+  			
+  		}
+  	}
+</script>  
+  
+  
+</body>  
+</html>  

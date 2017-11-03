@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统-付款页</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/member.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pay-head">
+			<div class="left"><img src="img/goBack.png" alt="img"/></div>
+			<div class="center">添加会员</div>
+			<div class="right">
+				<p class="two"><span class="sp-one"><img src="img/help-img.png" alt="img"/></span><span class="sp-two">帮助</span></p>
+			</div>
+		</div>
+		
+		<div class="member-content">
+			<div class="member-txts">
+				<div class="member-txt">
+					<p class="p-left"><img src="img/start.png" alt="img"/>会员卡号:</p>
+					<p class="p-right"><input type="text" name="memberID" id="memberID" value="20160826" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">会员密码:</p>
+					<p class="p-right"><input type="password" name="memberPwd" id="memberPwd" value="123456" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">确认密码:</p>
+					<p class="p-right"><input type="password" name="memberPwd1" id="memberPwd1" value="123456" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">会员分类: </p>
+					<p class="p-right p-type">默认会员分类（）无折扣 <img src="img/write-btn.png" alt="img"/></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left"><img src="img/start.png" alt="img"/>会员姓名:</p>
+					<p class="p-right"><input type="text" name="memberName" id="memberName" value="傲世焚君" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left"><img src="img/start.png" alt="img"/>会员电话:</p>
+					<p class="p-right"><input type="text" name="memberTel" id="memberTel" value="15555555555" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">过期时间:</p>
+					<p class="p-right p-date"><input type="text" name="memberDated" id="memberDated" value="2016年8月12日" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">会员生日:</p>
+					<p class="p-right p-date"><input type="text" name="memberBirth" id="memberBirth" value="2016年1月13日" /></p>
+				</div>
+				<div class="member-txt">
+					<p class="p-left">联系地址:</p>
+					<p class="p-right"><input type="text" name="memberAddress" id="memberAddress" value="思明区软件园二期" /></p>
+				</div>
+				<div class="member-remark">
+					<p class="p-top">备注:</p>
+					<p class="p-bottom"><textarea id="memberRemark" name="" rows="" cols=""></textarea></p>
+				</div>
+				<div class="member-txt member-btn">
+					<p class="p-btn"><a>确认</a></p>
+				</div>
+			</div>
+		
+			<div class="show-Dialog">
+				<div class="dialog-txt-title">选择会员分类</div>
+				<div class="dialog-content">
+					<div class="dialog-txt">分类一</div>
+				</div>
+				<div class="btns">
+					<a class="cancel" href="#">取消</a>
+					<a class="ok active" href="#">确认</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

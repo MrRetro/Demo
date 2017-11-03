@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face Tracker</title>
+		<meta charset="utf-8">
+		<style>
+			#overlay{position: absolute;top: 0px;left: 0px;}
+			#container{position : relative;width : 700px;height : 500px;}
+			#content{margin-top : 70px;margin-left : 100px;margin-right : 100px;max-width: 950px;}
+			#sketch{display: none;}
+			#filter{display: none;}
+			#convergence{display : inline;}
+			h2{font-weight : 400;}
+			.btn{font-family: 'Lato';font-size: 16px;}
+			.hide{display : none;}
+		</style>
+	</head>
+	<body>
+		<script src="./js/libs/utils.js"></script>
+		<script src="./js/clmtrackr.js"></script>
+		<script src="./js/model_pca_20_svm.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./styles/imgareaselect-default.css" />
+		<script src="./js/libs/jquery.min.js"></script>
+
+		<div id="content">
+			<div id="container">
+				<canvas id="image" width="625" height="500"></canvas>
+				<canvas id="overlay" width="625" height="500"></canvas>
+			</div>
+			<br/>
+			<input type="button" class="btn" value="start" onclick="animateClean()"></input>
+			<div id="positions"></div>
+
+			<script>
+				var cc = document.getElementById('image').getContext('2d');
+				var overlay = document.getElementById('overlay');
+				var overlayCC = overlay.getContext('2d');
+
+				var img = new Image();
+				img.onload = function() {
+					cc.drawImage(img,0,0,625, 500);
+				};
+				img.src = './media/bieber_small.jpg';
+				
+				var obj={};
+
+				var ctrack = new clm.tracker({stopOnConvergence : true});
+				ctrack.init(pModel);
+
+				var drawRequest;
+
+				function animateClean() {
+					ctrack.start(document.getElementById('image'));
+					drawLoop();
+				}
+				function positionLoop() {
+					requestAnimationFrame(positionLoop);
+					var positions = ctrack.getCurrentPosition();
+					
+					var positionString = "";
+					if(positions) {
+						ctrack.draw(overlay);
+						for(var p = 0; p < positions.length; p++) {
+							positionString += "featurepoint " + p + " : [" + positions[p][0].toFixed(2) + "," + positions[p][1].toFixed(2) + "]<br/>";
+							
+							//实时获取参数值
+							obj['pX']=positions[0][0];
+							obj['pY']=positions[20][1];
+							obj['width']=positions[14][0]-positions[0][0];
+							obj['height']=positions[41][1]-positions[20][1];
+							obj['rX']=obj['width']/2;
+							obj['rY']=obj['height']/2;
+						}
+//						document.getElementById('positions').innerHTML = positionString;
+					}
+					
+				}
+				positionLoop();
+
+				function drawLoop() {
+					drawRequest = requestAnimFrame(drawLoop);
+					overlayCC.clearRect(0, 0, 720, 576);
+//					if (ctrack.getCurrentPosition()) {
+//						ctrack.draw(overlay);
+//					}
+					
+						
+					load(obj);
+				}
+				drawLoop();
+				function drawBeauty(beauty,obj) {
+					var mycv = document.getElementById("overlay");
+					var myctx = mycv.getContext("2d");
+					myctx.drawImage(beauty, obj.pX, obj.pY, obj.width, obj.height);
+				}
+
+				function load(obj) {
+					var beauty = new Image();
+					beauty.src = "./img/gl1.png";
+					if(beauty.complete) {
+						drawBeauty(beauty,obj);
+					} else {
+						beauty.onload = function() {
+							drawBeauty(beauty,obj);
+						};
+						beauty.onerror = function() {
+							window.alert('图片加载失败，请重试');
+						};
+					};
+				} 
+			</script>
+		</div>
+	</body>
+</html>

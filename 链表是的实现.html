@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+			function myclass(value) {
+				this.data = value;
+				this.next = null;
+
+			}
+			var first = null;//{data:a,next:{data:b,next:null}}
+			var last = null;
+
+			function run() {
+				a = new myclass(document.getElementById("txt").value);
+				if(first == null) {
+					first = a;
+					last = a;
+				} else {
+					last.next = a;
+					last = a;
+				}
+				document.getElementById("txt").value = "";
+				console.log(a.data);
+				console.log(a.next);
+				
+				
+				console.log(first);
+				
+				console.log(last);
+			}
+
+			function show() {
+				for(temp = first; temp != null; temp = temp.next) {
+					console.log(temp.data);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<p>该代码实现点击“add”将text   中的内容加入到链表中。点击“show”将整个链表的内容输出。你可以参考一下，树结构也可以由相似方法实现。</p>
+		<input type="text" width="10" id="txt">
+		<input type="button" value="add" onclick="run()">
+		<input type="button" value="show" onclick="show()">
+	</body>
+
+</html>

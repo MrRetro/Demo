@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{float: left;width: 100%;height: 100%;overflow: hidden;}
+			.boxscroll {height: 100%;width: 100%;overflow: auto;margin-bottom: 20px;position: fixed;}
+		</style>
+	</head>
+
+	<body>
+		<div class="boxscroll">
+			THIS IS A SIMPLE SCROLLABLE DIV
+			<h2> Package Description </h2>
+			<p>Release Date: August 10, 2010</p>
+			<p>The HPIJS</a> driver is the free, open-source driver issued by HP for their DeskJet and LaserJet printers. For most supported printers, this driver produces output quality equivalent to the proprietary HP drivers. In photo mode, with photo paper, the output quality is very high, especially for the HP DeskJet 990C and later models, which auto-detect the paper type in hardware. Photo printing is fully supported in the newer 6- and 7-ink models.</p>
+			<p>A major advantage of using this driver over those supplied by HP is the direct interface between HPIJS and the native CUPS spooler, which allows printing from any printer over any available connection such as USB, AppleTalk, TCP/IP (via LPD and IPP), HP JetDirect, and shared windows printers via SAMBA. Additionally, this driver utilizes the existing Mac OS X USB &quot;backend&quot; and thus does not install any software that might interfere with standard USB operation.</p>
+			<p>Please note:</p>
+			<ul>
+				<li>HP does not provide any support for HPLIP or HPIJS on the Mac OS X platform.</li>
+				<li>Several HP USB devices may not print successfully over the standard Mac OS X USB &quot;backend&quot;. Please see this note for more information.</li>
+			</ul>
+			<h2>Release Notes</h2>
+			<ul>
+				<li>This release fixes a problem with the PPDs that caused many job options such as page orientation, color/grayscale mode, duplex printing, etc. to fail.</li>
+				<li>HPIJS is HP's universal printer driver for most of their non-PostScript printers. It comes as a part of HPLIP, HP Linux Imaging and Printing.</li>
+				<li>The PPDs for HP printers are now sourced from the HPLIP package rather than the OpenPrinting.org database.</li>
+				<li>PPDs for printers from other manufacturers are provided by OpenPrinting.org.</li>
+				<li>Some printers are only partially supported. Printers such as<br /> HP LaserJet 1022<br /> HP LaserJet p1505n<br /> HP LaserJet p12014<br /> HP LaserJet p2035<br /> require a proprietary plug-in for full support. This package does not contain or support such plug-ins.</li>
+			</ul>
+			<h2> Printer Set Up Instructions </h2>
+			<p>To add a printer queue, Leopard (Mac OS X 10.5.x) users should use the Print &amp; Fax from System Preferences. Click on the + (plus) icon at the lower left. A new window will open. In that window, click the Default Browser icon at the top left. Highlight your printer in the section below. Use the &quot;Print Using&quot; pop-up menu near the bottom of the window to select the correct PPD for your printer and click Add.</p>
+			<p>Tiger users should open the Printer Setup Utility and click on the Add icon at the top of the Printer List window. A new window will open. In that window, click the Default Browser icon at the top left. Highlight your printer in the section below. Use the &quot;Print Using&quot; pop-up menu near the bottom of the window to select the correct PPD for your printer and click Add.</p>
+			<p>Jaguar (OS X 10.2.x) and Panther (OS X 10.3.x) users should open Print Center (Jaguar) or Printer Setup Utility (Panther), hold down the Option key, and click the Add Printer button in the Print Center toolbar. Within the setup sheet, choose Advanced from the top popup menu; then in the &quot;Device:&quot; popup menu select your printer by name (it should be the last item in the menu list). Finally, select the correct PPD from the model browser and click Add.</p>
+			<a class="a-scrollTop" style="color: red;cursor: pointer;padding: 20px;border: 1px solid wheat;display: inline-block;">置顶</a>
+		</div>
+		
+		<script src="jqTips/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.bscroll.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				//开启区域滚动
+				$(".boxscroll").bscroll({ cursorborder: "", cursorcolor: "#b4c9f5", boxzoom: true }); // First scrollable DIV
+				$('.a-scrollTop').on('click',function(){scrollTopGo();});
+			});
+			//置顶
+			function scrollTopGo(){
+				$('.boxscroll').animate({scrollTop:0})
+			}
+		</script>
+	</body>
+
+</html>

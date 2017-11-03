@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>引导操作页</title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="logo" style="float:left;width: 200px;height: 60px;background-color: red;"></div>
+			<div class="ad" style="float:left;">
+				<img src="images/pic_04.png"/>
+			</div>
+			<div id="back" style="float:left;width: 200px;height: 60px;background-color: navajowhite;"></div>
+			
+			<div class="demo" style="float:left;">
+				<img src="img/time/00_19.jpg"/>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.guide.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		$.guide([{
+		    selector: '.logo',
+		    content: '<img src="./img/guide-1.png" width="102" height="47">',
+		    align: 'left'
+		}, {
+		    selector: '.ad img',
+		    content: '<img src="./img/guide-1.png" width="104" height="47">'
+		}, {
+		    selector: '#back',
+		    content: '<img src="./img/guide-1.png" width="72" height="47">',
+		    align: 'left'
+		}, {
+		    selector: '.demo img',
+		    content: '<img src="./img/guide-1.png" width="86" height="47">'
+		}]);
+		</script>
+	</body>
+</html>

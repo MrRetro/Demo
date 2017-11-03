@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>代码高亮 Highlight.js</title>
+    <script src="js/highlight.pack.js"></script>
+    <link href="css/monokai_sublime.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="demodisplay">
+        <h1> Highlight.js - Monokai Sublime Style</h1>
+        <p>Website: <a href="https://highlightjs.org/" target="_target">https://highlightjs.org/</a></p>
+        <h2>HTML</h2>
+        <pre><code class="language-html"> 
+&lt;header&gt;
+&lt;h1&gt;Example HTML&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main class=&quot;style&quot;&gt;
+&lt;p&gt;Some text&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+        <h2>JavaScript</h2>
+        <pre><code class="language-javascript">var example = true;
+
+function foo(arg) {
+	console.log( "do", arg);
+	arg = example ? true : false;
+	return arg;
+}</code></pre>
+        <h2>CSS</h2>
+        <pre><code class="language-css">@import "somestyle.css"
+
+body {
+	background: white;
+}
+
+.wrapper {
+	background: #F88;
+	color: #454545;
+}
+
+.box::after {
+	content: "...";
+}</code></pre>
+        <h2>PHP</h2>
+        <pre><code class="language-php">&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+&lt;article&gt;
+&lt;h1&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+&lt;?php the_content(); ?&gt;
+&lt;/article&gt;
+&lt;?php endwhile; endif; ?&gt;</code></pre>
+        <h2>Markdown</h2>
+        <pre><code class="language-markdown"># Example Markdown
+
+Some text with *emphasis*
+
+* list
+* list
+* list
+
+Some text with a [link](http://tutsplus.com)</code></pre>
+        <h2>CoffeeScript</h2>
+        <pre><code class="language-coffeescript"># Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert "I knew it!" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)</code></pre>
+        <h2>Handlebars</h2>
+        <pre><code class="language-handlebars">&lt;header&gt;
+&lt;h1&gt;{{title}}&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main class=&quot;style&quot;&gt;
+{{content}}
+&lt;/main&gt;</code></pre>
+        <h2>Jade</h2>
+        <pre><code class="language-jade">- var title = "Example Jade";
+header
+	h1 #{title}
+main.style
+	p Some text</code></pre>
+        <h2>LESS</h2>
+        <pre><code class="language-less">@body_background: white;
+@wrapper_background: #F88;
+@wrapper_color: #454545;
+
+body {
+	background: @body_background;
+}
+
+.wrapper {
+	background: @wrapper_background;
+	color: @wrapper_color;
+}
+
+.box::after {
+	content: "...";
+}</code></pre>
+        <h2>Sass</h2>
+        <pre><code class="language-scss">$body_background: white;
+$wrapper_background: #F88;
+$wrapper_color: #454545;
+
+body {
+	background: $body_background;
+}
+
+.wrapper {
+	background: $wrapper_background;
+	color: $wrapper_color;
+}
+
+.box::after {
+	content: "...";
+}</code></pre>
+        <h2>Stylus</h2>
+        <pre><code class="language-stylus">$body_background = white
+$wrapper_background = #F88
+$wrapper_color = #454545
+
+body
+	background: $body_background
+
+.wrapper
+	background: $wrapper_background
+	color: $wrapper_color
+
+.box::after
+	content: "..."</code></pre>
+        <script>hljs.initHighlightingOnLoad();</script>
+      </div>
+    </div>
+  </body>
+</html>

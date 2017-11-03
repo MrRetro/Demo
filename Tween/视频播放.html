@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Tween Study</title>
+	</head>
+
+	<body>
+		<div id="target" style="position: absolute; left: 50px; top: 420px; font-size: 100px; letter-spacing: -7px; ">
+			<video id="video" src="video/sintel.webm" width="320" height="138" autoplay></video>
+		</div>
+		<script src="js/tween.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/RequestAnimationFrame.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		
+			var video;
+
+			init();
+			animate();
+
+			function init() {
+
+				var output = document.createElement( 'div' );
+
+				var target = document.getElementById( 'target' );
+				target.appendChild( output );
+
+				video = document.getElementById( 'video' );
+				video.addEventListener( 'play', function() {
+
+					new TWEEN.Tween( { x: 50, y: 0 } )
+						.to( { x: 400 }, this.duration )
+						.easing( TWEEN.Easing.Linear.None )
+						.onUpdate( function () {
+
+							output.innerHTML = 'x == ' + Math.round( this.x );
+							target.style.left = ( this.x ) + 'px';
+
+						} )
+						.start( video.currentTime );
+
+				}, false );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				if ( video.readyState === video.HAVE_ENOUGH_DATA ) {
+
+					TWEEN.update( video.currentTime );
+
+				}
+				
+			}
+		</script>
+	</body>
+
+</html>

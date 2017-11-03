@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>福彩信息-注册</title>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="min-height:1200px;min-width: 1000px;overflow-y: scroll;">
+		<div class="ball_body ball_regist">
+			<div class="tbody_box regist_body">
+				<div class="contentBox">
+					<div class="content_left">
+						<div class="left_box">
+							<div class="registLogo"><img src="img/regist_logo.png" alt="logo" /></div>
+							<div class="registTxt">
+								<p class="p_one"><img src="img/regist_01.png" alt="img" /></p>
+								<p class="p_two">用户名:</p>
+								<p class="p_three"><input type="text" name="" id="txtUserName" value="" placeholder="请输入您的用户名" /></p>
+							</div>
+							<div class="registTxt">
+								<p class="p_one"><img src="img/regist_02.png" alt="img" /></p>
+								<p class="p_two">密码:</p>
+								<p class="p_three"><input type="password" name="" id="txtPass" value="" placeholder="请输入您的密码" /></p>
+							</div>
+							<div class="registTxt">
+								<p class="p_one"><img src="img/regist_02.png" alt="img" /></p>
+								<p class="p_two">确认密码:</p>
+								<p class="p_three"><input type="password" name="" id="txtPass2" value="" placeholder="请再次输入您的密码" /></p>
+							</div>
+							<div class="registTxt">
+								<p class="p_one"><img src="img/regist_03.png" alt="img" /></p>
+								<p class="p_two">邮箱:</p>
+								<p class="p_three"><input type="text" name="" id="txtEmail" value="" placeholder="请输入您的邮箱" /></p>
+							</div>
+							<div class="registTxt" style="float: left;">
+								<p class="p_one"><img src="img/regist_04.png" alt="img" /></p>
+								<p class="p_two" style="width: 73px;">验证码:</p>
+								<p class="p_three" style="width: 108px;"><input type="text" name="" id="txtValidate" value="" placeholder="请输入验证码" /></p>
+							</div>
+							<div class="registTxt" style="float: left;width: 155px;padding: 0 5px;">
+								<p class="p_validate"><img src="img/validate.jpg" alt="img"></p>
+							</div>
+
+							<div class="registTxt rbtn">注册</div>
+							<div class="registed">
+								<p>已有账号请&nbsp;<span>登录</span></p>
+							</div>
+						</div>
+					</div>
+					
+						<div class="content_right" style="background: none;">
+							<div class="regist_ad">
+								<img src="img/regist_b1.png" align="img"/>
+							</div>
+							<div class="regist_ad regist_ad2">
+								<img src="img/regist_b2.png" align="img"/>
+							</div>
+							<div class="regist_ad regist_ad2">
+							    <img src="img/regist_b3.png" align="img"/>
+							</div>
+						</div>
+
+					<div class="footer">
+						<div class="support">
+							<p><img src="img/guge.png" alt="img" />
+								<img src="img/FF.png" alt="img" />
+								<img src="img/ie.png" alt="img" />
+								<img src="img/uc.png" alt="img" />
+								<img src="img/360.png" alt="img" />
+							</p>
+						</div>
+						<p class="p_foot">版本信息版本信息版本信息版本信息版本信息</p>
+					</div>
+
+				</div>
+
+				<div class="onLine">
+					<p>
+						<a href="#" style="background: url(img/onLine.png) center center no-repeat;"></a>
+					</p>
+					<p>
+						<a href="#" style="background: url(img/dialog.png) center center no-repeat;"></a>
+					</p>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(function(){
+					$('.regist_body .contentBox .content_left .left_box .rbtn').click(function(){
+						//验证
+						var email = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+						if ($('#txtUserName').val().trim() == '') {
+							alert("用户名不能为空");
+							$('#txtUserName').focus();
+							return false;
+						}else if ($('#txtPass').val().trim() == '') {
+							alert("用户密码不能为空");
+							$('#txtPass').focus();
+							return false;
+						}else if ($('#txtPass').val()!=$('#txtPass2').val()) {
+							alert("两次密码不一致");
+							$('#txtPass').focus();
+							return false;
+						}else if ($('#txtEmail').val().trim() == '') {
+							alert("邮箱不能为空");
+							$('#txtEmail').focus();
+							return false;
+						}else if (!email.test($('#txtEmail').val())) {
+							alert("您输入的邮箱格式不正确！");
+							$('#txtEmail').focus();
+							return false;
+						}else if ($('#txtValidate').val().trim() == '') {
+							alert("验证码不能为空");
+							$('#txtValidate').focus();
+							return false;
+						}else{
+							//判断验证码是否正确
+						}
+					})
+				})
+			</script>
+	</body>
+
+</html>

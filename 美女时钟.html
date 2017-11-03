@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美女时钟</title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			.time-box{float: left;width: 100%;text-align: center;}
+			.sp-clock{width: 294px;height: 196px;display: inline-block;background-size: cover;background-position: center;background-repeat: no-repeat;transition: background .8s linear;position: relative;overflow: hidden;}
+			.sp-clock>strong{ width: 60px; height: 60px; line-height: 20px; background-color: #f50c43; border-radius: 50%; font-size: 12px; color: white; text-align: left; position: absolute; bottom: -53px; right: -55px; padding: 11px; padding-top: 8px; padding-left: 10px;}
+		</style>
+	</head>
+	<body>
+		<div class="time-box">
+			<span class="sp-clock" style="background-image: url(img/time/00_00.jpg);"><strong>00</strong></span>
+		</div>
+		<script src="jqTips/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var time,h,m,s,imgName,s1,s2,c=0,nd = '2017-04-13 00:00:00'.replace(/-/ig,'/');
+				setInterval(function(){
+						if(c>59){
+							c=0;
+						}
+						nd='2017-04-13 00:0'+(c++)+':00'.replace(/-/ig,'/');
+						time = new Date(nd); //当前时间
+						h=time.getHours()<10?'0'+time.getHours():time.getHours();
+						m=time.getMinutes()<10?'0'+time.getMinutes():time.getMinutes();
+						s=time.getSeconds()<10?'0'+time.getSeconds():time.getSeconds();
+						imgName=h+'_'+m;
+//						s1=60-parseInt(s);
+//						s2=s1<10?'0'+s1:s1;
+						s1=c-1;
+						s2=s1<10?'0'+s1:s1;
+						$('.sp-clock>strong').html(s2);
+						$('.sp-clock').css({'background-image':'url(img/time/'+imgName+'.jpg)'})
+					},1000);
+			})
+		</script>
+	</body>
+</html>

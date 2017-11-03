@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>d</title>
+	</head>
+	<body>
+		
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"http://blog.parryqiu.com",
+					async:true,
+					complete:function(e){
+						console.log(e)
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

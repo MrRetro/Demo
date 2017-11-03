@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>echo测试</title>
+	</head>
+	<body>
+		<div class="div">点我试试</div>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echo.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+//				$('.div').e_move($('div'),function(){alert(1)})
+//				$('.div').aa(function(){alert(1)});
+//				$('.div').e_click($(this),function(){alert(1)})
+//				$('.div').AlertSelf()
+				alert($('.div').e_status.times)
+//				var aa=$.map( [0,1,2], function(n){
+//					return n > 0 ? n + 1 : null;
+//				});
+//				console.log(aa)
+			})
+		</script>
+	</body>
+</html>

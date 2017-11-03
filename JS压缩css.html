@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>JS压缩css</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="Description" content="retro 2tro.com retro-web" />
+		<meta name="Keywords" content="retro 2tro.com retro-web" />
+		<style type="text/css">
+				.submit{height: 36px; line-height: 36px; background-color: #f0f3f9; color: #333; overflow: visible; cursor: pointer; box-shadow: 1px 1px #AFC4EA, 2px 2px #AFC4EA, 3px 3px #AFC4EA; font-size: 16px; display: inline-block; text-align: center; padding: 0px 10px; text-decoration: none; font-weight: bold; margin-right: 10px;margin-top: 20px;}
+				.submit:active{-ms-transform:translate(1px,1px);transform:translate(1px,1px);box-shadow:1px 1px #AFC4EA,2px 2px #AFC4EA;}
+				.submit:hover{background-color:#EAEDF5;}
+		</style>
+	</head>
+
+	<body>
+		<h1>压缩css</h1>
+		<textarea id="txts" style="width: 50%;height: 500px;margin-bottom: -14px;" name="" rows="" cols="" placeholder="把样式粘贴进来..."></textarea>
+		<a class="submit" href="javascript:cssRow()">css横向压缩</a>
+		<a class="submit" href="javascript:cssCol()">css纵向压缩</a>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function cssRow() {
+				var code = $('#txts').val();
+				code = code.replace(/\r\n/ig, '');
+				code = code.replace(/(\s){2,}/ig, '$1');
+				code = code.replace(/\t/ig, '');
+				code = code.replace(/\n\}/ig, '\}');
+				code = code.replace(/\n\{\s*/ig, '\{');
+				code = code.replace(/(\S)\s*\}/ig, '$1\}');
+				code = code.replace(/(\S)\s*\{/ig, '$1\{');
+				code = code.replace(/\{\s*(\S)/ig, '\{$1');
+				$('#txts').val(code);
+			}
+
+			function cssCol() {
+				var code = $('#txts').val();
+				code = code.replace(/(\s){2,}/ig, '$1');
+				code = code.replace(/(\S)\s*\{/ig, '$1 {');
+				code = code.replace(/\*\/(.[^\}\{]*)}/ig, '\*\/\n$1}');
+				code = code.replace(/\/\*/ig, '\n\/\*');
+				code = code.replace(/;\s*(\S)/ig, ';\n\t$1');
+				code = code.replace(/\}\s*(\S)/ig, '\}\n$1');
+				code = code.replace(/\n\s*\}/ig, '\n\}');
+				code = code.replace(/\{\s*(\S)/ig, '\{\n\t$1');
+				code = code.replace(/(\S)\s*\*\//ig, '$1\*\/');
+				code = code.replace(/\*\/\s*([^\}\{]\S)/ig, '\*\/\n\t$1');
+				code = code.replace(/(\S)\}/ig, '$1\n\}');
+				code = code.replace(/(\n){2,}/ig, '\n');
+				code = code.replace(/:/ig, ':');
+				code = code.replace(/  /ig, ' ');
+				$('#txts').val(code);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统-销售单据</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/laydate.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pay.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/soldNote.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pay-head">
+            <div class="left"><a href="main.html"><img src="img/goBack.png" alt="img" /></a></div>
+			<div class="center">销售单据</div>
+			<div class="right">
+				<p class="two"><span class="sp-one"><img src="img/help-img.png" alt="img"/></span><span class="sp-two">帮助</span></p>
+			</div>
+		</div>
+		
+		<div class="soldNote-content">
+			<div class="show-Dialog saleNote" style="display: block;">
+				<div class="dialog-txt-title">选择会员分类</div>
+				<div class="div-input"><input type="text" name="" id="" value="" /></div>
+				<div class="btns">
+					<a class="cancel" href="#">取消</a>
+					<a class="ok active" href="#">确认</a>
+				</div>
+			</div>
+			<div class="soldNote-content-top">
+				<p class="p-txt one"><input type="text" id="memberNumber" value="输入单据号/牌号/会员号" placeholder="输入单据号/牌号/会员号" /></p>
+				<label class="lb-one">起始日期:</label>
+				<p class="p-txt"><input type="text" id="startTime" value="2016-08-27  00:00" placeholder="2016-08-27  00:00" /></p>
+				<label class="lb-line">-</label>
+				<p class="p-txt"><input type="text" id="endTime" value="2016-08-27  00:00" placeholder="2016-08-27  00:00" /></p>
+				<p class="p-search"><a>搜索</a></p>
+			</div>
+			<div class="soldNote-content-bottom">
+				<div class="content-left">
+					<div class="nav-title"><p class="p-one">流水号</p><p class="p-two">总额</p></div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span><span class="backed"></span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span><span class="dollar"></span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-txt">
+						<p class="one"><span class="sp-left">20160827105244931000</span><span class="sp-right">121.00</span></p>
+						<p class="two"><span class="sp-left">牌号：0003 <label>8-27</label></span><span class="sp-right">10：52</span></p>
+					</div>
+					<div class="nav-pages"><a class="pre">上一页</a><a class="a-center"><span class="one">1</span>/<span class="two">99</span></a><a class="next">下一页</a></div>
+				</div>
+				<div class="content-right">
+					<div class="content-right-table">
+						<table>
+							<thead><tr><th>商品名</th><th>售价</th><th>折扣价</th><th>数量</th></tr></thead>
+							<tbody>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td><span class="sp-num">999</span><span class="sp-backed"><a class="one">退货</a><a class="two">1</a></span></td></tr>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td><span class="sp-num">999</span><span class="sp-backed"><a class="one">退货</a><a class="two">1</a></span></td></tr>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td>999</td></tr>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td>999</td></tr>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td>999</td></tr>
+								<tr><td>韩版牛仔裤<br />(201608271052448310003）</td><td>¥999，999</td><td>¥999，999</td><td>999</td></tr>
+							</tbody>
+							<tfoot>
+								<tr><td colspan="4">
+									<p class="p-one">
+										<span class="sp-one"><label>件数：</label><label class="lb-txt">3</label></span>
+										<span class="sp-one"><label>会员：</label><label class="lb-txt"></label></span>
+										<span class="sp-one"><label>地址：</label><label class="lb-txt"></label></span>
+									</p>
+									<p class="p-two">
+										<span class="sp-one"><label>总额：</label><label class="lb-txt">￥999,999,9999</label></span>
+										<span class="sp-one"><label>电话：</label><label class="lb-txt">1875555551</label></span>
+									</p>
+								</td></tr>
+							</tfoot>
+						</table>
+					</div>
+					<div class="content-right-btns"><a class="a-backGoods">退货</a><a class="backMoney">反结账</a><a class="a-print">打印</a></div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

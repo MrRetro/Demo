@@ -1,0 +1,4 @@
+*{margin: 0;padding: 0;}
+#container{background-color:#ddd;width: 500px;height: 250px;}
+#container path{fill: none;stroke:#4682b4;stroke-width: 2;}
+#container .domain,#container .tick line{stroke:gray;stroke-width: 1;}

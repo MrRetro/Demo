@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h1>按键盘f12试试！！！</h1>
+	</body>
+	<script type="text/javascript">
+		/*检测浏览器类型*/
+		function uaMatch() {
+			var userAgent = navigator.userAgent,
+				rEdge = /(edge)\/([\w.]+)/,
+				rMsie = /(msie\s|trident.*rv:)([\w.]+)/,
+				rFirefox = /(firefox)\/([\w.]+)/,
+				rOpera = /(opera).+version\/([\w.]+)/,
+				rChrome = /(chrome)\/([\w.]+)/,
+				rSafari = /version\/([\w.]+).*(safari)/;
+			var ua = userAgent.toLowerCase();
+
+			var match = rEdge.exec(ua);
+			if(match != null) {
+				return {
+					browser: "EDGE",
+					version: match[2] || "0"
+				};
+			}
+			var match = rMsie.exec(ua);
+			if(match != null) {
+				return {
+					browser: "IE",
+					version: match[2] || "0"
+				};
+			}
+			var match = rFirefox.exec(ua);
+			if(match != null) {
+				return {
+					browser: match[1] || "",
+					version: match[2] || "0"
+				};
+			}
+			var match = rOpera.exec(ua);
+			if(match != null) {
+				return {
+					browser: match[1] || "",
+					version: match[2] || "0"
+				};
+			}
+			var match = rChrome.exec(ua);
+			if(match != null) {
+				return {
+					browser: match[1] || "",
+					version: match[2] || "0"
+				};
+			}
+			var match = rSafari.exec(ua);
+			if(match != null) {
+				return {
+					browser: match[2] || "",
+					version: match[1] || "0"
+				};
+			}
+			if(match != null) {
+				return {
+					browser: "",
+					version: "0"
+				};
+			}
+		}
+
+		try {
+			var browser = uaMatch().browser;
+
+			if(browser.toUpperCase() == "IE" || browser.toUpperCase() == "EDGE") {
+				window.console && window.console.log && (
+					console.log("【Retro ♥ Echo】"),
+					console.log("逆流的鱼儿\n更容易得生"),
+					console.log("http://www.2tro.com/")
+				)
+			} else {
+				window.console && window.console.log && (
+					console.log("%c【Retro %c♥ %cEcho】 \n %c逆流的鱼儿 \n 更容易得生", "color:black", "color:pink", "color:black", "color:#1d6402"),
+					console.log("%chttp://2tro.com/retroWeb/catalog.html", "color:red")
+				)
+			}
+		} catch(e) {}
+	</script>
+
+</html>

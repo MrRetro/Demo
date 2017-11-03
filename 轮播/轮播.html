@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			body{float:left;width: 100%;min-height: 800px;}
+			li{list-style: none;}
+			.content-types-box{float: left;width: 100%;height:480px;background-color: #f0f0f0;}
+			.content-types{float: left;width: 1280px;height:100%;margin-left: 50%;position: relative;left: -640px;top:0px;}
+			.content-types .p-btn-left{float: left;width: 80px;height: 100%;}
+			.content-types .p-btn-left .i-left{float:left;width: 60px;height: 116px;margin-top:172px;cursor: pointer;background-color: rgba(128, 128, 128, 0.51);}
+			.content-types .p-btn-right{float: right;width: 80px;height: 100%;}
+			.content-types .p-btn-right .i-right{float:right;width: 60px;height: 116px;margin-top:172px;cursor: pointer;background-color: rgba(128, 128, 128, 0.51);}
+			.content-types .types-items-box{float: left;width: 1120px;height: 100%;position: relative;}
+			.content-types .types-items-box .types-items{float: left;width: 3450px;height: 100%;position: relative;left: 0px;top:0px;}
+			.content-types .types-items-box .types-items .ul-items{float: left;width: 1120px;margin-right: 30px;position: relative;z-index: 2;}
+			.content-types .types-items-box .types-items .ul-items li{float: left;width: 396px;height: 306px;margin-top: 80px;background-color: white;padding: 18px;border-radius: 10px;position: absolute;top: 0px;left: 344px;z-index: 1;transition: all .2s linear;box-shadow: 0 0 24px #323232;transform: scale(0.9);background-color: wheat;}
+			.content-types .types-items-box .types-items .ul-items li.li-left{left: 0px;z-index: 2;}
+			.content-types .types-items-box .types-items .ul-items li.li-center{z-index: 5;transform: scale(1);}
+			.content-types .types-items-box .types-items .ul-items li.li-right{left: 688px;z-index: 2;}
+			.content-types .types-items-box .types-items .ul-items .p-img{float: left;width: 100%;height: 158px;background-position: top center;background-repeat:no-repeat;position: relative;z-index: 1;border-radius: 8px;background-size: cover;}
+			.content-types .types-items-box .types-items .ul-items .p-img .sp-bg-color{position: absolute;top: 10px;left: -64px;width: 128px;height:128px;margin-left: 50%;border-radius: 10px;}
+			.content-types .types-items-box .types-items .ul-items .p-img .sp-bg-color .sp-item-img{float: left;margin-left: 8px;margin-top: 8px;}
+			
+			.content-types .types-items-box .types-items .ul-items .p-title{float: left;width: 100%;height: 40px;line-height: 40px;text-align: center;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;font-size: 18px;color: #323232;}
+			.content-types .types-items-box .types-items .ul-items .p-txts{float: left;width: 90%;height:50px;line-height:24px;padding: 0% 5%;font-size: 14px;color: #909090;overflow: hidden;}
+			.content-types .types-items-box .types-items .ul-items .p-btn{float: left;width: 100%;text-align: center;}
+			.content-types .types-items-box .types-items .ul-items .p-btn .sp-btn{font-size:14px;width: 100%;height: 34px;line-height:34px;text-align: center;background-color: #6688b5;color: white;border-radius: 4px;display: inline-block;margin-top: 4px;cursor: pointer;}
+			.content-types .types-items-box .types-items .ul-items .p-btn .sp-btn:hover{opacity: 0.9;}
+		</style>
+	</head>
+	<body>
+		<div class="content-types">
+			<p class="p-btn-left"><i class="i-left"></i></p>
+			<div class="types-items-box">
+				<div class="types-items" style="width: 1150px;">
+					<ul class="ul-items">
+						<li class="li-left">
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img JSFFC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码1</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li class="li-center cur">
+							<p class="p-img p-img-bg02">
+								<span class="sp-bg-color">
+									<span class="sp-item-img HLJSSC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码2</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li class="li-right">
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img JXSSC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码3</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码4</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码5</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码6</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码7</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码8</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+						<li>
+							<p class="p-img p-img-bg01">
+								<span class="sp-bg-color">
+									<span class="sp-item-img XDL15FC"></span>
+								</span>
+							</p>
+							<p class="p-title">页码9</p>
+							<p class="p-txts">描述信息  描述信息  描述信息</p>
+							<p class="p-btn"><span class="sp-btn">选择</span></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="p-btn-right"><i class="i-right"></i></p>
+		</div>
+		<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//翻页开关
+				var state=true;
+				//上一页-类型
+				$('.content-types .p-btn-left .i-left').on('click',function(){
+					if(state){
+						state=false;
+						var index=$('.content-types .types-items-box .types-items .ul-items li.cur').index();
+						var count=$('.content-types .types-items-box .types-items .ul-items li').length;
+						if(count>3){
+							$('.content-types .types-items-box .types-items .ul-items li').each(function(){
+								var i=$(this).index();
+								var first=index-1<0?count-1:index-1;
+								var three=index+1>=count?0:index+1;
+								var four=index+2;
+								if(index+2==count){
+									four=0;
+								}else if(index+2>count){
+									four=1
+								}
+								switch(i){
+									case first:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(first).css({
+											transform:'scale(0.9)',
+											left:344,
+											zIndex:1
+										});
+										break;
+									case index:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(index).css({
+											transform:'scale(0.9)',
+											left:0,
+											zIndex:1
+										});
+										break;
+									case three:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(three).css({
+											transform:'scale(1)',
+											left:344,
+											right:'initial',
+											zIndex:5
+										});
+										break;
+									case four:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(four).css({
+											transform:'scale(0.9)',
+											left:688,
+											zIndex:1
+										});
+										break;
+									default:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(i).animate({
+											transform:'scale(0.9)',
+											left:344,
+											right:'initial',
+											zIndex:1
+										});
+								}
+							});
+						}
+						$('.content-types .types-items-box .types-items .ul-items li.cur').removeClass('cur');
+						if(index+1<count){
+							$('.content-types .types-items-box .types-items .ul-items li').eq(index+1).addClass('cur');
+						}else{
+							$('.content-types .types-items-box .types-items .ul-items li').eq(0).addClass('cur');
+						}
+						setTimeout(function(){
+							state=true;
+						},500);
+					}
+				});
+				//下一页-类型
+				$('.content-types .p-btn-right .i-right').on('click',function(){
+					if(state){
+						state=false;
+						var index=$('.content-types .types-items-box .types-items .ul-items li.cur').index();
+						var count=$('.content-types .types-items-box .types-items .ul-items li').length;
+						if(count>3){
+							$('.content-types .types-items-box .types-items .ul-items li').each(function(){
+								var i=$(this).index();
+								var first=index-1<0?count-1:index-1;
+								var three=index+1>=count?0:index+1;
+								var four=count-1;
+								if(first!=0){
+									four=first-1;
+								}
+								switch(i){
+									case first:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(first).css({
+											transform:'scale(1)',
+											left:344,
+											zIndex:5
+										});
+										break;
+									case index:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(index).css({
+											transform:'scale(0.9)',
+											left:688,
+											zIndex:1
+										});
+										break;
+									case three:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(three).css({
+											transform:'scale(0.9)',
+											left:344,
+											right:'initial',
+											zIndex:1
+										});
+										break;
+									case four:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(four).css({
+											transform:'scale(0.9)',
+											left:0,
+											zIndex:1
+										});
+										break;
+									default:
+										$('.content-types .types-items-box .types-items .ul-items li').eq(i).animate({
+											transform:'scale(0.9)',
+											left:344,
+											right:'initial',
+											zIndex:1
+										});
+								}
+							});
+						}
+						$('.content-types .types-items-box .types-items .ul-items li.cur').removeClass('cur');
+						if(index-1>=0){
+							$('.content-types .types-items-box .types-items .ul-items li').eq(index-1).addClass('cur');
+						}else{
+							$('.content-types .types-items-box .types-items .ul-items li').eq(count-1).addClass('cur');
+						}
+						setTimeout(function(){
+							state=true;
+						},500);
+					}
+				});
+			})
+		</script>
+	</body>
+</html>

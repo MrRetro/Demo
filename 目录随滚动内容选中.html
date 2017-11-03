@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body, div,ul,li{margin:0;padding:0}
+			ul li{list-style:none;}
+			#sideBar{width:50px;height:500px;position:fixed;left:30px;top:200px;}
+			#sideBar ul li{width:50px;height:50px;background:skyblue;border:1px dashed #eee;color:#fff;text-align:center;line-height:50px;cursor:pointer;}
+			#sideBar ul li.cur{background:orange;color:#fff;font-weight:bold;}
+			.item{width:70%;height:800px;background:#cccccc;margin:0 auto;font-size:150px;color:#fff;text-align: center;border-bottom:1px solid #37c1e3;line-height:800px;}
+		</style>
+	</head>
+
+	<body>
+		<div id="sideBar">
+			<ul>
+				<li class="itemLi">aa1</li>
+				<li class="itemLi">aa2</li>
+				<li class="itemLi">aa3</li>
+				<li class="itemLi">aa4</li>
+				<li class="itemLi">aa5</li>
+				<li class="itemLi">aa6</li>
+				<li class="itemLi">aa7</li>
+				<li class="itemLi">aa8</li>
+				<li class="itemLi">aa9</li>
+				<li class="itemLi">aa10</li>
+			</ul>
+		</div>
+		<div class="content">
+			<div style="background:pink" class="item" >aa1</div>
+			<div style="background:deepskyblue" class="item" >aa2</div>
+			<div style="background:greenyellow" class="item" >aa3</div>
+			<div style="background:green" class="item" >aa4</div>
+			<div style="background:orange" class="item" >aa5</div>
+			<div style="background:pink" class="item" >aa6</div>
+			<div style="background:deepskyblue" class="item" >aa7</div>
+			<div style="background:greenyellow" class="item" >aa8</div>
+			<div style="background:green" class="item" >aa9</div>
+			<div style="background:orange" class="item" >aa10</div>
+		</div>
+		<div style="height:1000px;" id="sest">
+
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function ($) {
+				$.fn.SideBar = function SideBar(opt) {
+					var self = this;
+					this.opt = {
+						sidebar: '',
+						items: '',
+						sel:'cur',
+					};
+					this.opt= $.extend({}, this.opt, opt);
+					this.proboxTop = []; //每个详细模块的偏移量
+					this.opt.sidebar.eq(0).addClass(this.opt.sel);
+					$.each(self.opt.items, function(i) { //循环将每个模块对应的偏移量存入数组中
+						self.proboxTop[i] = self.opt.items.eq(i).offset().top;
+					});
+
+					this.init(); //执行init()函数；核心函数
+				}
+				$.fn.SideBar.prototype = {
+					init: function() {
+						this.clickTo();
+						this.scrollTo();
+
+					},
+
+					//点击跳转到某个模块
+					clickTo: function() {
+						var self = this;
+						this.opt.sidebar.finish().click(function() {
+							var i = $(this).index(); //获取点击的li对应的索引
+							$('html,body').finish().animate({
+								scrollTop: self.proboxTop[i] //移动到当前与当前索引相同的item上
+							}, 200);
+							//当前添加类cur其他的兄弟元素去掉cur这个类
+							this.opt.sidebar.removeClass(this.opt.sel);
+							$(this).addClass(this.opt.sel);
+
+						});
+
+					},
+					//滚动到对应位置显示高亮
+					scrollTo: function() {
+						var self = this;
+						//刷新页面时获取当前对应的高亮处的位置
+						this.change($(window).scrollTop());
+
+						//滑动滚动条的变化对应左侧导航栏高亮的变化
+						$(window).on('scroll', function() {
+
+							self.change($(this).scrollTop());
+						});
+					},
+
+					//左侧高亮变化函数
+					change: function(scrollTop) {
+						//第一张到倒数第二张的判断
+						var self = this;
+						var el = self.opt.sidebar;
+						for(var i = 0; i < self.proboxTop.length - 1; i++) {
+							if(self.proboxTop[i] <= scrollTop && self.proboxTop[i + 1] > scrollTop) {
+								el.removeClass(this.opt.sel);
+								el.eq(i).addClass(this.opt.sel);
+							}
+						}
+						//最后一张的判断
+						if(self.proboxTop[self.proboxTop.length - 1] <= scrollTop) {
+							el.removeClass(this.opt.sel);
+							el.eq(self.proboxTop.length - 1).addClass(this.opt.sel);
+
+						}
+					}
+
+				}
+			})(jQuery);
+			
+			$(function() {
+				var scroll = new $.fn.SideBar({
+					sidebar: $('.itemLi'),
+					items: $('.item'),
+				});
+
+			});
+
+				
+		</script>
+	</body>
+
+</html>

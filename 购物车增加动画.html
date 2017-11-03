@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{float: left;width: 100%;height:100%;}
+			.goodsItem{width: 50px;height:50px;border-radius: 50%;background-color: wheat;}
+			#shoppingCart{padding: 12px;border-radius: 4px;background-color: cornflowerblue;display: inline-block;color: white;cursor: pointer;}
+			#shoppingCart:active{box-shadow: 0 0 5px #888;background-color: #00AACC;}
+		</style>
+	</head>
+	<body>
+		<div class="goodsItem"></div>
+		<div id="shoppingCart" style="margin-left: 500px;">购买</div>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/**添加购物车动画
+			* 说明：页面需要先引入JQuery
+			*传入参数：需要播放动画的对象
+			*/
+			var state=false,fn;
+			function shoppingCartAnimate(dom){
+			    var goodsItem = $(dom).closest(".goodsItem");
+			    var flyElm = goodsItem.clone();
+			    if(!state){
+			    	state=true;
+				    $('body').append(flyElm);
+				    flyElm.css({
+				        'z-index': 9000,
+				        'display': 'block',
+				        'position': 'absolute',
+				        'top': goodsItem.offset().top +'px',
+				        'left': goodsItem.offset().left +'px',
+				        'width': goodsItem.width() +'px',
+				        'height': goodsItem.height() +'px'
+				    });
+				    flyElm.animate({
+				        top: $('#shoppingCart').offset().top,
+				        left: $('#shoppingCart').offset().left,
+				        width: 10,
+				        height: 10
+				    });
+			    }
+			    fn=setTimeout(function(){
+			        flyElm.remove();
+			        state=false;
+			        clearTimeout(fn);
+			    },350)
+			}
+			
+			$(function(){
+				$('#shoppingCart').on('click',function(){
+					shoppingCartAnimate($('.goodsItem'));
+				});
+			})
+			
+		</script>
+	</body>
+</html>

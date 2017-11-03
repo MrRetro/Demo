@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="order2-html">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统-商品编辑</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/orderGoods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/inventory.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/goodsEdit.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="pay-head">
+            <div class="left"><a href="main.html"><img src="img/goBack.png" alt="img" /></a></div>
+			<div class="center">商品编辑</div>
+			<div class="right">
+				<p class="two"><span class="sp-one"><img src="img/help-img.png" alt="img"/></span><span class="sp-two">帮助</span></p>
+				<p class="one inventory"><span class="sp-one">全部</span><span class="sp-two active">分类</span></p>
+			</div>
+		</div>
+		
+		<div class="main-content edit">
+			<div class="inventory-nav">
+				<div class="title">分类列表</div>
+				<div class="txt">饮料</div>
+				<div class="txt">水果</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="txt">套餐</div>
+				<div class="last"><p class="left">上一页</p><p class='center'><span>1</span>/<span>20</span></p><p class="right">下一页</p></div>
+			</div>
+			<div class="main-table inventory">
+				<table>
+					<thead><tr><th>商品条码</th><th>商品名称</th><th>原价</th><th>折扣</th><th>数量</th><th>现价</th><th>小计</th></tr></thead>
+					<tbody>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+						<tr><td>201608211001</td><td>201608211001</td><td>99.00</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="goodsBtns">
+				<p class="p-one p-sels"><a class="a-sels">多选</a></p>
+				<p class="p-one input"><input type="text" name="searchName" id="searchName" value="" placeholder="条码/拼音码/编号" /></p>
+				<p class="p-one p-info"><a>2<br />商品数</a><a>1495<br />总库存</a><a>4488<br />总进价</a><a>7472.5<br />总销售</a></p>
+				<p class="p-one p-pages"><a>上一页</a><label>99/99</label><a>下一页</a></p>
+			</div>
+		</div>
+		<div class="addpro-dialog" style="display: block;">
+			<div class="title"><span class="left">商品资料</span><span class="right"><img src="img/close.png" alt="img"></span></div>
+			<div class="pro-content">
+				<div class="pro-info">
+					<p class="left"><label class="lb-one">条码：</label><input class="txt-two" type="text" name="maNum" id="maNum" value=""><a class="a-three">生成</a></p>
+					<p class="right"><input class="txt-two" type="text" name="inPrice" id="inPrice" value=""><label class="lb-one">进货价：</label></p>
+				</div>
+				<div class="pro-info">
+					<p class="left"><label class="lb-one">品名：</label><input class="txt-two" type="text" name="proName" id="proName" value=""></p>
+					<p class="right"><input class="txt-two" type="text" name="outPrice" id="outPrice" value=""><label class="lb-one">销售价：</label></p>
+				</div>
+				<div class="pro-info">
+					<p class="left"><label class="lb-one">分类：</label>
+						<select class="txt-two" name="" id="proType">
+							<option value="0">--请选择分类--</option>
+							<option value="1">--分类一--</option>
+							<option value="2">--分类二--</option>
+						</select>
+						<a class="a-three">推荐</a></p>
+					<p class="right"><input class="txt-two" type="text" name="inCount" id="inCount" value=""><label class="lb-one">库&nbsp;&nbsp;&nbsp;存：</label></p>
+				</div>
+				<div class="other-info">
+					<a class="a-drop"><span>展开</span><img class="down" src="img/drop_down.png"><img class="up" src="img/drop_up.png"></a>
+					<div class="drop-other" style="display: none;">
+						<div class="pro-info">
+							<p class="left"><label class="lb-one">拼音码：</label><input class="txt-two" type="text" name="proName" id="proName" value=""></p>
+							<p class="right"><input class="txt-two" type="text" name="outPrice" id="outPrice" value=""><label class="lb-one">库存上限：</label></p>
+						</div>
+						<div class="pro-info">
+							<p class="left"><label class="lb-one">供货商：</label><input class="txt-two" type="text" name="proName" id="proName" value=""></p>
+							<p class="right"><input class="txt-two" type="text" name="outPrice" id="outPrice" value=""><label class="lb-one">库存下限：</label></p>
+						</div>
+						<div class="pro-info">
+							<p class="left"><label class="lb-one">生产期：</label><input class="txt-two" type="text" name="proName" id="proName" value=""></p>
+							<p class="right"><input class="txt-two" type="text" name="outPrice" id="outPrice" value=""><label class="lb-one">颜色/尺码：</label></p>
+						</div>
+						<div class="pro-info">
+							<p class="left"><label class="lb-one">商品状态：</label><input type="checkbox" id="ckpro"><label for="ckpro">开启</label></p>
+							<p class="right"><input class="txt-two" type="text" name="outPrice" id="outPrice" value=""><label class="lb-one">会员折扣：</label></p>
+						</div>
+						<div class="pro-info" style="height: 120px;">
+							<textarea style="width: 96%;height: 68px;padding:2% 2%;resize: none;" name="" rows="" cols=""></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pro-btns">
+				<p class="left"><span>*以上展开部分的信息为选填内容</span></p>
+				<p class="right"><a class="cancel" href="javascript:;">取消</a><a class="submit" href="javascript:;">确认</a></p>
+			</div>
+		</div>
+	</body>
+</html>

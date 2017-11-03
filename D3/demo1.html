@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="container"></div>
+		
+		<script src="js/d3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var width=500,
+				height=250,
+				margin={left:50,top:30,right:20,bottom:20},
+				g_width=width-margin.left-margin.right,//画布内容的宽度
+				g_height=height-margin.top-margin.bottom;//画布内容的高度
+				
+			var svg=d3.select('#container')
+			.append('svg')//添加svg标签
+			.attr('width',width)//添加宽度
+			.attr('height',height);
+			
+			var g=d3.select('svg').append('g')
+			.attr('transform','translate('+margin.left+','+margin.top+')');
+			
+			var data=[1,3,5,7,8,4,3,7];
+			
+			var scale_x=d3.scale.linear()//scale按比例生成对应的比例数值
+			.domain([0,data.length-1])//输入范围
+			.range([0,g_width])//输出范围
+			
+			var scale_y=d3.scale.linear()
+			.domain([0,d3.max(data)])//输入范围
+			.range([g_height,0])//输出范围
+						
+			var line_generator=d3.svg.line()//svg的线性插值 x返回x轴数组 y返回y轴数组
+			.x(function(d,i){return scale_x(i)})//0,1,2,3..
+			.y(function(d,i){return scale_y(d)})//1,3,5,7..
+			.interpolate('cardinal')//给线条添加圆滑效果
+			
+			g
+			.append('path')
+			.attr('d',line_generator(data));
+			
+			/*
+				d3.svg.axis()：D3 中坐标轴的组件，能够在 SVG 中生成组成坐标轴的元素。
+				scale()：指定比例尺。
+				orient()：指定刻度的朝向，bottom 表示在坐标轴的下方显示。
+				ticks()：指定刻度的数量。
+			*/
+			var x_axis=d3.svg.axis().scale(scale_x),
+			y_axis=d3.svg.axis().scale(scale_y).orient('left');//
+			
+			/*
+			 	d3中call函数意思  举个栗子
+			 	----------------------1-------------------------
+			 	function foo(selection) {  
+				  selection  
+				      .attr("name1", "value1")  
+				      .attr("name2", "value2");  
+				}  
+				foo(d3.selectAll("div"))  
+			 	-----------------------1------------------------
+			 	等价于
+			 	----------------------2-------------------------
+			 	d3.selectAll("div").call(foo);  
+			 	-----------------------2------------------------
+			 */
+			
+			g.append('g')
+			.call(x_axis)
+			.attr('transform','translate(0,'+g_height+')');
+			
+			g.append('g')
+			.call(y_axis)
+			.append('text')//添加文本
+			.text('Price($)')//文本内容
+			.attr('transform','rotate(-90)')//逆时针旋转90度
+			.attr('text-anchor','end')//文本对齐方式 start起始 middle居中 end尾部 inherit继承方式
+			.attr('dy','1em')//y轴偏移量
+			
+			
+		</script>
+	</body>
+</html>

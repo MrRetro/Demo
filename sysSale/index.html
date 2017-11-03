@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+		<title>收银系统</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/keyboard.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.keyboard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commone.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/keyboard.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="login-head">
+			<a class="one"><i>PT</i>&nbsp;加旅收银</a>
+			<a class="two">收银员登录</a>
+			<a class="three" href="javascript:;"><img src="img/close.png" alt="img"/></a>
+		</div>
+		<div class="login-content">
+			<div class="login-content-txts">
+				<div class="login-content-txts-p">
+					<span class="one"><img src="img/user-img.png" alt="img" />&nbsp;工号：</span>
+					<span class="two"><input type="text" name="" id="txt_num" value="" placeholder="请输入工号" tabindex="1" /></span>
+					<span class="three"><a>首次登陆</a></span>
+				</div>
+				<div class="login-content-txts-p">
+					<span class="one"><img src="img/user-pwd.png" alt="img" style="left: -6px;" />&nbsp;密码：</span>
+					<span class="two"><input type="password" name="" id="txt_pwd" value="" placeholder="请输入密码" tabindex="2" /></span>
+				</div>
+				<div class="login-content-txts-p">
+					<a class="btn" tabindex="3">登&nbsp;陆</a>
+				</div>
+				<div class="login-content-txts-a"><a href="#" class="one">添加管理后台快捷方式到桌面</a><a href="#" class="three">马上创建</a><a href="#" class="two">联系客服</a></div>
+			</div>
+		</div>
+		<div class="keys">
+			<div class="keyImg"><img src="img/keys.png" alt="img"/></div>
+		</div>
+		
+		<div id="container">
+			<ul id="keyboard">
+				<li class="symbol"><span class="off">`</span><span class="on">~</span></li>
+				<li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+				<li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+				<li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+				<li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+				<li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+				<li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+				<li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+				<li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+				<li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+				<li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+				<li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+				<li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+				<li class="delete lastitem">delete</li>
+				<li class="tab">tab</li>
+				<li class="letter">q</li>
+				<li class="letter">w</li>
+				<li class="letter">e</li>
+				<li class="letter">r</li>
+				<li class="letter">t</li>
+				<li class="letter">y</li>
+				<li class="letter">u</li>
+				<li class="letter">i</li>
+				<li class="letter">o</li>
+				<li class="letter">p</li>
+				<li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+				<li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+				<li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+				<li class="capslock">caps lock</li>
+				<li class="letter">a</li>
+				<li class="letter">s</li>
+				<li class="letter">d</li>
+				<li class="letter">f</li>
+				<li class="letter">g</li>
+				<li class="letter">h</li>
+				<li class="letter">j</li>
+				<li class="letter">k</li>
+				<li class="letter">l</li>
+				<li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+				<li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+				<li class="return lastitem">return</li>
+				<li class="left-shift">shift</li>
+				<li class="letter">z</li>
+				<li class="letter">x</li>
+				<li class="letter">c</li>
+				<li class="letter">v</li>
+				<li class="letter">b</li>
+				<li class="letter">n</li>
+				<li class="letter">m</li>
+				<li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+				<li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+				<li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+				<li class="right-shift lastitem">shift</li>
+				<li class="space lastitem">&nbsp;</li>
+			</ul>
+		</div>
+	</body>
+</html>

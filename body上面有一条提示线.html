@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>body上面有一条提示线</title>
+		<style>   
+			*{margin: 0;padding: 0;}    
+	        .line{    
+	        position:fixed;    
+	        width:0%;    
+	        height:2px;    
+	        left:0px;    
+	        top:0px;    
+	        background-color:mediumvioletred;
+	        }     
+	        .sp-fixed{padding: 10px;position: fixed;color: brown;}  
+	    </style>
+	</head>
+	<body>
+		<div class="line"></div>
+		<div class="aa" style="float: left;width: 100%;height: 1800px;background-color: wheat;">
+			<span class="sp-fixed">鼠标移动到这里来滚动看看~~~</span>
+		</div>
+		
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		    $(function(){
+		    	var htmlHeight=$('html').height();//页面实际高度
+		    	var screenHeight=$(window).height();//屏显高度
+		    	var scrollHeight=htmlHeight-screenHeight;//滚轮可滚动总长度
+		    	$(window).scroll(function() {
+		    		//滚轮实时滚动距离
+		    		var scrollTop=$(window).scrollTop();
+		    		var w=scrollTop/scrollHeight*100;
+		    		$('.line').css({'width':w+'%'});
+			    });
+		    })
+		</script>
+	</body>
+</html>
