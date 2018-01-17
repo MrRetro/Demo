@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/**
+			  Question 2: sort extensions by extType follow these orders ASC
+			  DigitalUser < VitrualUser < FaxUser < AO < Dept.
+			**/
+			function sortExtensionsByExtType(extensions) {
+				return extensions.sort(sortRules());
+			}
+			//枚举-用到排序中
+			var orders={
+				DigitalUser:0,
+				VitrualUser:1,
+				FaxUser:2,
+				AO:3,
+				Dept:4
+			}
+			//排序函数
+			function sortRules(){
+				var extType='extType';
+				return function(a,b){
+					var v1=orders[a[extType]],
+						v2=orders[b[extType]];
+					if(v1<v2){
+						return -1;
+					}else if(v1>v2){
+						return 1;
+					}else{
+						return 0
+					}
+				};
+			}
+			
+			//数据模拟
+			var arr=[
+				{firstName: 'vv', lastName: 'bt', ext: 'other1', extType: 'VitrualUser'},
+				{firstName: 'vv', lastName: 'bt', ext: 'other0', extType: 'VitrualUser'},
+				{firstName: 'mm', lastName: 'ak', ext: '', extType: 'DigitalUser'},
+				{firstName: 'gg', lastName: '', ext: 'hello word', extType: 'FaxUser'},
+				{firstName: 'ww', lastName: 'rr', ext: 'day day study', extType: 'Dept'},
+				{firstName: 'vv', lastName: 'at', ext: 'other', extType: 'AO'}
+			];
+			
+			console.log(sortExtensionsByExtType(arr));
+
+		</script>
+	</body>
+</html>

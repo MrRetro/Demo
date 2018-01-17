@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			/**
+			  Question 5: please create a tool to generate Sequence
+			  Expected to be used like:
+			  var sequence1 = new Sequence();
+			  sequence1.next() --> return 1;
+			  sequence1.next() --> return 2;
+			  
+			  in another module:
+			  var sequence2 = new Sequence();
+			  sequence2.next() --> 3;
+			  sequence2.next() --> 4;
+			**/
+			
+			//每次调用next 累加1
+			var vl=0
+			function Sequence(){
+				this.next = function () {
+					vl+=1
+					return vl;
+				};
+			}
+			
+			
+			var sequence1 = new Sequence();
+		  	var a=sequence1.next() 
+		  	var b=sequence1.next()
+		  	console.log(a)
+			console.log(b)		
+			
+			var sequence2 = new Sequence();
+			var c=sequence2.next() 
+		  	var d=sequence2.next()
+		  	console.log(c)
+			console.log(d)	
+			console.log(sequence2.next())
+			console.log(sequence1.next())
+
+		</script>
+	</body>
+</html>

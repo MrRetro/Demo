@@ -2,52 +2,65 @@
 <html>
 
 	<head>
-		<title>QQ授权测试</title>
+		<title>sina授权测试</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<style>
-		</style>
-<!--		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>-->
-		
-<html xmlns:wb="http://open.weibo.com/wb">
-
+		</head>
 		<body>
+			<span id="wb_connect_btn"></span>
+			<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<!-- Sina第三方登录JS导入 -->
+		<script type="text/javascript" src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=742060939" charset="utf-8"></script>
+		<script type="text/javascript">
+			var running = false;
+			var sinaCode = '';
+			if(sinaCode) {} else {
+				sinaCode = "";
+			}
+			WB2.anyWhere(function(W) {
+				W.widget.connectButton({
+					id: "wb_connect_btn",
+					type: '3,2',
+					callback: {
+						login: function(o) {
+							//登录成功之后执行  
+							//alert(o.id + "-------------" + o.screen_name + "----------" + o.avatar_large);
 
-<!-- Sina第三方登录JS导入 --> 
-<!--<script  type="text/javascript" src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2509346633"  charset="utf-8"></script>-->
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2509346633&debug=true" type="text/javascript" charset="utf-8"></script>
+							//登陆隐藏 头像和退出显示
+							//$("#loginTop").hide();
+							//$("#userImg>span").css("background-image", "url(" + o.avatar_large + ")");
+							//$("#userImg").show();
+							//$("#exitLogin").show();
 
-<!--start sina账号登录平台-->   
-<span id="wb_connect_btn"></span>
-<script type="text/javascript">
-    WB2.anyWhere(function (W) {
-        W.widget.connectButton({
-            id: "wb_connect_btn",
-            callback: {
-                login: function (o) {
-                    //登录成功之后执行  
-                    alert(o.id+"-------------"+o.screen_name+"----------"+o.avatar_large);
-                    //$.ajax({
-                    //    type: "POST",//传输类型get/post
-                    //    url: "/Tools/OtherLogin1.ashx",//请求路径
-                    //    data: { openId: o.id, accessToken: accessToken, "": o.avatar_large, QQname: o.screen_name },//请求路径后面带的参数
-                    //    cache: false,
-                    //    dataType: "text",//返回格式有json
-                    //    success: function (data) { //成功返时返回回来的data数据
-                    //        //location.href = data;
-                    //    },
-                    //    error: function () {//错误是弹出报错框
-                    //        alert("shibai")
-                    //    }
-                    //})
-                },
-                logout: function () {
-                    //退出之后执行  
-                    alert('退出之后执行');
-                }
-            }
-        });
-    });
-</script>  
+							if(!running) {
+								running = true;
+								$.ajax({
+									type: "POST", //传输类型get/post
+									url: "/Tools/OtherLogin1.ashx", //请求路径
+									data: {
+										openId: o.id,
+										accessToken: sinaCode,
+										QQtouxiang: o.avatar_large,
+										QQname: o.screen_name
+									}, //请求路径后面带的参数
+									cache: false,
+									dataType: "text", //返回格式有json
+									success: function(data) { //成功返时返回回来的data数据
+										//location.href = data;
+									},
+									error: function() { //错误是弹出报错框
+										alert("shibai")
+									}
+								})
+							}
+						},
+
+						logout: function() { //退出后的回调函数
+
+						}
+					}
+				});
+			});
+		</script>
 		</body>
 
-		</html>
+</html>

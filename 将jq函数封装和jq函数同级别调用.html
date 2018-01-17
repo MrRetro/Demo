@@ -19,8 +19,16 @@
 					$(this).css({'color':'red'});
 				};
 			})($)
+			var retro={
+				click:function(obj){
+					obj.on('click',function(){
+						alert('aaaa')
+					});
+				}
+			}
 			$("#htmlDiv").ShowHtmlToo();
 			$("#htmlDiv").ShowHtmlToo2();
+			retro.click($("#htmlDiv"));
 		</script>
 	</body>
 

@@ -6,17 +6,8 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="this is my page">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<!--<link rel="stylesheet"type="text/css"href="./styles.css">-->
 		<style type="text/css">
-			.popWindow {
-				background-color: #ffffff;
-				border-radius: 3px;
-				border: 2px solid #075E8B;
-				position: absolute;
-				display: none;
-				box-shadow: 5px 5px 5px #322E2F;
-				z-index: 999;
-			}
+			.popWindow{background-color: #ffffff;border-radius: 3px;border: 2px solid #075E8B;position: absolute;display: none;box-shadow: 5px 5px 5px #322E2F;z-index: 999;}
 		</style>
 		<script type="text/javascript">
 			function popWindowShow(url, height, width, title) {
@@ -42,13 +33,13 @@
 	</head>
 
 	<body>
-		<input type="button" value="很牛B的弹窗" onclick="popWindowShow('http://www.163.com',300,450,'显示很牛B的弹窗')" />
+		<input type="button" value="点击弹出一个网页弹框" onclick="popWindowShow('http://www.2tro.com',300,450,'显示很牛B的弹窗')" />
 		<div class="popWindow" id="popWindow">
 			<table style="width:100%;line-height:22px;" cellspacing="0" cellpadding="0">
 				<tr style="background-color:#075E8B;">
 					<td style="color:white;font-family:bolder;font-size:10pt;" id="titleTd">新窗口-东哥的标题</td>
 					<td style="color:#EBEBEB;font-weight:bolder;width:20px;">
-						<img src="action_delete.png" style="width:16px;height:16px;" title="关闭" onclick="popWindowHide()" />
+						<img src="img/loading.gif" style="width:16px;height:16px;cursor: pointer;" title="关闭" onclick="popWindowHide()" />
 					</td>
 				</tr>
 				<tr>

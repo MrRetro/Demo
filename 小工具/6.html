@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				var result=getUnUsedKeys([0,1,2,3,4,5,6,7,8,9],[2,3,4])
+				alert(result)
+			})
+			
+			/**
+			    Question 6:
+			    AllKeys: 0-9;
+			    usedKeys: an array to store all used keys like [2,3,4];
+			    We want to get an array which contains all the unused keys,in this example it would be: [0,1,5,6,7,8,9]
+			**/
+			function getUnUsedKeys(allKeys, usedKeys) {
+				var allKeysObjs={},//重新格式所有数组里的值
+					usedKeyObjs={},//重新格式已使用的数值里的值
+					resultKeys=[];//返回弃除使用过后的所有值
+					
+				for(var i=0;i<allKeys.length;i++){
+					allKeysObjs[allKeys[i]]=allKeys[i];
+				}
+				
+				for(var q=0;q<usedKeys.length;q++){
+					usedKeyObjs[usedKeys[q]]=usedKeys[q];
+				}
+				
+				for(var item in allKeysObjs){
+					if(allKeysObjs[item]!=usedKeyObjs[item]){
+						resultKeys.push(allKeysObjs[item]);
+					}
+				}
+				return resultKeys;
+			}
+
+		</script>
+	</body>
+</html>

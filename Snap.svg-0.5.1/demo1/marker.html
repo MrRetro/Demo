@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="200" height="100"></svg>
+            
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			// 圈圈
+			var c1 = svg.paper.circle(5, 5, 3);
+			// 三角
+			var p1 = svg.paper.path("M2,2 L2,11 L10,6 L2,2").attr({
+			    fill: "#000"      
+			});
+			
+			// 变身标记
+			var m1 = c1.marker(0, 0, 8, 8, 5, 5), m2 = p1.marker(0, 0, 13, 13, 2, 6);
+			
+			// 添加一个路径
+			var p2 = svg.paper.path("M10,10 L150,10 L150,90").attr({
+			    // 描边
+			    stroke: "#00f",
+			    strokeWidth: 1,
+			    fill: "none",
+			    // 起始标记
+			    markerStart: m1,
+			    'marker-mid':m2,
+			    // 结束标记
+			    "marker-end": m2
+			});
+		</script>
+		
+	</body>
+</html>

@@ -1,92 +1,82 @@
-					<html><head>
-    <meta charset="UTF-8">
-    <meta name="google" value="notranslate">
+<html>
 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="google" value="notranslate">
 
-    <title>WEB骇客DEMO - CSS animation 两种动画同时进行</title>
-    
-    
-    <link rel="stylesheet" href="reset.css">
+		<title>WEB骇客DEMO - CSS animation 两种动画同时进行</title>
 
-    
-    <style>
-      .element {
-  height: 200px;
-  width: 200px;
-  background-color: red;
-  -webkit-animation: pulse 3s ease infinite alternate,  nudge 5s linear infinite alternate;
-          animation: pulse 3s ease infinite alternate,  nudge 5s linear infinite alternate;
-  border-radius: 100%;
-}
+		<link rel="stylesheet" href="reset.css">
 
-@-webkit-keyframes pulse {
-  0%, 100% {
-    background-color: red;
-  }
-  50% {
-    background-color: orange;
-  }
-}
+		<style>
+			.element {
+				height: 200px;
+				width: 200px;
+				background-color: red;
+				-webkit-animation: pulse 3s ease infinite alternate, nudge 5s linear infinite alternate;
+				animation: pulse 3s ease infinite alternate, nudge 5s linear infinite alternate;
+				border-radius: 100%;
+			}
+			
+			@-webkit-keyframes pulse {
+				0%,
+				100% {
+					background-color: red;
+				}
+				50% {
+					background-color: orange;
+				}
+			}
+			
+			@keyframes pulse {
+				0%,
+				100% {
+					background-color: red;
+				}
+				50% {
+					background-color: orange;
+				}
+			}
+			
+			@-webkit-keyframes nudge {
+				0%,
+				100% {
+					-webkit-transform: translate(0, 0);
+					transform: translate(0, 0);
+				}
+				50% {
+					-webkit-transform: translate(150px, 0);
+					transform: translate(150px, 0);
+				}
+				80% {
+					-webkit-transform: translate(-150px, 0);
+					transform: translate(-150px, 0);
+				}
+			}
+			
+			@keyframes nudge {
+				0%,
+				100% {
+					-webkit-transform: translate(0, 0);
+					transform: translate(0, 0);
+				}
+				50% {
+					-webkit-transform: translate(150px, 0);
+					transform: translate(150px, 0);
+				}
+				80% {
+					-webkit-transform: translate(-150px, 0);
+					transform: translate(-150px, 0);
+				}
+			}
+			
+			html,body{height: 100%;}
+			body{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}
+		</style>
+	</head>
 
-@keyframes pulse {
-  0%, 100% {
-    background-color: red;
-  }
-  50% {
-    background-color: orange;
-  }
-}
-@-webkit-keyframes nudge {
-  0%, 100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  50% {
-    -webkit-transform: translate(150px, 0);
-            transform: translate(150px, 0);
-  }
-  80% {
-    -webkit-transform: translate(-150px, 0);
-            transform: translate(-150px, 0);
-  }
-}
-@keyframes nudge {
-  0%, 100% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  50% {
-    -webkit-transform: translate(150px, 0);
-            transform: translate(150px, 0);
-  }
-  80% {
-    -webkit-transform: translate(-150px, 0);
-            transform: translate(-150px, 0);
-  }
-}
-html, body {
-  height: 100%;
-}
+	<body>
+		<div class="element"></div>
+	</body>
 
-body {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}   
-
- </style>  
-  </head>
-
-  <body>
-    <div class="element"></div>    
-</body></html>
-					
+</html>

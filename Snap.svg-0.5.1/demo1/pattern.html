@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="250" height="250"></svg>
+            
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var p = svg.paper.path("M10-5-10,15M15,0,0,15M0-5-20,15").attr({
+			    fill: "none",
+			    stroke: "#beceeb",
+			    strokeWidth: 1
+			}).pattern(0, 0, 5, 5),
+			c = svg.paper.circle(120, 120, 100);
+			c.attr({
+			    // 斜纹图案填充
+			    fill: p
+			});
+		</script>
+		
+	</body>
+</html>

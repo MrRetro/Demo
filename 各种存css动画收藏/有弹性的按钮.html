@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.div {
+				float: left;
+				width: 100px;
+				height: 40px;
+				margin: 200px;
+				background-color: burlywood;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+			}
+			.div:before {
+			    content: "";
+			    position: absolute;
+			    z-index: -1;
+			    top: 0px;
+			    left: 0px;
+			    right: 0px;
+			    bottom: 0px;
+			    background: #C1CDCD;
+			    -webkit-transform: scaleX(0);
+			    transform: scaleX(0);
+			    -webkit-transform-origin: 0 50%;
+			    transform-origin: 0 50%;
+			    -webkit-transition-property: transform;
+			    transition-property: transform;
+			    -webkit-transition-duration: 0.4s;
+			    transition-duration: 0.4s;
+			    -webkit-transition-timing-function: ease-out;
+    			transition-timing-function: ease-out;
+			}
+			.div:hover:before {
+			    -webkit-transform: scaleX(1);
+			    transform: scaleX(1);
+			    -webkit-transition-timing-function: cubic-bezier(0.405, 1.640, 0.395, 0.670);
+
+transition-timing-function: cubic-bezier(0.405, 1.640, 0.395, 0.670);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div"></div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="200" height="100"></svg>
+            
+		<input id="button" type="button" value="点击改变圈圈的顺序">
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c1 = svg.paper.circle(50, 50, 40).attr({
+			    fill: "#f00"	// 红色
+			});
+			var c2 = svg.paper.circle(100, 50, 40).attr({
+			    fill: "#00f"	// 蓝色
+			});
+			
+			var c3 = svg.paper.circle(78, 50, 40).attr({
+			    fill: "#000"	//黑色 
+			});
+			
+			// 事件
+			var bool=false;
+			document.querySelector("#button").addEventListener("click", function() {
+				if(!bool){
+				    c3.after(c1);	
+				}else{
+					c1.after(c2);
+				}
+				bool=!bool;
+			});
+		</script>
+	</body>
+</html>

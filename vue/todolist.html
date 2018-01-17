@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.ok{
+				text-decoration: line-through;
+				color: #8f8f8f;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" name="" id="" value="" v-model="sth" v-on:keyup.enter="add" />
+			<ul>
+				<li v-for="item in things" @click="item.isOk=!item.isOk" v-bind:class="{ok:item.isOk}">
+					{{item.text}}
+				</li>
+			</ul>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					sth:'',
+					things:[]
+				},
+				methods:{
+					add:function(){
+						this.things.unshift({
+							isOk:false,
+							text:this.sth
+						});
+						this.sth=''
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

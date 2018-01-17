@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="description" content="SVG polygon points参数值变化与动画效果 » 张鑫旭-鑫空间-鑫生活" />
+		<meta name="description" content="SVG polygon points参数值变化与动画效果" />
+		<meta name="keywords" content="SVG, javascript, Snap.svg, polygon, points" />
+		<meta name="author" content="张鑫旭, zhangxinxu" />
+		<title>一个简单的SVG路径变化形成的动画效果</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+				background-color: #012E72;
+				font-family: 'microsoft yahei';
+				overflow: hidden;
+			}
+			
+			.shape-svg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.white {
+				padding: 10px;
+				color: #fff;
+				position: absolute;
+				z-index: 2;
+			}
+			
+			.white:hover {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg id="shapeSVG" class="shape-svg"></svg>
+		<script src="js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			// SVG主体
+			var svg = Snap("#shapeSVG");
+
+			// 确定页面中心点位置
+			var point_center = [window.innerWidth / 2, window.innerHeight / 2];
+
+			// 这里是一个5变形
+			// 从中心点位置过去，到每一个转折点，是有一个半径的
+			var radius = 200;
+
+			// 根据中心点和半径，确认五边形5个点坐标
+			// （中心点与端点相连）5个等腰三角形，每个角72° + 54° + 54°
+			// 因此假设5个点是如下排列则
+			/*
+			      。2
+			  。1 
+			  |       。3
+			  。5
+			      。4
+			*/
+
+			var p1 = [
+					point_center[0] - radius * Math.sin((54 / 180) * Math.PI),
+					point_center[1] - radius * Math.sin((36 / 180) * Math.PI)
+				],
+				p2 = [
+					point_center[0] + radius * Math.sin((18 / 180) * Math.PI),
+					point_center[1] - radius * Math.sin((72 / 180) * Math.PI)
+				],
+				p3 = [
+					point_center[0] + radius,
+					point_center[1]
+				],
+				p4 = [
+					point_center[0] + radius * Math.sin((18 / 180) * Math.PI),
+					point_center[1] + radius * Math.sin((72 / 180) * Math.PI)
+				],
+				p5 = [
+					point_center[0] - radius * Math.sin((54 / 180) * Math.PI),
+					point_center[1] + radius * Math.sin((36 / 180) * Math.PI)
+				];
+
+			// 根据这5个点绘制
+			var polygon = svg.paper.polyline([p1.join(), p2.join(), p3.join(), p4.join(), p5.join()].join()).attr({
+				fill: "rgba(255,255,255,.85)",
+			});
+
+			// 事件与动画
+			// 我们对p3这一点做处理
+			var animate_p3 = function(val) {
+				polygon.attr({
+					points: [p1.join(), p2.join(), [point_center[0] + val, point_center[1]], p4.join(), p5.join()].join()
+				});
+			};
+			// 鼠标移入与移出
+			polygon.mouseover(function() {
+				Snap.animate(radius, 0, animate_p3, 300, mina.backout);
+			}).mouseout(function() {
+				Snap.animate(0, radius, animate_p3, 300, mina.backin);
+			});
+		</script>
+	</body>
+
+</html>

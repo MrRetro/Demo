@@ -9,7 +9,7 @@
 		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+		<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
  <g>
   <title>background</title>
@@ -33,6 +33,9 @@
 			nowTxt+=arr[i]+' ';
 			$('#p1').attr('d',nowTxt);
 			i++;
+			if(i>arr.length){
+				clearInterval(f1);
+			}
 		},30);
 	})
 </script>

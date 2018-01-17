@@ -1,0 +1,78 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>SVG</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			svg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				padding: 30px;
+			}
+			
+			#path {
+				animation: animation 15s infinite cubic-bezier(.34, 1.61, .7, 1);
+			}
+			
+			@keyframes animation {
+				0%,
+				7% {
+					d: path('M0,100 L50,100 L50,50 L50,0 L0,0 L0,50 L50,50')
+				}
+				11%,
+				17% {
+					d: path('M0,0 L50,0 L50,100 L0,100 L0,0 L0,50 L50,50')
+				}
+				21%,
+				27% {
+					d: path('M0,0 L50,0 L50,20 L50,40 L50,60 L50,80 L50,100')
+				}
+				31%,
+				37% {
+					d: path('M50,0 L0,0 L0,50 L0,100 L50,100, L50,50 L0,50')
+				}
+				41%,
+				47% {
+					d: path('M50,0 L0,0 L0,50 L25,50 L50,50 L50,100 L0,100')
+				}
+				51%,
+				57% {
+					d: path('M0,0 L0,50 L50,50 L50,0 L50,35 L50,70 L50,100')
+				}
+				61%,
+				67% {
+					d: path('M0,0 L50,0 L50,100 L0,100 L50,100 L50,50 L0,50')
+				}
+				71%,
+				77% {
+					d: path('M0,0 L50,0 L50,50 L25,50 L0,50 L0,100 L50,100')
+				}
+				81%,
+				87% {
+					d: path('M50,0 L50,15 L50,30 L50,45 L50,60 L50,75 L50,100')
+				}
+				91%,
+				96% {
+					d: path('M0,0 L50,0 L50,50 L50,100 L0,100 L0,25 L0,0')
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+			<path id="path" fill="none" stroke="#f00" stroke-width="2px" d="M0,0 L50,0 L50,50 L50,100 L0,100 L0,25 L0,0">
+			</path>
+
+		</svg>
+	</body>
+
+</html>

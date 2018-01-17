@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body style="background-color: #000;">
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<input type="range" id="scale-range" min="0.5" max="3.0" step="0.01" value="1" style="display: block;margin-top: 20px;width: 370px;" />
+	</body>
+
+	<script type="text/javascript">
+		canvas = document.getElementById('canvas')
+		slider=document.getElementById('scale-range')
+		ctx = canvas.getContext('2d')
+		image=new Image()
+		
+		window.onload=function(){
+			canvas.width=370
+			canvas.height=224
+			
+			image.src='../images/pic_01.png'
+			
+			var scale=slider.value
+			
+			image.onload=function(){
+				
+//				ctx.drawImage(image,0,0,canvas.width,canvas.height)
+//				ctx.drawImage(image,0,0,53,53,200,200,53,53)
+				drawImageByScale(scale)
+				
+				slider.onmousemove=function(){
+					
+					scale = slider.value
+					drawImageByScale(scale)
+					
+				}
+				
+			}
+			
+		}
+		
+		function drawImageByScale(scale){
+			
+			var imageWidth = 370 * scale
+			var imageHeight = 224 * scale
+			
+			var dx = canvas.width / 2 - imageWidth / 2
+			var dy = canvas.height / 2 - imageHeight / 2
+			
+			
+			ctx.clearRect(0,0,canvas.width,canvas.height)
+			ctx.drawImage(image,dx,dy,imageWidth,imageHeight)
+			
+		}
+		
+		
+		
+		
+	</script>
+
+</html>

@@ -1,4 +1,23 @@
 $.fn.extend({
+	//按钮改变目标
+	binChange:function(e){
+		obj={
+			btn:'.btnName',			//按钮
+			target:'.toName',		//目标
+			cs:'active',			//状态
+			click:'click'			//事件
+		}
+		nowObj=$.extend({},obj,e);
+		if($(nowObj.btn)){
+			$(nowObj.btn).on(nowObj.click,function(){
+				if($(nowObj.target).hasClass(nowObj.cs)){
+					$(nowObj.target).removeClass(nowObj.cs);
+				}else{
+					$(nowObj.target).addClass(nowObj.cs);
+				}
+			})
+		}
+	},
 	//平移轮播
 	lunbo:function(e){
 		var defaults = {

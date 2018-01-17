@@ -5,17 +5,8 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style>
-			.txtFlash {
-				text-align: center;
-				background-color: gainsboro;
-				color: #111111;
-				font-size: 20px;
-				font-weight: bold;
-			}
-			
-			.txtFlash .active {
-				color: red;
-			}
+			.txtFlash{text-align: center;background-color: gainsboro;color: #111111;font-size: 20px;font-weight: bold;}
+			.txtFlash .active{color: red;}
 		</style>
 		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
@@ -26,20 +17,22 @@
 		<script type="text/javascript">
 			$(function() {
 				$.fn.textFlicke('txtFlash');
+//				textFlicke();
 			});
 			//文字闪烁 参数className为类名
-//			function textFlicke(className) {
-//				var i = 0;
-//				setInterval(function() {
-//					var count = $('.' + className + ' label').length;
-//					if (i >= count) {
-//						i = 0;
-//					}
-//					$('.' + className + ' label').removeClass('active');
-//					$('.' + className + ' label').eq(i).addClass('active');
-//					i = i + 1;
-//				}, 500);
-//			}
+			var i = 0;
+			function textFlicke() {
+				var className='txtFlash';
+				var count = $('.' + className + ' label').length;
+				if (i >= count) {
+					i = 0;
+				}
+				$('.' + className + ' label').removeClass('active');
+				$('.' + className + ' label').eq(i).addClass('active');
+				i = i + 1;
+				
+				requestAnimationFrame(textFlicke);
+			}
 //		</script>
 	</body>
 

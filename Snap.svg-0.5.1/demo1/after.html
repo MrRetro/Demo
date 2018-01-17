@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg1" width="100" height="100"></svg>
+		<svg id="svg2" width="100" height="100"></svg>
+		            
+		<input id="button" type="button" value="蓝圈圈跑到红圈圈家里蹭饭">
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg1 = Snap("#svg1"), svg2 = Snap("#svg2");
+			var c1 = svg1.paper.circle(50, 50, 40).attr({
+			    fill: "#f00"	// 红色
+			});
+			var c2 = svg2.paper.circle(50, 50, 30).attr({
+			    fill: "#00f"	// 蓝色
+			});
+			
+			// 事件
+			document.querySelector("#button").addEventListener("click", function() {
+			    svg1.append(c2);
+			    this.value = "蹭饭成功";
+			});
+		</script>
+	</body>
+</html>

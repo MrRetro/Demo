@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="text" name="" id="" value="" />
+			{{ text }}
+		</div>
+		<script type="text/javascript">
+			
+//			var vm=new Vue({
+//				el:'#app',
+//				data:{
+//					text:'hello world'
+//				}
+//			});
+			var dom=nodeToFragment(document.getElementById('app'))
+//			
+			function nodeToFragment(node){
+				var flag=document.createDocumentFragment();
+				var child;
+				while(child=node.firstChild){
+					flag.appendChild(child);//劫持node的所有子节点
+				}
+				return flag;
+			}
+			
+			document.getElementById('app').appendChild(dom)
+			
+			
+			
+		</script>
+	</body>
+</html>

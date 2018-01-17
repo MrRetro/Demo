@@ -77,6 +77,8 @@
 		
 		// If this element doesn't have a background image, don't apply this effect to it
 		var backgroundUrl = (/url\(["']?([^"']*)["']?\)/.exec(this.$el.css('background-image')));
+//console.log(backgroundUrl)
+backgroundUrl=['url("url("http://i1.piimg.com/4851/400280a2096dab71.jpg")', 'http://i1.piimg.com/4851/400280a2096dab71.jpg', {index: 0}, {input: 'url("url("http://i1.piimg.com/4851/400280a2096dab71.jpg")'}];
 		if (backgroundUrl == null) return;
 		backgroundUrl = backgroundUrl[1];
 		

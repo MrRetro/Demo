@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app-9">
+			<span v-once>这个将不会改变: {{ foo }}</span>
+			<p>{{ foo }}</p>
+			<input type="button" @click="foo='bax'" value="change it"></input>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var data={
+				foo:'bar'
+			}
+			
+			var vm=new Vue({
+				el:'#app-9',
+			    data:data
+			})
+		</script>
+	</body>
+</html>

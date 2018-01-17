@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="100" height="100"></svg>
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c = svg.paper.path("M10 10L90 90").attr({
+			    stroke: "#000",
+			    strokeWidth: 5	
+			});
+			console.dir(c.getPointAtLength(20));    // 结果见最下面的截图
+		</script>
+		
+	</body>
+</html>

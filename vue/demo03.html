@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app-3">
+			<p v-if="seen" @click="isShow">现在你看到我了</p>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app-3',
+				data:{
+					seen:true
+				},
+				methods:{
+					isShow:function(){
+						this.seen=!this.seen
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

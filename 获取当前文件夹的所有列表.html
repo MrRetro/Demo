@@ -4,18 +4,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			/*
+			 * http://jingyan.baidu.com/article/ae97a646d43dc8bbfd461d0b.html
+			 * 到ie8把activeX开起来才可以-参照以上文档设置
+			 */
 			function searchFiles() {
 				var fso = new ActiveXObject("Scripting.FileSystemObject");
 				var f = fso.GetFolder(document.all.fixfolder.value);
 				var fc = new Enumerator(f.files);
 				var s = "";
 				
-//				var i=0;
-//				var arry=[];
 				for(; !fc.atEnd(); fc.moveNext()) {
-//					var url=fc.item();
-//					arry[i]=url;
-//					i++;
 					
 					s += fc.item();
 					s += "<br/>";
@@ -40,7 +39,7 @@
 				var locF = curWwwPath.substring(0, pos);
 				//				alert(curWwwPath.substring(0,pos));
 				var pathName = document.getElementById('search');
-				pathName.value = "D:\\Work\\加旅科技\\测试";
+				pathName.value = "E:\\将来时\\测试";
 				
 
 			}

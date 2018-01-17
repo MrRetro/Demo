@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="500" height="500" style="background:yellow"></svg>
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c1 = svg.paper.circle(50, 50, 40).drag();
+		</script>
+		
+		
+		
+<br />onmove 函数。移动中的事件句柄。
+<br />onstart 函数。拖拽开始时的事件句柄。
+<br />onend 函数。拖拽结束时的事件句柄。
+<br />mcontext 对象。移动事件上下文。
+<br />scontext 对象。拖拽开始事件的上下文。
+<br />econtext 对象。拖拽结束事件的上下文。
+另外，以下drag事件被触发：开始时的drag.start.<id>, 结束时的drag.end.<id>以及每次移动的drag.move.<id>. 当元素拖动经过另外一个元素的时候，drag.over.<id>也会触发。//zxx: 这个大家其实可以不要关心，此段直接取自代码注释。我发现这玩意没法使用。
+
+开始事件和句柄调用特定的上下文，或者元素自身带有如下参数的上下文：
+
+<br />x 数值。鼠标x位置。
+<br />y 数值。鼠标y位置。
+<br />event 对象。DOM事件对象。
+<br />移动事件和句柄调用特定的上下文，或者元素自身带有如下参数的上下文：
+
+<br />dx 数值。距离鼠标开始点的x偏移。
+<br />dx 数值。距离鼠标开始点的y偏移。
+<br />x 数值。鼠标x位置。
+<br />y 数值。鼠标y位置。
+<br />event 对象。DOM事件对象。
+结束事件和句柄调用特定的上下文，或者元素自身带有如下参数的上下文：
+
+event 对象。DOM事件对象。
+一般而言，onmove等方法不需要设置。也就是直接drag()实现拖拽效果。因为onmove等方法表示自定义而不是回调。
+	</body>
+</html>

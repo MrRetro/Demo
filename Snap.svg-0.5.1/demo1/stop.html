@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="200" height="100">
+		    <circle cx="50" cy="50" r="40"></circle>
+		    <circle class="sel" cx="150" cy="50" r="40"></circle>        
+		</svg>
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c=svg.selectAll("circle").animate({
+			    fill: "#f00"					  
+			},500);
+		</script>
+		
+	</body>
+</html>

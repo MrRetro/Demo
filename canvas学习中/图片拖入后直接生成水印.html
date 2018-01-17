@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片拖进来直接生成文字水印</title>
+		<style>
+		body:before{content: '图片直接拖进来';float: left;padding: 20px;}
+		canvas,div,h1{float: left;}
+		h1{float: left;width: 100%;height: 1px;}
+		h2{float: left;width: 100%;padding-left: 20px;}
+		#result{display: none;}
+		#waterTxt{
+			float:left;
+			border: 1px solid #d6d7dc;
+		    border-radius: 13px;
+		    padding: 10px 30px;
+		    margin-top: 5px;
+		    outline: none;
+	    }
+		</style>
+	</head>
+	<body>
+		<span id="waterTxt" class="sp-word" contenteditable="true">==2tro.com==</span>
+		<h1></h1>
+	<div id="div">
+		
+	</div>
+	<h2 id="result">生成结果：</h2>
+	<canvas id="canvas"></canvas>
+	<canvas id="watermark-canvas" style="display: none;"></canvas>
+	
+	<script src="js/makewater.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="200" height="100"></svg>
+            
+		
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c = svg.paper.circle(50, 50, 40).attr({
+			    fill: "#f00"        // 红色
+			}).mousedown(function() {
+			    this.animate({
+			        fill: "#00f"    // 蓝色
+			    }, 1000);	
+			});
+		</script>
+		
+	</body>
+</html>

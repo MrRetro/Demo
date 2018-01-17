@@ -160,6 +160,12 @@
 			          if (status === 'complete' && result.info === 'OK') {
 			            var pois = result.poiList.pois;
 			            pois.forEach(function(poi){
+			            	
+			            	var oo=[]
+			            	for(var a in poi){
+			            		oo.push(a)
+			            	}
+			            	console.log(oo)
 			              var divStr = '<div class="makerStyle"><span>' + poi.name + '</span></div>';
 			              var info = '<div class="infoWindow"><div class="info_title gd1">小区信息</div>'
 			                + '<div class="info_name">名称: ' + poi.name+ '</div>'

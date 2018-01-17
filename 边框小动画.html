@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		div{float: left;width: 100%;}
+		.div1,
+		.div2,
+		.div3,
+		.div4,
+		.div5,
+		.div6,
+		.div7,
+		.div8,
+		.div9,
+		.div10,
+		.div11,
+		.div12
+		{float: left;width: 200px;height: 60px;line-height:60px;text-align:center;margin: 60px;margin-bottom:0px;background:wheat;position: relative;}
+		/*up*/
+		.sp1{
+		    position: absolute;
+		    left: 50%; 
+		    right: 50%; 
+		    top: 0;
+		    background: #a9334c;
+		    height: 4px;
+		    -webkit-transition-property: 'left, right';
+		    transition-property: 'left, right';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div1:hover .sp1{left:0;right:0px;}
+		
+		/*left*/
+		.sp2{
+		    position: absolute;
+		    left: 0; 
+		    top: 50%; 
+		    bottom: 50%;
+		    background: #a9334c;
+		    width: 4px;
+		    -webkit-transition-property: 'top, bottom';
+		    transition-property: 'top, bottom';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div2:hover .sp2{top:0;bottom:0px;}
+		
+		/*down*/
+		.sp3{
+		    position: absolute;
+		    left: 50%; 
+		    right: 50%; 
+		    bottom: 0;
+		    background: #a9334c;
+		    height: 4px;
+		    -webkit-transition-property: 'left, right';
+		    transition-property: 'left, right';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div3:hover .sp3{left:0;right:0px;}
+		
+		/*right*/
+		.sp4{
+		    position: absolute;
+		    right: 0; 
+		    top: 50%; 
+		    bottom: 50%;
+		    background: #a9334c;
+		    width: 4px;
+		    -webkit-transition-property: 'top, bottom';
+		    transition-property: 'top, bottom';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div4:hover .sp4{top:0;bottom:0px;}
+		
+		/*all*/
+		.div5:hover .sp1{left:0;right:0px;}
+		.div5:hover .sp2{top:0;bottom:0px;}
+		.div5:hover .sp3{left:0;right:0px;}
+		.div5:hover .sp4{top:0;bottom:0px;}
+		
+		
+		/*up*/
+		.sp6{
+		    position: absolute;
+		    left: 0%; 
+		    right: 100%; 
+		    top: 0;
+		    background: #a9334c;
+		    height: 4px;
+		    -webkit-transition-property: 'left, right';
+		    transition-property: 'left, right';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div6:hover .sp6{left:0;right:0;}
+		
+		/*left*/
+		.sp7{
+		    position: absolute;
+		    left: 0; 
+		    top: 100%; 
+		    bottom: 0%;
+		    background: #a9334c;
+		    width: 4px;
+		    -webkit-transition-property: 'top, bottom';
+		    transition-property: 'top, bottom';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div7:hover .sp7{top:0;bottom:0px;}
+		
+		/*down*/
+		.sp8{
+		    position: absolute;
+		    left: 100%; 
+		    right: 0%; 
+		    bottom: 0;
+		    background: #a9334c;
+		    height: 4px;
+		    -webkit-transition-property: 'left, right';
+		    transition-property: 'left, right';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div8:hover .sp8{left:0;right:0px;}
+		
+		/*right*/
+		.sp9{
+		    position: absolute;
+		    right: 0; 
+		    top: 0%; 
+		    bottom: 100%;
+		    background: #a9334c;
+		    width: 4px;
+		    -webkit-transition-property: 'top, bottom';
+		    transition-property: 'top, bottom';
+		    -webkit-transition-duration: .3s;
+		    transition-duration: .3s;
+		    -webkit-transition-timing-function: ease-out;
+		    transition-timing-function: ease-out;
+		}
+		.div9:hover .sp9{top:0;bottom:0px;}
+		
+		/*all*/
+		.div10:hover .sp6{left:0;right:0px;}
+		.div10:hover .sp7{top:0;bottom:0px;}
+		.div10:hover .sp8{left:0;right:0px;}
+		.div10:hover .sp9{top:0;bottom:0px;}
+		
+		.div11:hover .sp6{left:0;right:0px;transition-delay: .2s;}
+		.div11:hover .sp7{top:0;bottom:0px;transition-delay: .8s;}
+		.div11:hover .sp8{left:0;right:0px;transition-delay: .6s;}
+		.div11:hover .sp9{top:0;bottom:0px;transition-delay: .4s;}
+		
+		/*duang*/
+		.div12{background-color: #F4606C;color: white;}
+		.div12:hover:after {
+		    content: "";
+		    position: absolute;
+		    top: -1px;
+		    left: -1px;
+		    bottom: -1px;
+		    right: -1px;
+		    border-radius: inherit;
+		    border: 0 solid #F4606C;
+		    opacity: .4;
+		    animation: buttonEffect .2s infinite;
+		    display: block
+		}
+		
+		@keyframes buttonEffect {
+		    to {
+		        opacity: 0;
+		        top: -6px;
+		        left: -6px;
+		        bottom: -6px;
+		        right: -6px;
+		        border-width: 12px
+		    }
+		}
+		
+		.div13{
+			margin: 60px;
+			margin-bottom:0px;
+			position: relative;
+		    display: inline-block;
+		    box-sizing: border-box;
+		    height: 22px;
+		    min-width: 44px;
+		    line-height: 20px;
+		    vertical-align: middle;
+		    border-radius: 20px;
+		    border: 1px solid transparent;
+		    background-color: rgba(0,0,0,.25);
+		    cursor: pointer;
+		    -webkit-transition: all .36s;
+		    transition: all .36s;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+		.div13:hover{
+			background-color: #19CAAD;
+		}
+		.div13:after{
+			position: absolute;
+		    width: 18px;
+		    height: 18px;
+		    left: 1px;
+		    top: 1px;
+		    border-radius: 18px;
+		    background-color: #fff;
+		    content: " ";
+		    cursor: pointer;
+		    -webkit-transition: all .36s cubic-bezier(.78,.14,.15,.86);
+		    transition: all .36s cubic-bezier(.78,.14,.15,.86);
+		}
+		.div13:hover:after{
+			left: 100%;
+    		margin-left: -19px;
+		}
+		.sp13{
+			color: #fff;
+		    font-size: 12px;
+		    margin-left: 24px;
+		    margin-right: 6px;
+		    display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p class="div1">
+			<span class="sp1"></span>
+			鼠标移上来试试
+		</p>
+		<p class="div2">
+			<span class="sp2"></span>
+			左边
+		</p>
+	</div>
+	<div>
+		<p class="div3">
+			<span class="sp3"></span>
+			下边
+		</p>
+		<p class="div4">
+			<span class="sp4"></span>
+			右边
+		</p>
+	</div>
+	<div>
+		<p class="div5">
+			<span class="sp1"></span>
+			<span class="sp2"></span>
+			<span class="sp3"></span>
+			<span class="sp4"></span>
+			万花
+		</p>
+	</div>
+	
+	<div>
+		<p class="div6">
+			<span class="sp6"></span>
+			上边
+		</p>
+		<p class="div7">
+			<span class="sp7"></span>
+			左边
+		</p>
+	</div>
+	<div>
+		<p class="div8">
+			<span class="sp8"></span>
+			下边
+		</p>
+		<p class="div9">
+			<span class="sp9"></span>
+			右边
+		</p>
+	</div>
+	
+	<div>
+		<p class="div10">
+			<span class="sp6"></span>
+			<span class="sp7"></span>
+			<span class="sp8"></span>
+			<span class="sp9"></span>
+			外环
+		</p>
+		<p class="div11">
+			<span class="sp6"></span>
+			<span class="sp7"></span>
+			<span class="sp8"></span>
+			<span class="sp9"></span>
+			跑外环
+		</p>
+	</div>
+	
+	<div>
+		<p class="div12">
+			<span class="sp12"></span>
+			Duang
+		</p>
+		<p class="div13">
+			<span class="sp13"></span>
+		</p>
+	</div>
+	
+</body>
+</html>

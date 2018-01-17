@@ -5,236 +5,32 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style type="text/css">
-			div {
-				margin: 100px 100px;
-				text-align: center;
-			}
+			div{margin: 100px 100px;text-align: center;float: left;margin-top: 110px;}
 			/*三角形*/
-			
-			#angle {
-				width: 0px;
-				height: 0px;
-				border-bottom: 50px solid red;
-				border-left: 50px solid rgba(0, 0, 0, 0);
-				border-right: 50px solid rgba(0, 0, 0, 0);
-				transition:all 1s;
-			}
-			#angle:hover{
-				transform:rotate(180deg);
-				-ms-transform:rotate(180deg); /* Internet Explorer */
-				-moz-transform:rotate(180deg); /* Firefox */
-				-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
-				-o-transform:rotate(180deg); /* Opera */
-				/*圆心点*/
-				transform-origin:50% 50%;
-				-ms-transform-origin:50% 50%; /* IE 9 */
-				-webkit-transform-origin:50% 50%; /* Safari and Chrome */
-				
-				margin-left: 200px;
-			}
+			#angle{width: 0px;height: 0px;border-bottom: 50px solid red;border-left: 50px solid rgba(0, 0, 0, 0);border-right: 50px solid rgba(0, 0, 0, 0);transition:all 1s;}
+			#angle:hover{transform:rotate(180deg);-ms-transform:rotate(180deg);/* Internet Explorer*/-moz-transform:rotate(180deg);/* Firefox*/-webkit-transform:rotate(180deg);/* Safari 和 Chrome*/-o-transform:rotate(180deg);/* Opera*//*圆心点*/transform-origin:50% 50%;-ms-transform-origin:50% 50%;/* IE 9*/-webkit-transform-origin:50% 50%;/* Safari and Chrome*/margin-left: 200px;}
 			/*六边形*/
-			
-			#star-six {
-				width: 0;
-				height: 0;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				border-bottom: 100px solid red;
-				position: relative;
-			}
-			
-			#star-six:after {
-				width: 0;
-				height: 0;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				border-top: 100px solid red;
-				position: absolute;
-				content: "";
-				top: 30px;
-				left: -50px;
-			}
+			#star-six{width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 100px solid red;position: relative;}
+			#star-six:after{width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 100px solid red;position: absolute;content: "";top: 30px;left: -50px;}
 			/*五角星*/
-			
-			#star-five {
-				margin: 50px 0;
-				position: relative;
-				display: block;
-				color: red;
-				width: 0px;
-				height: 0px;
-				border-right: 100px solid transparent;
-				border-bottom: 70px solid red;
-				border-left: 100px solid transparent;
-				-moz-transform: rotate(35deg);
-				-webkit-transform: rotate(35deg);
-				-ms-transform: rotate(35deg);
-				-o-transform: rotate(35deg);
-			}
-			
-			#star-five:before {
-				border-bottom: 80px solid red;
-				border-left: 30px solid transparent;
-				border-right: 30px solid transparent;
-				position: absolute;
-				height: 0;
-				width: 0;
-				top: -45px;
-				left: -65px;
-				display: block;
-				content: '';
-				-webkit-transform: rotate(-35deg);
-				-moz-transform: rotate(-35deg);
-				-ms-transform: rotate(-35deg);
-				-o-transform: rotate(-35deg);
-			}
-			
-			#star-five:after {
-				position: absolute;
-				display: block;
-				color: red;
-				top: 3px;
-				left: -105px;
-				width: 0px;
-				height: 0px;
-				border-right: 100px solid transparent;
-				border-bottom: 70px solid red;
-				border-left: 100px solid transparent;
-				-webkit-transform: rotate(-70deg);
-				-moz-transform: rotate(-70deg);
-				-ms-transform: rotate(-70deg);
-				-o-transform: rotate(-70deg);
-				content: '';
-			}
+			#star-five{position: relative;display: block;color: red;width: 0px;height: 0px;border-right: 100px solid transparent;border-bottom: 70px solid red;border-left: 100px solid transparent;-moz-transform: rotate(35deg);-webkit-transform: rotate(35deg);-ms-transform: rotate(35deg);-o-transform: rotate(35deg);}
+			#star-five:before{border-bottom: 80px solid red;border-left: 30px solid transparent;border-right: 30px solid transparent;position: absolute;height: 0;width: 0;top: -45px;left: -65px;display: block;content: '';-webkit-transform: rotate(-35deg);-moz-transform: rotate(-35deg);-ms-transform: rotate(-35deg);-o-transform: rotate(-35deg);}
+			#star-five:after{position: absolute;display: block;color: red;top: 3px;left: -105px;width: 0px;height: 0px;border-right: 100px solid transparent;border-bottom: 70px solid red;border-left: 100px solid transparent;-webkit-transform: rotate(-70deg);-moz-transform: rotate(-70deg);-ms-transform: rotate(-70deg);-o-transform: rotate(-70deg);content: '';}
 			/*五边形*/
-			
-			#pentagon {
-				position: relative;
-				width: 54px;
-				border-width: 50px 18px 0;
-				border-style: solid;
-				border-color: red transparent;
-			}
-			
-			#pentagon:before {
-				content: "";
-				position: absolute;
-				height: 0;
-				width: 0;
-				top: -85px;
-				left: -18px;
-				border-width: 0 45px 35px;
-				border-style: solid;
-				border-color: transparent transparent red;
-			}
+			#pentagon{position: relative;width: 54px;border-width: 50px 18px 0;border-style: solid;border-color: red transparent;}
+			#pentagon:before{content: "";position: absolute;height: 0;width: 0;top: -85px;left: -18px;border-width: 0 45px 35px;border-style: solid;border-color: transparent transparent red;}
 			/*正六边形*/
-			
-			#hexagon {
-				width: 100px;
-				height: 55px;
-				background: red;
-				position: relative;
-			}
-			
-			#hexagon:before {
-				content: "";
-				position: absolute;
-				top: -25px;
-				left: 0;
-				width: 0;
-				height: 0;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				border-bottom: 25px solid red;
-			}
-			
-			#hexagon:after {
-				content: "";
-				position: absolute;
-				bottom: -25px;
-				left: 0;
-				width: 0;
-				height: 0;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				border-top: 25px solid red;
-			}
+			#hexagon{width: 100px;height: 55px;background: red;position: relative;}
+			#hexagon:before{content: "";position: absolute;top: -25px;left: 0;width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-bottom: 25px solid red;}
+			#hexagon:after{content: "";position: absolute;bottom: -25px;left: 0;width: 0;height: 0;border-left: 50px solid transparent;border-right: 50px solid transparent;border-top: 25px solid red;}
 			/*正八边形*/
-			
-			#octagon {
-				width: 100px;
-				height: 100px;
-				background: red;
-				position: relative;
-			}
-			
-			#octagon:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				border-bottom: 29px solid red;
-				border-left: 29px solid #eee;
-				border-right: 29px solid #eee;
-				width: 42px;
-				height: 0;
-			}
-			
-			#octagon:after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				border-top: 29px solid red;
-				border-left: 29px solid #eee;
-				border-right: 29px solid #eee;
-				width: 42px;
-				height: 0;
-			}
+			#octagon{width: 100px;height: 100px;background: red;position: relative;}
+			#octagon:before{content: "";position: absolute;top: 0;left: 0;border-bottom: 29px solid red;border-left: 29px solid #fff;border-right: 29px solid #fff;width: 42px;height: 0;}
+			#octagon:after{content: "";position: absolute;bottom: 0;left: 0;border-top: 29px solid red;border-left: 29px solid #fff;border-right: 29px solid #fff;width: 42px;height: 0;}
 			/*爱心型*/
-			
-			#heart {
-				position: relative;
-				width: 100px;
-				height: 90px;
-			}
-			
-			#heart:before,
-			#heart:after {
-				position: absolute;
-				content: "";
-				left: 50px;
-				top: 0;
-				width: 50px;
-				height: 80px;
-				background: red;
-				-moz-border-radius: 50px 50px 0 0;
-				border-radius: 50px 50px 0 0;
-				-webkit-transform: rotate(-45deg);
-				-moz-transform: rotate(-45deg);
-				-ms-transform: rotate(-45deg);
-				-o-transform: rotate(-45deg);
-				transform: rotate(-45deg);
-				-webkit-transform-origin: 0 100%;
-				-moz-transform-origin: 0 100%;
-				-ms-transform-origin: 0 100%;
-				-o-transform-origin: 0 100%;
-				transform-origin: 0 100%;
-			}
-			
-			#heart:after {
-				left: 0;
-				-webkit-transform: rotate(45deg);
-				-moz-transform: rotate(45deg);
-				-ms-transform: rotate(45deg);
-				-o-transform: rotate(45deg);
-				transform: rotate(45deg);
-				-webkit-transform-origin: 100% 100%;
-				-moz-transform-origin: 100% 100%;
-				-ms-transform-origin: 100% 100%;
-				-o-transform-origin: 100% 100%;
-				transform-origin: 100% 100%;
-			}
+			#heart{position: relative;width: 100px;height: 90px;}
+			#heart:before,#heart:after{position: absolute;content: "";left: 50px;top: 0;width: 50px;height: 80px;background: red;-moz-border-radius: 50px 50px 0 0;border-radius: 50px 50px 0 0;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);-webkit-transform-origin: 0 100%;-moz-transform-origin: 0 100%;-ms-transform-origin: 0 100%;-o-transform-origin: 0 100%;transform-origin: 0 100%;}
+			#heart:after{left: 0;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);-webkit-transform-origin: 100% 100%;-moz-transform-origin: 100% 100%;-ms-transform-origin: 100% 100%;-o-transform-origin: 100% 100%;transform-origin: 100% 100%;}
 		</style>
 	</head>
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+		<div id="animated-number-demo">
+		  <input v-model.number="number" type="number" step="20" @mouseenter="rd" @mouseleave="rd">
+		  <p>{{ animatedNumber }}</p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+			  el: '#animated-number-demo',
+			  data: {
+			    number: 0,
+			    animatedNumber: 0
+			  },
+			  watch: {
+			    number: function(newValue, oldValue) {
+			      var vm = this
+			      function animate () {
+			        if (TWEEN.update()) {
+			          requestAnimationFrame(animate)
+			        }
+			      }
+			
+			      new TWEEN.Tween({ tweeningNumber: oldValue })
+			        .easing(TWEEN.Easing.Quadratic.Out)
+			        .to({ tweeningNumber: newValue }, 500)
+			        .onUpdate(function () {
+			          vm.animatedNumber = this.tweeningNumber.toFixed(0)
+			        })
+			        .start()
+			
+			      animate()
+			    }
+			  },
+			  methods:{
+			  	rd:function(){
+			  		var rand=Math.random()*100000000000
+			  		this.number=rand.toFixed(0)
+			  	}
+			  }
+			})
+		</script>
+	</body>
+</html>

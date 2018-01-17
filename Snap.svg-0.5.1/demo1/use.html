@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg"></svg>
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c = svg.paper.el("circle", {
+			    cx: 50,
+			    cy: 50,
+			    r: 40	
+			});
+			
+			c.use();
+		</script>
+		
+	</body>
+</html>

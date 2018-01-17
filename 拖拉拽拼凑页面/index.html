@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dashboard - Bootstrap Admin Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+<style type="text/css">
+	*{float: left;-moz-user-select: none;list-style: none;}
+	html,body{float: left;width: 100%;}
+	#outer_wrap{margin-left: 50%;float: left;width: 375px;height: 667px;border: 1px solid #adff2f;position: relative;left:-187.5px;overflow-y: auto;}
+	#outer_wrap>li{float: left;width: 100%;line-height: 30px;padding: 0;}
+	#outer_wrap>li:hover{background: #bdb76b;cursor: move;}
+	.p-one{width: 100%;}
+	.p-title{width: 100%;text-align: center;line-height: 200px;}
+	.img{float: left;background-color: wheat;}
+	.line-red{display: none;}
+</style>
+</head>
+<body>
+	<h1 class="p-title">页面展示</h1>
+		<ul id="outer_wrap">
+			<li>
+				<div style="background-color: yellow;">
+				    <div class="widget-nopad">
+					    <!-- /widget-header -->
+					    <div class="">
+					      <div class="widget big-stats-container">
+					        <div class="">
+					          <h6 class="bigstats">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.by EGrappler" target="_blank">by EGrappler</a>.  These are some dummy lines to fill the area.</h6>
+					          </div>
+					        <!-- / --> 
+					        
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div style="background-color: green;">
+				    <div class="widget-nopad">
+					    <!-- /widget-header -->
+					    <div class="">
+					      <div class="widget big-stats-container">
+					        <div class="">
+					          <h6 class="bigstats">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.by EGrappler" target="_blank">by EGrappler</a>.  These are some dummy lines to fill the area.</h6>
+					          </div>
+					        <!-- / --> 
+					        
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div style="background-color: blue;">
+				    <div class="widget-nopad">
+					    <!-- /widget-header -->
+					    <div class="">
+					      <div class="widget big-stats-container">
+					        <div class="">
+					          <h6 class="bigstats">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.by EGrappler" target="_blank">by EGrappler</a>.  These are some dummy lines to fill the area.</h6>
+					          </div>
+					        <!-- / --> 
+					        
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div style="background-color: red;">
+				    <div class="widget-nopad">
+					    <!-- /widget-header -->
+					    <div class="">
+					      <div class="widget big-stats-container">
+					        <div class="">
+					          <h6 class="bigstats">A fully responsive premium quality admin template built on Twitter Bootstrap by <a href="http://www.by EGrappler" target="_blank">by EGrappler</a>.  These are some dummy lines to fill the area.</h6>
+					          </div>
+					        <!-- / --> 
+					        
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</li>
+			
+			<div class="line-red"></div>
+		</ul>
+
+
+
+<script src="js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+			//获取鼠标位置 
+			function getMousePos(e) {
+				return {
+					x: e.pageX || e.clientX + document.body.scrollLeft,
+					y: e.pageY || e.clientY + document.body.scrollTop
+				}
+			}
+			//获取元素位置 
+			function getElementPos(el) {
+				return {
+					x: el.offsetParent ? el.offsetLeft + arguments.callee(el.offsetParent)['x'] : el.offsetLeft,
+					y: el.offsetParent ? el.offsetTop + arguments.callee(el.offsetParent)['y'] : el.offsetTop
+				}
+			}
+			//获取元素尺寸 
+			function getElementSize(el) {
+				return {
+					width: el.offsetWidth,
+					height: el.offsetHeight
+				}
+			}
+			//禁止选择 
+			document.onselectstart = function() {
+				return false;
+			}
+			//判断是否有挪动 
+			var MOVE = {};
+			MOVE.isMove = false;
+
+			//就是创建的标杆 
+			var div = $('.line-red')
+			div.css({
+				float:'left',
+				width:'100%',
+				height:'3px',
+				fontSize:0,
+				background:'black',
+				opcity:0.8
+			});
+			var el;
+			var li_self;
+			var $outer_wrap = $('#outer_wrap');
+			
+			//锁定是哪个li标签被选中
+			$outer_wrap.children('li').on('mousedown',function(){
+				li_self=$(this);
+				el=$(this).clone();
+				div.css({display:'block'})
+				$(this).after(div);
+			})
+			$outer_wrap.on('mousedown',function(event) {
+				//获取列表顺序 
+				var lis = $outer_wrap.children('li');
+				for(var i = 0; i < lis.length; i++) {
+					lis[i]['pos'] = getElementPos(lis[i]);
+					lis[i]['size'] = getElementSize(lis[i]);
+				}
+				event = event || window.event;
+				var t = event.target || event.srcElement;
+				
+				if(li_self[0].tagName=='LI') {
+					var p = getMousePos(event);
+					console.log(el)
+					el.css({
+						position:'absolute',
+						left:li_self.offset().left,
+					    top:li_self.offset().top,
+					    width:li_self.width(),
+					    height:li_self.height(),
+					    border:'1px solid #d4d4d4',
+					    background:'#d4d4d4',
+					    opacity:'0.7'
+					});
+					$('body').append(el);
+						
+
+					$(document).on('mousemove',function(event) {
+						event = event || window.event;
+						var current = getMousePos(event);
+						el.css({
+							left:li_self.offset().left + current.x - p.x + 'px',
+							top:li_self.offset().top + current.y - p.y + 'px'
+						});
+						$('body').css({cursor:'move'});
+
+						//判断插入点 
+						for(var i = 0; i < lis.length; i++) {
+							if(current.y >= lis[i]['pos']['y']) {
+								if(li_self != lis[i]) {
+									$(lis[i]).before(div);
+								}
+							}
+						} 
+						//处理拖动到最后一个后面
+						if(current.y>lis[lis.length-1]['pos']['y']+lis[lis.length-1]['size'].height){
+							$(lis[lis.length-1]).after(div);
+						}
+					})
+					//移除事件 
+					$(document).on('mouseup',function(event) {
+						event = event || window.event;
+						div.before(li_self).remove();
+						el.remove();
+						$('body').css({cursor:'normal'});
+						$(document).off();
+					})
+				}
+			})
+		</script>
+
+</body>
+</html>

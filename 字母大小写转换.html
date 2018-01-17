@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>转换大小写</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="Description" content="retro 2tro.com retro-web" />
+		<meta name="Keywords" content="retro 2tro.com retro-web" />
+		<style type="text/css">
+			.submit{height: 36px;line-height: 36px;background-color: #f0f3f9;color: #333;overflow: visible;cursor: pointer;box-shadow: 1px 1px #AFC4EA, 2px 2px #AFC4EA, 3px 3px #AFC4EA;font-size: 16px;display: inline-block;text-align: center;padding: 0px 10px;text-decoration: none;font-weight: bold;margin-right: 10px;margin-top: 20px;}
+			.submit:active{-ms-transform: translate(1px, 1px);transform: translate(1px, 1px);box-shadow: 1px 1px #AFC4EA, 2px 2px #AFC4EA;}
+			.submit:hover{background-color: #EAEDF5;}
+		</style>
+	</head>
+	<body>
+		<h1>大小写在线转换</h1>
+		<div>
+			<textarea id="zm_neirong" style="border: 1px solid #d9d9d9;height: 160px;width: 50%;"></textarea>
+			<br><br>
+			<a class="submit" href="javascript:zm_quanbudaxie();">转换为大写</a>
+			<a class="submit" href="javascript:zm_quanbuxiaoxie();">转换为小写</a>
+			<a class="submit" href="javascript:zm_shouzimudaxie();">转换首字母为大写</a>
+		</div>
+		<script type="text/javascript">
+			function zm_shouzimudaxie() {
+			    zm_tihuanneirong(document.getElementById("zm_neirong").value.replace(/\b\w+\b/g,
+			    function(a) {
+			        return a.substring(0, 1).toUpperCase() + a.substring(1)
+			    }))
+			}
+			function zm_quanbudaxie() {
+			    zm_tihuanneirong(document.getElementById("zm_neirong").value.toUpperCase())
+			}
+			function zm_quanbuxiaoxie() {
+			    zm_tihuanneirong(document.getElementById("zm_neirong").value.toLowerCase())
+			}
+			function zm_tihuanneirong(a) {
+			    document.getElementById("zm_neirong").value = a
+			};
+		</script>
+	</body>
+</html>

@@ -5,30 +5,14 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style type="text/css">
-			* {margin: 0;padding: 0;}
-			.clip[style] {opacity: 0;}
-			.active .clip:not([style]) {opacity: 0;animation: fadeIn .1s .4s both;}
-			.active .clip[style] {will-change: transform;animation: noTransform .5s both;}
-			
-			@keyframes noTransform {
-				to {
-					opacity: 1;
-					transform: translate3d(0, 0, 0) rotate(0);
-				}
-			}
-			
-			@keyframes fadeIn {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-			
-			.box {height: 190px;}
-			.text {position: absolute;width: 300px;}
-			.image {position: absolute;}
+			*{margin: 0;padding: 0;}
+			.clip[style]{opacity: 0;}
+			.active .clip:not([style]){opacity: 0;animation: fadeIn .1s .4s both;}
+			.active .clip[style]{will-change: transform;animation: noTransform .5s both;}
+			@keyframes noTransform{to{opacity: 1;transform: translate3d(0, 0, 0) rotate(0);}}@keyframes fadeIn{from{opacity: 0;}
+			to{opacity: 1;}}.box{height: 190px;}
+			.text{position: absolute;width: 300px;}
+			.image{position: absolute;}
 		</style>
 		<script src="js/imgFly.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -44,7 +28,6 @@
 		</svg>
 		
 		
-		<!-- <img src="images/bac2.jpg" style="-webkit-clip-path: polygon(626px 463px,765px 236px,687px 31px,271px 100px,70px 10px,49px 250px,133px 406px,374px 462px,529px 393px);clip-path: polygon(626px 463px,765px 236px,687px 31px,271px 100px,70px 10px,49px 250px,133px 406px,374px 462px,529px 393px);"/>-->
 		<img src="images/bac2.jpg" style="-webkit-clip-path: url(#svgTextPath);clip-path: url(#svgTextPath);width: 850px;"/>
   
   		<br />

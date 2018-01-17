@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div style="margin: 20px auto;width: 1114px;">
+			<canvas id="canvasa" width="540" height="448" style="display: block;float: left;border: 1px solid #d6d7dc;"></canvas>
+			<canvas id="canvasb" width="540" height="448" style="display: block;float: left;margin-left: 30px;border: 1px solid #d6d7dc;"></canvas>
+		</div>
+		<div style="clear:both"></div>
+		
+		<div style="text-align: center;margin-top: 50px;font-size: 20px;">
+			<a href="javascript:copy();">像素级复制</a>
+			<a href="javascript:filter();">滤镜</a>
+			<a href="javascript:greyEffect();">灰度滤镜</a>
+			<a href="javascript:blackEffect();">黑白滤镜</a>
+			<a href="javascript:reverseEffect();">反色滤镜</a>
+			<a href="javascript:blurEffect();">模糊滤镜</a>
+			<a href="javascript:mosaicEffect();">马赛克滤镜</a>
+		</div>
+		
+	</body>
+
+	<script type="text/javascript">
+		canvasa = document.getElementById('canvasa')
+		contexta = canvasa.getContext('2d')
+		
+		canvasb = document.getElementById('canvasb')
+		contextb = canvasb.getContext('2d')
+		
+		image=new Image()
+		
+		window.onload=function(){
+			
+			image.src='../images/pic_05.png'
+			
+			image.onload=function(){
+				
+				contexta.drawImage( image,0,0,canvasa.width,canvasa.height)
+			}
+		}
+		
+		//复制
+		function copy(){
+			
+			var imageData=contexta.getImageData(0,0,canvasa.width,canvasa.height)
+			
+			contextb.putImageData(imageData,0,0,0,0,canvasb.width,canvasb.height)
+		}
+		
+		//滤镜
+		function filter(){
+			
+			var imageData=contexta.getImageData(0,0,canvasa.width,canvasa.height)
+			var pixelData=imageData.data
+			
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				
+				pixelData[4*i+0]=0
+//				pixelData[4*i+1]=0
+//				pixelData[4*i+2]=0
+			}
+			
+			contextb.putImageData(imageData,0,0,0,0,canvasb.width,canvasb.height)
+		}
+		
+		//灰度滤镜
+		function greyEffect(){
+			
+			var imageData=contexta.getImageData(0,0,canvasa.width,canvasa.height)
+			var pixelData=imageData.data
+			
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				
+				var r=pixelData[4*i+0]
+				var g=pixelData[4*i+1]
+				var b=pixelData[4*i+2]
+				
+				//灰度公式
+				var grey=r*0.3+g*0.59+b*0.11
+				
+				pixelData[4*i+0]=grey
+				pixelData[4*i+1]=grey
+				pixelData[4*i+2]=grey
+			}
+			
+			contextb.putImageData(imageData,0,0,0,0,canvasb.width,canvasb.height)
+		}
+		
+		//黑白滤镜
+		function blackEffect(){
+			
+			var imageData=contexta.getImageData(0,0,canvasa.width,canvasa.height)
+			var pixelData=imageData.data
+			
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				
+				var r=pixelData[4*i+0]
+				var g=pixelData[4*i+1]
+				var b=pixelData[4*i+2]
+				
+				//灰度公式
+				var grey=r*0.3+g*0.59+b*0.11
+				//判断灰度值
+				if(grey>255/2){
+					v=255
+				}else{
+					v=0
+				}
+				
+				pixelData[4*i+0]=v
+				pixelData[4*i+1]=v
+				pixelData[4*i+2]=v
+			}
+			
+			contextb.putImageData(imageData,0,0,0,0,canvasb.width,canvasb.height)
+		}
+		
+		//反色滤镜
+		function reverseEffect(){
+			
+			var imageData=contexta.getImageData(0,0,canvasa.width,canvasa.height)
+			var pixelData=imageData.data
+			
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				
+				var r=pixelData[4*i+0]
+				var g=pixelData[4*i+1]
+				var b=pixelData[4*i+2]
+				
+				pixelData[4*i+0]=255-r
+				pixelData[4*i+1]=255-g
+				pixelData[4*i+2]=255-b
+			}
+			
+			contextb.putImageData(imageData,0,0,0,0,canvasb.width,canvasb.height)
+		}
+		
+		//模糊滤镜
+		function blurEffect(){
+			var tmpImageData = contexta.getImageData( 0 , 0 , canvasa.width , canvasa.height )
+            var tmpPixelData = tmpImageData.data
+
+            var imageData = contexta.getImageData( 0 , 0 , canvasa.width , canvasa.height )
+            var pixelData = imageData.data
+			
+			//模糊程度参数
+            var blurR = 10
+            var totalnum = (2*blurR + 1)*(2*blurR + 1)
+
+            for( var i = blurR ; i < canvasb.height - blurR ; i ++ )
+                for( var j = blurR ; j < canvasb.width - blurR ; j ++ ){
+
+                    var totalr = 0 , totalg = 0 , totalb = 0
+                    for( var dx = -blurR ; dx <= blurR ; dx ++ )
+                        for( var dy = -blurR ; dy <= blurR ; dy ++ ){
+
+                            var x = i + dx
+                            var y = j + dy
+
+                            var p = x*canvasb.width + y
+                            totalr += tmpPixelData[p*4+0]
+                            totalg += tmpPixelData[p*4+1]
+                            totalb += tmpPixelData[p*4+2]
+                        }
+
+                    var p = i*canvasb.width + j
+                    pixelData[p*4+0] = totalr / totalnum
+                    pixelData[p*4+1] = totalg / totalnum
+                    pixelData[p*4+2] = totalb / totalnum
+                }
+
+            contextb.putImageData( imageData , 0 , 0 , 0 , 0 , canvasb.width , canvasb.height )
+
+		}
+		
+		//马赛克滤镜
+		function mosaicEffect(){
+
+            var tmpImageData = contexta.getImageData( 0 , 0 , canvasa.width , canvasa.height )
+            var tmpPixelData = tmpImageData.data
+
+            var imageData = contexta.getImageData( 0 , 0 , canvasa.width , canvasa.height )
+            var pixelData = imageData.data
+
+            var size = 16
+            var totalnum = size*size
+            for( var i = 0 ; i < canvasb.height ; i += size )
+                for( var j = 0 ; j < canvasb.width ; j += size ){
+
+                    var totalr = 0 , totalg = 0 , totalb = 0
+                    for( var dx = 0 ; dx < size ; dx ++ )
+                        for( var dy = 0 ; dy < size ; dy ++ ){
+
+                            var x = i + dx
+                            var y = j + dy
+
+                            var p = x*canvasb.width + y
+                            totalr += tmpPixelData[p*4+0]
+                            totalg += tmpPixelData[p*4+1]
+                            totalb += tmpPixelData[p*4+2]
+                        }
+
+                    var p = i*canvasb.width+j
+                    var resr = totalr / totalnum
+                    var resg = totalg / totalnum
+                    var resb = totalb / totalnum
+
+                    for( var dx = 0 ; dx < size ; dx ++ )
+                        for( var dy = 0 ; dy < size ; dy ++ ){
+
+                            var x = i + dx
+                            var y = j + dy
+
+                            var p = x*canvasb.width + y
+                            pixelData[p*4+0] = resr
+                            pixelData[p*4+1] = resg
+                            pixelData[p*4+2] = resb
+                        }
+            }
+
+            contextb.putImageData( imageData , 0 , 0 , 0 , 0 , canvasb.width, canvasb.height )
+
+        }
+
+	</script>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE >
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{float: left;margin: 0;padding: 0;-moz-user-select: none;list-style: none;}
+			html,body{float: left;width: 100%;}
+			#outer_wrap{margin-left: 50%;float: left;width: 375px;height: 667px;border: 1px solid #adff2f;position: relative;left:-187.5px;}
+			#outer_wrap>li{float: left;width: 100%;line-height: 30px;padding: 0;}
+			#outer_wrap>li:hover{background: #bdb76b;cursor: move;}
+			.p-one{width: 100%;}
+			.p-title{width: 100%;text-align: center;line-height: 200px;}
+			.img{float: left;background-color: wheat;}
+			.line-red{display: none;}
+		</style>
+	</head>
+
+	<body>
+		<h1 class="p-title">页面展示</h1>
+		<ul id="outer_wrap">
+			<li>第一条</li>
+			<li>第二条</li>
+			<li>第三条</li>
+			<li>第四条</li>
+			<li>第五条</li>
+			<li>第六条</li>
+			<li>第七条</li>
+			<li>第八条</li>
+			<div class="line-red"></div>
+		</ul>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//获取鼠标位置 
+			function getMousePos(e) {
+				return {
+					x: e.pageX || e.clientX + document.body.scrollLeft,
+					y: e.pageY || e.clientY + document.body.scrollTop
+				}
+			}
+			//获取元素位置 
+			function getElementPos(el) {
+				return {
+					x: el.offsetParent ? el.offsetLeft + arguments.callee(el.offsetParent)['x'] : el.offsetLeft,
+					y: el.offsetParent ? el.offsetTop + arguments.callee(el.offsetParent)['y'] : el.offsetTop
+				}
+			}
+			//获取元素尺寸 
+			function getElementSize(el) {
+				return {
+					width: el.offsetWidth,
+					height: el.offsetHeight
+				}
+			}
+			//禁止选择 
+			document.onselectstart = function() {
+				return false;
+			}
+			//判断是否有挪动 
+			var MOVE = {};
+			MOVE.isMove = false;
+
+			//就是创建的标杆 
+			var div = $('.line-red')
+			div.css({
+				float:'left',
+				width:'100%',
+				height:'1px',
+				fontSize:0,
+				background:'red'
+			});
+			var el;
+			var li_self;
+			var $outer_wrap = $('#outer_wrap');
+			
+			//锁定是哪个li标签被选中
+			$outer_wrap.children('li').on('mousedown',function(){
+				li_self=$(this);
+				el=$(this).clone();
+				div.css({display:'block'})
+				$(this).after(div);
+			})
+			$outer_wrap.on('mousedown',function(event) {
+				//获取列表顺序 
+				var lis = $outer_wrap.children('li');
+				for(var i = 0; i < lis.length; i++) {
+					lis[i]['pos'] = getElementPos(lis[i]);
+					lis[i]['size'] = getElementSize(lis[i]);
+				}
+				console.log(li_self)
+				event = event || window.event;
+				var t = event.target || event.srcElement;
+				
+				if(li_self[0].tagName=='LI') {
+					var p = getMousePos(event);
+					console.log(el)
+					el.css({
+						position:'absolute',
+						left:li_self.offset().left,
+					    top:li_self.offset().top,
+					    width:li_self.width(),
+					    height:li_self.height(),
+					    border:'1px solid #d4d4d4',
+					    background:'#d4d4d4',
+					    opacity:'0.7'
+					});
+					$('body').append(el);
+						
+
+					$(document).on('mousemove',function(event) {
+						event = event || window.event;
+						var current = getMousePos(event);
+						el.css({
+							left:li_self.offset().left + current.x - p.x + 'px',
+							top:li_self.offset().top + current.y - p.y + 'px'
+						});
+						$('body').css({cursor:'move'});
+
+						//判断插入点 
+						for(var i = 0; i < lis.length; i++) {
+							if(current.x > lis[i]['pos']['x'] && current.x < lis[i]['pos']['x'] + lis[i]['size']['width'] && current.y > lis[i]['pos']['y'] && current.y < lis[i]['pos']['y'] + lis[i]['size']['height'] / 2) {
+								if(li_self != lis[i]) {
+									MOVE.isMove = true;
+									$(lis[i]).before(div);
+								}
+
+							} else if(current.x > lis[i]['pos']['x'] && current.x < lis[i]['pos']['x'] + lis[i]['size']['width'] && current.y > lis[i]['pos']['y'] + lis[i]['size']['height'] / 2 && current.y < lis[i]['pos']['y'] + lis[i]['size']['height']) {
+								if(li_self != lis[i]) {
+									MOVE.isMove = true;
+									
+									$(lis[i].nextSibling).before(div);
+								}
+							}
+						}
+					})
+					//移除事件 
+					$(document).on('mouseup',function(event) {
+						event = event || window.event;
+						if(MOVE.isMove) {
+							div.before(li_self).remove();
+							MOVE.isMove = false;
+						}
+						el.remove();
+						el = null;
+						$('body').css({cursor:'normal'});
+						$(document).off();
+					})
+				}
+			})
+		</script>
+	</body>
+
+</html>

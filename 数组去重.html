@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+
 	<body>
 		<script>
-/**
-*unique the array
-*@param {Array} array array to unique
-*@return {Array} uniqued array ,note change parameter
-*/
-function undulpicate(array){
-	for(var i=0;i<array.length;i++) {
-		for(var j=i+1;j<array.length;j++) {
-			//注意 ===
-			if(array[i]===array[j]) {
-				array.splice(j,1);
-				j--;
+			function undulpicate(array) {
+				for(var i = 0; i < array.length; i++) {
+					for(var j = i + 1; j < array.length; j++) {
+						//注意 ===
+						if(array[i] === array[j]) {
+							array.splice(j, 1);
+							j--;
+						}
+					}
+				}
+				return array;
 			}
-		}
-	}
-	return array;
-}
-//定义测试用的数组
-var array1=["2013-06-06 00","2013-06-06 01","2013-06-06 02","2013-06-06 03","2013-06-06 04","2013-06-06 05","2013-06-06 05","2013-06-06 06","2013-06-06 07","2013-06-06 07","2013-06-06 08"];
-//打印原始数组
-document.write(array1);
-document.write("<br />");
-//去重
-array1=undulpicate(array1);
-//打印去重后的数组
-document.write(array1);
-</script>
+			//定义测试用的数组
+			var array1 = ["2013-06-06 07", "2013-06-06 07"];
+			//打印原始数组
+			document.write('这是原始数据：'+array1);
+			document.write("<br />");
+			//去重
+			array1 = undulpicate(array1);
+			//打印去重后的数组
+			document.write('去重复数据后：'+array1);
+		</script>
 	</body>
+
 </html>

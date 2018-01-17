@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="120" height="120"></svg>
+		
+		<input type="button" id="button" class="zxx_api_button" value="点击执行add()">
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			// 画个圈圈
+			var c = svg.paper.circle(50, 50, 40);
+			// 当前矩阵
+			var m1 = new Snap.Matrix(1,0,0,1,20,20);
+			// 圈圈应用矩阵变换 - 位移(20, 20)
+			c.transform(m1.toTransformString());
+			
+			// 事件
+			if (document.addEventListener) {
+			    document.querySelector("#button").addEventListener("click", function() {
+			        // 矩阵组合
+			        m1.add(1,0,0,1,-20,-20);
+			        // 圈圈再次应用矩阵变换 - 位移(-20, -20)
+			        c.transform(m1.toTransformString());
+			    });
+			}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		给元素添加touchcancel事件。
+		<svg id="svg" width="0" height="0"></svg>
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			console.log(svg.paper.toString());
+			// 结果是：
+			// <svg id="svg" width="0" height="0" xmlns="http://www.w3.org/2000/svg"><desc>Created with Snap</desc><defs></defs></svg>
+		</script>
+		
+	</body>
+</html>

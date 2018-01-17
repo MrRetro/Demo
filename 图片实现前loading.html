@@ -10,18 +10,12 @@
 		</style>
 		<script src="js/jquery-1-7-2-min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			/*感觉效果不对*/
 		window.onload=function(){
 			var src=$('img').eq(0).attr('src');
 			$('img').eq(0).attr('src','img/loading.gif');
 			$('img').eq(0).attr('src',src);
-
 		}
-//			function aaa(e) {
-//				var src=$(e).attr('src');
-//				var $parent=$(e).parent();
-//				$parent.html('<img src="img/loading.gif"/>');
-//				$parent.children('img').attr("src",src);
-//			}
 		</script>
 	</head>
 
@@ -30,7 +24,6 @@
 			<div id="cc"><img src="img/11.jpg" onload="aaa(this);" border="0" /> </div>
 			<div><img src="img/1.jpg" onload="aaa(this);" border="0" /> </div>
 			<div><img src="img/2.jpg" onload="aaa(this);" border="0" /> </div>
-			<div><img src="img/3.jpg" onload="aaa(this);" border="0" /> </div>
 		</div>
 	</body>
 

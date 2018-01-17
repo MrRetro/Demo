@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg id="svg" width="200" height="100"></svg>
+		<input id="button" type="button" value="移除数据">
+            
+		<script src="./js/snap.svg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var svg = Snap("#svg");
+			var c1 = svg.paper.circle(50, 50, 40).attr({
+			    fill: "#f00"        // 红色
+			}).data('小样','想谁呢？');
+			var c2 = svg.paper.circle(150, 50, 40).attr({
+			    fill: "#00f"        // 蓝色
+			});
+			
+			document.getElementById("button").onclick = function() {
+			    // 移除数据
+			    
+			    console.log(c1.data('小样'))
+			    c1.removeData();
+			    console.log(c1.data('小样'))
+			};
+		</script>
+		
+	</body>
+</html>
