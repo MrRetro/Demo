@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			.table{width: 100%;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<table class="table" border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>你</th>
+				<th>你好21212</th>
+				<th>你好324234</th>
+				<th>你好576457</th>
+				<th>你好57858</th>
+				<th>你好698769</th>
+				<th>你好678967896</th>
+				<th>你好689678967</th>
+				<th>你好678967896</th>
+				<th>你好689678967</th>
+			</tr>
+			<tr>
+				<td>今天 明天 后天dasf</td>
+				<td>今天 明天 后天打发斯蒂芬</td>
+				<td>今天 明天 后天打发</td>
+				<td>今天 明天 后天阿斯顿发</td>
+				<td>今天 明天 后天阿道夫</td>
+				<td>今天 明天 后天阿斯顿发</td>
+				<td>今天 明天 后天是</td>
+				<td>今天 明天 后天啊</td>
+				<td>今天 明天 后天</td>
+				<td>今天 明天 后天的</td>
+			</tr>
+		</table>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				autoRow();
+				$(window).resize(function(){
+					autoRow();
+				})
+			});
+			
+			function autoRow(){
+				$('.table').css({width:$(window).width()})
+				var span,w,h;
+				$('th,td').each(function(i,v){
+					span=$('<span></span>');
+					w=$(this).width();
+					h='50px';
+					span.html($(this).html());
+					span.css({width:w,height:h,lineHeight:h,display:'inline-block',overflowX:'auto',overflowY:'hidden',whiteSpace: 'nowrap'});
+					$(this).html(span);
+				})
+			}
+		</script>
+	</body>
+</html>
